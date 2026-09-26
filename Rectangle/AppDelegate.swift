@@ -395,7 +395,8 @@ extension AppDelegate: NSMenuDelegate {
     }
     
     func addWindowActionMenuItems() {
-        let additionalSizeCategories: Set<WindowActionCategory> = [.eighths, .ninths, .twelfths, .sixteenths]
+        let additionalSizeCategories: Set<WindowActionCategory> = [.eighths, .ninths, .twelfths, .sixteenths,
+                                                                 .sixthColumns, .eighthColumns, .topHalfEighthColumns, .topHalfTenthColumns]
         let submenuOnlyWhenAdditional: Set<WindowActionCategory> = [.thirds, .size]
         let showAdditional = Defaults.showAdditionalSizesInMenu.userEnabled
         var menuIndex = 0

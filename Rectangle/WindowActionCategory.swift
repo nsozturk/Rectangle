@@ -4,7 +4,8 @@ import Foundation
 
 enum WindowActionCategory {
 
-    case halves, corners, thirds, max, size, display, move, other, sixths, fourths, eighths, ninths, twelfths, sixteenths
+    case halves, corners, thirds, max, size, display, move, other, sixths, fourths, eighths, ninths, twelfths, sixteenths,
+         sixthColumns, eighthColumns, topHalfEighthColumns, topHalfTenthColumns
 
     var menuOrder: Int {
         switch self {
@@ -17,6 +18,10 @@ enum WindowActionCategory {
         case .ninths: return 6
         case .twelfths: return 7
         case .sixteenths: return 8
+        case .sixthColumns: return 9
+        case .eighthColumns: return 10
+        case .topHalfEighthColumns: return 11
+        case .topHalfTenthColumns: return 12
         default: return 99
         }
     }
@@ -51,6 +56,14 @@ enum WindowActionCategory {
             return NSLocalizedString("Twelfths", tableName: "Main", value: "Twelfths", comment: "")
         case .sixteenths:
             return NSLocalizedString("Sixteenths", tableName: "Main", value: "Sixteenths", comment: "")
+        case .sixthColumns:
+            return NSLocalizedString("Full-Height Sixths", tableName: "Main", value: "Full-Height Sixths", comment: "")
+        case .eighthColumns:
+            return NSLocalizedString("Full-Height Eighths", tableName: "Main", value: "Full-Height Eighths", comment: "")
+        case .topHalfEighthColumns:
+            return NSLocalizedString("Top-Half Eighths", tableName: "Main", value: "Top-Half Eighths", comment: "")
+        case .topHalfTenthColumns:
+            return NSLocalizedString("Top-Half Tenths", tableName: "Main", value: "Top-Half Tenths", comment: "")
         }
     }
 }

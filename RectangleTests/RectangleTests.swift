@@ -80,6 +80,110 @@ class PositionCyclesTests: XCTestCase {
     }
 }
 
+class ColumnLayoutTests: XCTestCase {
+
+    func testGroupsExposeAllActionsWithStableIdsAndNames() {
+        XCTAssertEqual(WindowAction.columnLayoutGroups.map(\.count), [6, 8, 8, 10])
+
+        let actions = WindowAction.columnLayoutGroups.flatMap { $0 }
+        XCTAssertEqual(actions.map(\.rawValue), Array(130...161))
+        XCTAssertEqual(Set(actions.map(\.name)).count, 32)
+        XCTAssertTrue(actions.allSatisfy { WindowAction.active.contains($0) })
+        XCTAssertTrue(actions.allSatisfy { $0.displayName != nil })
+        XCTAssertTrue(actions.allSatisfy { $0.spectacleDefault == nil && $0.alternateDefault == nil })
+        XCTAssertTrue(actions.allSatisfy { !$0.positionCycles })
+    }
+
+    func testAllColumnLayoutsPartitionOddNegativeOriginFrameWithoutGapsOrOverflow() {
+        assertColumnPartitions(in: CGRect(x: -1500, y: -200, width: 1001, height: 901))
+    }
+
+    func testAllColumnLayoutsPreserveExactFractionalOuterBoundaries() {
+        assertColumnPartitions(in: CGRect(x: -1500.25, y: -200.5, width: 1001.25, height: 901.5))
+    }
+
+    func testAllColumnLayoutsRemainHorizontalOnPortraitFrame() {
+        assertColumnPartitions(in: CGRect(x: 45, y: 70, width: 901, height: 1601))
+    }
+
+    func testRepeatedExecutionKeepsEachFixedColumn() {
+        let frame = CGRect(x: -80, y: 25, width: 1003, height: 777)
+
+        for action in WindowAction.columnLayoutGroups.flatMap({ $0 }) {
+            let calculation = WindowCalculationFactory.calculationsByAction[action]
+            let initial = calculation?.calculateRect(params(for: action, frame: frame)).rect
+            let repeatedParams = RectCalculationParameters(window: Window(id: 1, rect: initial ?? .null),
+                                                            visibleFrameOfScreen: frame,
+                                                            action: action,
+                                                            lastAction: RectangleAction(action: action,
+                                                                                        subAction: nil,
+                                                                                        rect: initial ?? .null,
+                                                                                        count: 1))
+            XCTAssertEqual(calculation?.calculateRect(repeatedParams).rect, initial, action.name)
+        }
+    }
+
+    func testColumnGapEdgesMatchOuterAndSharedBoundaries() {
+        for group in WindowAction.columnLayoutGroups {
+            guard let first = group.first, let last = group.last else {
+                XCTFail("Column group must not be empty")
+                continue
+            }
+            let verticalEdge: Edge = first.columnLayout?.isTopHalf == true ? .bottom : .none
+            var firstEdges = verticalEdge
+            firstEdges.insert(.right)
+            var middleEdges = verticalEdge
+            middleEdges.formUnion([.left, .right])
+            var lastEdges = verticalEdge
+            lastEdges.insert(.left)
+
+            XCTAssertEqual(first.gapSharedEdge, firstEdges, first.name)
+            XCTAssertEqual(group[group.count / 2].gapSharedEdge, middleEdges)
+            XCTAssertEqual(last.gapSharedEdge, lastEdges, last.name)
+        }
+    }
+
+    private func assertColumnPartitions(in frame: CGRect,
+                                        file: StaticString = #filePath,
+                                        line: UInt = #line) {
+        for group in WindowAction.columnLayoutGroups {
+            var previousMaxX = frame.minX
+
+            for action in group {
+                guard let layout = action.columnLayout,
+                      let calculation = WindowCalculationFactory.calculationsByAction[action]
+                else {
+                    XCTFail("Missing metadata/calculation for \(action.name)", file: file, line: line)
+                    continue
+                }
+
+                let rect = calculation.calculateRect(params(for: action, frame: frame)).rect
+                let expectedLeft = frame.minX + (frame.width * CGFloat(layout.index) / CGFloat(layout.columnCount)).rounded()
+                let expectedRight = layout.index == layout.columnCount - 1
+                    ? frame.maxX
+                    : frame.minX + (frame.width * CGFloat(layout.index + 1) / CGFloat(layout.columnCount)).rounded()
+                let expectedY = layout.isTopHalf ? frame.minY + (frame.height / 2).rounded() : frame.minY
+
+                XCTAssertEqual(rect.minX, expectedLeft, accuracy: 0.001, file: file, line: line)
+                XCTAssertEqual(rect.maxX, expectedRight, accuracy: 0.001, file: file, line: line)
+                XCTAssertEqual(rect.minX, previousMaxX, accuracy: 0.001, file: file, line: line)
+                XCTAssertEqual(rect.minY, expectedY, accuracy: 0.001, file: file, line: line)
+                XCTAssertEqual(rect.maxY, frame.maxY, accuracy: 0.001, file: file, line: line)
+                previousMaxX = rect.maxX
+            }
+
+            XCTAssertEqual(previousMaxX, frame.maxX, accuracy: 0.001, file: file, line: line)
+        }
+    }
+
+    private func params(for action: WindowAction, frame: CGRect) -> RectCalculationParameters {
+        RectCalculationParameters(window: Window(id: 1, rect: frame),
+                                  visibleFrameOfScreen: frame,
+                                  action: action,
+                                  lastAction: nil)
+    }
+}
+
 class CooperativeResizeSourceTests: XCTestCase {
 
     func testKeyboardShortcutsAndDragSnappingAllowCooperativeResize() {

@@ -167,6 +167,31 @@ struct HalfSplitFrameCalculation {
     }
 }
 
+class ColumnLayoutCalculation: WindowCalculation {
+
+    override func calculateRect(_ params: RectCalculationParameters) -> RectResult {
+        guard let layout = params.action.columnLayout else { return RectResult(.null) }
+
+        let frame = params.visibleFrameOfScreen
+        let columnCount = CGFloat(layout.columnCount)
+        let leftOffset = (frame.width * CGFloat(layout.index) / columnCount).rounded()
+        let rightOffset = layout.index == layout.columnCount - 1
+            ? frame.width
+            : (frame.width * CGFloat(layout.index + 1) / columnCount).rounded()
+        var rect = CGRect(x: frame.minX + leftOffset,
+                          y: frame.minY,
+                          width: rightOffset - leftOffset,
+                          height: frame.height)
+
+        if layout.isTopHalf {
+            rect.origin.y = frame.minY + (frame.height / 2).rounded()
+            rect.size.height = frame.maxY - rect.minY
+        }
+
+        return RectResult(rect)
+    }
+}
+
 class WindowCalculationFactory {
     
     static let leftHalfCalculation = LeftRightHalfCalculation()
@@ -266,8 +291,10 @@ class WindowCalculationFactory {
     static let bottomCenterRightSixteenthCalculation = BottomCenterRightSixteenthCalculation()
     static let bottomRightSixteenthCalculation = BottomRightSixteenthCalculation()
     static let specificDisplayCalculation = SpecificDisplayCalculation()
+    static let columnLayoutCalculation = ColumnLayoutCalculation()
 
-    static let calculationsByAction: [WindowAction: WindowCalculation] = [
+    static let calculationsByAction: [WindowAction: WindowCalculation] = {
+        var calculations: [WindowAction: WindowCalculation] = [
      .leftHalf: leftHalfCalculation,
      .rightHalf: rightHalfCalculation,
      .maximize: maximizeCalculation,
@@ -388,5 +415,10 @@ class WindowCalculationFactory {
      .displayEight: specificDisplayCalculation,
      .displayNine: specificDisplayCalculation
         //     .restore: nil
-    ]
+        ]
+        for action in WindowAction.columnLayoutGroups.flatMap({ $0 }) {
+            calculations[action] = columnLayoutCalculation
+        }
+        return calculations
+    }()
 }

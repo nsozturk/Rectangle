@@ -135,7 +135,48 @@ enum WindowAction: Int, Codable {
          displaySix = 125,
          displaySeven = 126,
          displayEight = 127,
-         displayNine = 128
+         displayNine = 128,
+         firstSixth = 130,
+         secondSixth = 131,
+         thirdSixth = 132,
+         fourthSixth = 133,
+         fifthSixth = 134,
+         lastSixth = 135,
+         firstEighth = 136,
+         secondEighth = 137,
+         thirdEighth = 138,
+         fourthEighth = 139,
+         fifthEighth = 140,
+         sixthEighth = 141,
+         seventhEighth = 142,
+         lastEighth = 143,
+         topHalfColumn1Of8 = 144,
+         topHalfColumn2Of8 = 145,
+         topHalfColumn3Of8 = 146,
+         topHalfColumn4Of8 = 147,
+         topHalfColumn5Of8 = 148,
+         topHalfColumn6Of8 = 149,
+         topHalfColumn7Of8 = 150,
+         topHalfColumn8Of8 = 151,
+         topHalfColumn1Of10 = 152,
+         topHalfColumn2Of10 = 153,
+         topHalfColumn3Of10 = 154,
+         topHalfColumn4Of10 = 155,
+         topHalfColumn5Of10 = 156,
+         topHalfColumn6Of10 = 157,
+         topHalfColumn7Of10 = 158,
+         topHalfColumn8Of10 = 159,
+         topHalfColumn9Of10 = 160,
+         topHalfColumn10Of10 = 161
+
+    static let columnLayoutGroups: [[WindowAction]] = [
+        [.firstSixth, .secondSixth, .thirdSixth, .fourthSixth, .fifthSixth, .lastSixth],
+        [.firstEighth, .secondEighth, .thirdEighth, .fourthEighth, .fifthEighth, .sixthEighth, .seventhEighth, .lastEighth],
+        [.topHalfColumn1Of8, .topHalfColumn2Of8, .topHalfColumn3Of8, .topHalfColumn4Of8,
+         .topHalfColumn5Of8, .topHalfColumn6Of8, .topHalfColumn7Of8, .topHalfColumn8Of8],
+        [.topHalfColumn1Of10, .topHalfColumn2Of10, .topHalfColumn3Of10, .topHalfColumn4Of10, .topHalfColumn5Of10,
+         .topHalfColumn6Of10, .topHalfColumn7Of10, .topHalfColumn8Of10, .topHalfColumn9Of10, .topHalfColumn10Of10]
+    ]
 
     // Order matters here - it's used in the menu
     static let active = [leftHalf, rightHalf, centerHalf, topHalf, bottomHalf,
@@ -169,7 +210,71 @@ enum WindowAction: Int, Codable {
                          cascadeActiveApp, tileActiveApp,
                          displayOne, displayTwo, displayThree, displayFour, displayFive,
                          displaySix, displaySeven, displayEight, displayNine
-    ]
+    ] + columnLayoutGroups.flatMap { $0 }
+
+    struct ColumnLayout {
+        let index: Int
+        let columnCount: Int
+        let isTopHalf: Bool
+
+        var gapSharedEdges: Edge {
+            var edges: Edge = .none
+            if index > 0 { edges.insert(.left) }
+            if index < columnCount - 1 { edges.insert(.right) }
+            if isTopHalf { edges.insert(.bottom) }
+            return edges
+        }
+    }
+
+    var columnLayout: ColumnLayout? {
+        switch self {
+        case .firstSixth, .secondSixth, .thirdSixth, .fourthSixth, .fifthSixth, .lastSixth:
+            return ColumnLayout(index: rawValue - Self.firstSixth.rawValue, columnCount: 6, isTopHalf: false)
+        case .firstEighth, .secondEighth, .thirdEighth, .fourthEighth, .fifthEighth, .sixthEighth, .seventhEighth, .lastEighth:
+            return ColumnLayout(index: rawValue - Self.firstEighth.rawValue, columnCount: 8, isTopHalf: false)
+        case .topHalfColumn1Of8, .topHalfColumn2Of8, .topHalfColumn3Of8, .topHalfColumn4Of8,
+             .topHalfColumn5Of8, .topHalfColumn6Of8, .topHalfColumn7Of8, .topHalfColumn8Of8:
+            return ColumnLayout(index: rawValue - Self.topHalfColumn1Of8.rawValue, columnCount: 8, isTopHalf: true)
+        case .topHalfColumn1Of10, .topHalfColumn2Of10, .topHalfColumn3Of10, .topHalfColumn4Of10, .topHalfColumn5Of10,
+             .topHalfColumn6Of10, .topHalfColumn7Of10, .topHalfColumn8Of10, .topHalfColumn9Of10, .topHalfColumn10Of10:
+            return ColumnLayout(index: rawValue - Self.topHalfColumn1Of10.rawValue, columnCount: 10, isTopHalf: true)
+        default: return nil
+        }
+    }
+
+    private var columnLayoutDisplayName: String? {
+        guard let layout = columnLayout else { return nil }
+        let value: String
+        if layout.isTopHalf {
+            value = "Top Half — Column \(layout.index + 1) of \(layout.columnCount)"
+        } else {
+            let ordinals = ["First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth"]
+            let ordinal = layout.index == layout.columnCount - 1 ? "Last" : ordinals[layout.index]
+            value = "\(ordinal) \(layout.columnCount == 6 ? "Sixth" : "Eighth")"
+        }
+        return NSLocalizedString("\(name).title", tableName: "Main", value: value, comment: "")
+    }
+
+    private var columnLayoutImage: NSImage? {
+        guard let layout = columnLayout else { return nil }
+        let image = NSImage(size: NSSize(width: 21, height: 14), flipped: false) { _ in
+            let frame = NSRect(x: 0.5, y: 0.5, width: 20, height: 13)
+            NSColor.black.setStroke()
+            NSBezierPath(rect: frame).stroke()
+
+            let left = frame.minX + frame.width * CGFloat(layout.index) / CGFloat(layout.columnCount)
+            let right = frame.minX + frame.width * CGFloat(layout.index + 1) / CGFloat(layout.columnCount)
+            let selected = NSRect(x: left,
+                                  y: layout.isTopHalf ? frame.midY : frame.minY,
+                                  width: right - left,
+                                  height: layout.isTopHalf ? frame.height / 2 : frame.height)
+            NSColor.black.setFill()
+            NSBezierPath(rect: selected).fill()
+            return true
+        }
+        image.isTemplate = true
+        return image
+    }
 
     func post() {
         NotificationCenter.default.post(name: notificationName, object: ExecutionParameters(self))
@@ -194,7 +299,8 @@ enum WindowAction: Int, Codable {
     // Determines where separators should be used in the menu
     var firstInGroup: Bool {
         switch self {
-        case .leftHalf, .topLeft, .firstThird, .maximize, .almostMaximize, .nextDisplay, .moveLeft, .firstFourth, .topLeftSixth, .topLeftEighth, .topLeftNinth, .topLeftTwelfth, .topLeftSixteenth:
+        case .leftHalf, .topLeft, .firstThird, .maximize, .almostMaximize, .nextDisplay, .moveLeft, .firstFourth, .topLeftSixth, .topLeftEighth, .topLeftNinth, .topLeftTwelfth, .topLeftSixteenth,
+             .firstSixth, .firstEighth, .topHalfColumn1Of8, .topHalfColumn1Of10:
             return true
         default:
             return false
@@ -328,6 +434,38 @@ enum WindowAction: Int, Codable {
         case .displaySeven: return "displaySeven"
         case .displayEight: return "displayEight"
         case .displayNine: return "displayNine"
+        case .firstSixth: return "firstSixth"
+        case .secondSixth: return "secondSixth"
+        case .thirdSixth: return "thirdSixth"
+        case .fourthSixth: return "fourthSixth"
+        case .fifthSixth: return "fifthSixth"
+        case .lastSixth: return "lastSixth"
+        case .firstEighth: return "firstEighth"
+        case .secondEighth: return "secondEighth"
+        case .thirdEighth: return "thirdEighth"
+        case .fourthEighth: return "fourthEighth"
+        case .fifthEighth: return "fifthEighth"
+        case .sixthEighth: return "sixthEighth"
+        case .seventhEighth: return "seventhEighth"
+        case .lastEighth: return "lastEighth"
+        case .topHalfColumn1Of8: return "topHalfColumn1Of8"
+        case .topHalfColumn2Of8: return "topHalfColumn2Of8"
+        case .topHalfColumn3Of8: return "topHalfColumn3Of8"
+        case .topHalfColumn4Of8: return "topHalfColumn4Of8"
+        case .topHalfColumn5Of8: return "topHalfColumn5Of8"
+        case .topHalfColumn6Of8: return "topHalfColumn6Of8"
+        case .topHalfColumn7Of8: return "topHalfColumn7Of8"
+        case .topHalfColumn8Of8: return "topHalfColumn8Of8"
+        case .topHalfColumn1Of10: return "topHalfColumn1Of10"
+        case .topHalfColumn2Of10: return "topHalfColumn2Of10"
+        case .topHalfColumn3Of10: return "topHalfColumn3Of10"
+        case .topHalfColumn4Of10: return "topHalfColumn4Of10"
+        case .topHalfColumn5Of10: return "topHalfColumn5Of10"
+        case .topHalfColumn6Of10: return "topHalfColumn6Of10"
+        case .topHalfColumn7Of10: return "topHalfColumn7Of10"
+        case .topHalfColumn8Of10: return "topHalfColumn8Of10"
+        case .topHalfColumn9Of10: return "topHalfColumn9Of10"
+        case .topHalfColumn10Of10: return "topHalfColumn10Of10"
         }
     }
 
@@ -633,6 +771,13 @@ enum WindowAction: Int, Codable {
         case .displayOne, .displayTwo, .displayThree, .displayFour, .displayFive,
              .displaySix, .displaySeven, .displayEight, .displayNine:
             return nil
+        case .firstSixth, .secondSixth, .thirdSixth, .fourthSixth, .fifthSixth, .lastSixth,
+             .firstEighth, .secondEighth, .thirdEighth, .fourthEighth, .fifthEighth, .sixthEighth, .seventhEighth, .lastEighth,
+             .topHalfColumn1Of8, .topHalfColumn2Of8, .topHalfColumn3Of8, .topHalfColumn4Of8,
+             .topHalfColumn5Of8, .topHalfColumn6Of8, .topHalfColumn7Of8, .topHalfColumn8Of8,
+             .topHalfColumn1Of10, .topHalfColumn2Of10, .topHalfColumn3Of10, .topHalfColumn4Of10, .topHalfColumn5Of10,
+             .topHalfColumn6Of10, .topHalfColumn7Of10, .topHalfColumn8Of10, .topHalfColumn9Of10, .topHalfColumn10Of10:
+            return columnLayoutDisplayName
         }
 
         return NSLocalizedString(key, tableName: "Main", value: value, comment: "")
@@ -853,10 +998,18 @@ enum WindowAction: Int, Codable {
         case .displayOne, .displayTwo, .displayThree, .displayFour, .displayFive,
              .displaySix, .displaySeven, .displayEight, .displayNine:
             return NSImage(imageLiteralResourceName: "nextDisplayTemplate")
+        case .firstSixth, .secondSixth, .thirdSixth, .fourthSixth, .fifthSixth, .lastSixth,
+             .firstEighth, .secondEighth, .thirdEighth, .fourthEighth, .fifthEighth, .sixthEighth, .seventhEighth, .lastEighth,
+             .topHalfColumn1Of8, .topHalfColumn2Of8, .topHalfColumn3Of8, .topHalfColumn4Of8,
+             .topHalfColumn5Of8, .topHalfColumn6Of8, .topHalfColumn7Of8, .topHalfColumn8Of8,
+             .topHalfColumn1Of10, .topHalfColumn2Of10, .topHalfColumn3Of10, .topHalfColumn4Of10, .topHalfColumn5Of10,
+             .topHalfColumn6Of10, .topHalfColumn7Of10, .topHalfColumn8Of10, .topHalfColumn9Of10, .topHalfColumn10Of10:
+            return columnLayoutImage ?? NSImage()
         }
     }
 
     var gapSharedEdge: Edge {
+        if let columnLayout { return columnLayout.gapSharedEdges }
         switch self {
         case .leftHalf: return .right
         case .rightHalf: return .left
@@ -890,6 +1043,12 @@ enum WindowAction: Int, Codable {
             .upperMiddleLeftSixteenth, .upperMiddleCenterLeftSixteenth, .upperMiddleCenterRightSixteenth, .upperMiddleRightSixteenth,
             .lowerMiddleLeftSixteenth, .lowerMiddleCenterLeftSixteenth, .lowerMiddleCenterRightSixteenth, .lowerMiddleRightSixteenth,
             .bottomLeftSixteenth, .bottomCenterLeftSixteenth, .bottomCenterRightSixteenth, .bottomRightSixteenth,
+            .firstSixth, .secondSixth, .thirdSixth, .fourthSixth, .fifthSixth, .lastSixth,
+            .firstEighth, .secondEighth, .thirdEighth, .fourthEighth, .fifthEighth, .sixthEighth, .seventhEighth, .lastEighth,
+            .topHalfColumn1Of8, .topHalfColumn2Of8, .topHalfColumn3Of8, .topHalfColumn4Of8,
+            .topHalfColumn5Of8, .topHalfColumn6Of8, .topHalfColumn7Of8, .topHalfColumn8Of8,
+            .topHalfColumn1Of10, .topHalfColumn2Of10, .topHalfColumn3Of10, .topHalfColumn4Of10, .topHalfColumn5Of10,
+            .topHalfColumn6Of10, .topHalfColumn7Of10, .topHalfColumn8Of10, .topHalfColumn9Of10, .topHalfColumn10Of10,
              .doubleHeightUp, .doubleHeightDown, .doubleWidthLeft, .doubleWidthRight,
              .halveHeightUp, .halveHeightDown, .halveWidthLeft, .halveWidthRight,
             .leftTodo, .rightTodo,
@@ -924,7 +1083,13 @@ enum WindowAction: Int, Codable {
              .halveHeightUp, .halveHeightDown, .halveWidthLeft, .halveWidthRight,
              .reverseAll, .tileAll, .cascadeAll, .cascadeActiveApp, .tileActiveApp,
              .leftTodo, .rightTodo,
-             .specified:
+             .specified,
+             .firstSixth, .secondSixth, .thirdSixth, .fourthSixth, .fifthSixth, .lastSixth,
+             .firstEighth, .secondEighth, .thirdEighth, .fourthEighth, .fifthEighth, .sixthEighth, .seventhEighth, .lastEighth,
+             .topHalfColumn1Of8, .topHalfColumn2Of8, .topHalfColumn3Of8, .topHalfColumn4Of8,
+             .topHalfColumn5Of8, .topHalfColumn6Of8, .topHalfColumn7Of8, .topHalfColumn8Of8,
+             .topHalfColumn1Of10, .topHalfColumn2Of10, .topHalfColumn3Of10, .topHalfColumn4Of10, .topHalfColumn5Of10,
+             .topHalfColumn6Of10, .topHalfColumn7Of10, .topHalfColumn8Of10, .topHalfColumn9Of10, .topHalfColumn10Of10:
             return false
         default:
             return true
@@ -932,6 +1097,15 @@ enum WindowAction: Int, Codable {
     }
 
     var category: WindowActionCategory? { // used to specify a submenu
+        if let layout = columnLayout {
+            switch (layout.columnCount, layout.isTopHalf) {
+            case (6, false): return .sixthColumns
+            case (8, false): return .eighthColumns
+            case (8, true): return .topHalfEighthColumns
+            case (10, true): return .topHalfTenthColumns
+            default: return nil
+            }
+        }
         switch self {
         case .firstThird, .centerThird, .lastThird, .firstTwoThirds, .centerTwoThirds, .lastTwoThirds: return .thirds
         case .firstFourth, .secondFourth, .thirdFourth, .lastFourth, .firstThreeFourths, .centerThreeFourths, .lastThreeFourths: return .fourths

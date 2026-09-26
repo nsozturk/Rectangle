@@ -50637,7 +50637,6919 @@
           }
         }
       }
-    }
+    },
+      "firstSixth.title" : {
+        "comment" : "Column window action title",
+        "extractionState" : "manual",
+        "localizations" : {
+          "en" : {
+            "stringUnit" : {
+              "state" : "new",
+              "value" : "First Sixth"
+            }
+          },
+          "ar" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "السدس الأول"
+            }
+          },
+          "ca" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Primer sisè"
+            }
+          },
+          "ca-ES" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Primer sisè"
+            }
+          },
+          "cs" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "První šestina"
+            }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Erstes Sechstel"
+            }
+          },
+          "en-GB" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "First Sixth"
+            }
+          },
+          "es" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Primer sexto"
+            }
+          },
+          "es-419" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Primer sexto"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Premier sixième"
+            }
+          },
+          "id" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Seperenam Pertama"
+            }
+          },
+          "it" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Primo sesto"
+            }
+          },
+          "ja" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "最初の6分の1"
+            }
+          },
+          "ko" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "첫 번째 1/6"
+            }
+          },
+          "lt" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Pirmas šeštadalis"
+            }
+          },
+          "nb" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Første sjettedel"
+            }
+          },
+          "nl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Eerste zesde"
+            }
+          },
+          "nn" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Første sjettedel"
+            }
+          },
+          "pl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Pierwsza szósta"
+            }
+          },
+          "pt-BR" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Primeiro Sexto"
+            }
+          },
+          "pt-PT" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Primeiro Sexto"
+            }
+          },
+          "ro" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Prima Șesime"
+            }
+          },
+          "ru" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Первая шестая"
+            }
+          },
+          "sk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Prvá šestina"
+            }
+          },
+          "sv-SE" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Första sjättedelen"
+            }
+          },
+          "tr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "İlk Altıda Bir"
+            }
+          },
+          "uk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Перша шоста"
+            }
+          },
+          "vi" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Một Phần Sáu Đầu"
+            }
+          },
+          "zh-Hans" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "第一个六分之一"
+            }
+          },
+          "zh-Hant" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "六分之一"
+            }
+          },
+          "zh-Hant-HK" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "左首１／６"
+            }
+          }
+        }
+      },
+      "secondSixth.title" : {
+        "comment" : "Column window action title",
+        "extractionState" : "manual",
+        "localizations" : {
+          "en" : {
+            "stringUnit" : {
+              "state" : "new",
+              "value" : "Second Sixth"
+            }
+          },
+          "ar" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "السدس الثاني"
+            }
+          },
+          "ca" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Segon sisè"
+            }
+          },
+          "ca-ES" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Segon sisè"
+            }
+          },
+          "cs" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Druhá šestina"
+            }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Zweites Sechstel"
+            }
+          },
+          "en-GB" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Second Sixth"
+            }
+          },
+          "es" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Segundo sexto"
+            }
+          },
+          "es-419" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Segundo sexto"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Deuxième sixième"
+            }
+          },
+          "id" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Seperenam Kedua"
+            }
+          },
+          "it" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Secondo sesto"
+            }
+          },
+          "ja" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "2番目の6分の1"
+            }
+          },
+          "ko" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "두 번째 1/6"
+            }
+          },
+          "lt" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Antras šeštadalis"
+            }
+          },
+          "nb" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Andre sjettedel"
+            }
+          },
+          "nl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Tweede zesde"
+            }
+          },
+          "nn" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Andre sjettedel"
+            }
+          },
+          "pl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Druga szósta"
+            }
+          },
+          "pt-BR" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Segundo Sexto"
+            }
+          },
+          "pt-PT" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Segundo Sexto"
+            }
+          },
+          "ro" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "A Doua Șesime"
+            }
+          },
+          "ru" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Вторая шестая"
+            }
+          },
+          "sk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Druhá šestina"
+            }
+          },
+          "sv-SE" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Andra sjättedelen"
+            }
+          },
+          "tr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "İkinci Altıda Bir"
+            }
+          },
+          "uk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Друга шоста"
+            }
+          },
+          "vi" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Một Phần Sáu Thứ Hai"
+            }
+          },
+          "zh-Hans" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "第二个六分之一"
+            }
+          },
+          "zh-Hant" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "第二個六分之一"
+            }
+          },
+          "zh-Hant-HK" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "左二１／６"
+            }
+          }
+        }
+      },
+      "thirdSixth.title" : {
+        "comment" : "Column window action title",
+        "extractionState" : "manual",
+        "localizations" : {
+          "en" : {
+            "stringUnit" : {
+              "state" : "new",
+              "value" : "Third Sixth"
+            }
+          },
+          "ar" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "السدس الثالث"
+            }
+          },
+          "ca" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Tercer sisè"
+            }
+          },
+          "ca-ES" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Tercer sisè"
+            }
+          },
+          "cs" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Třetí šestina"
+            }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Drittes Sechstel"
+            }
+          },
+          "en-GB" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Third Sixth"
+            }
+          },
+          "es" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Tercer sexto"
+            }
+          },
+          "es-419" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Tercer sexto"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Troisième sixième"
+            }
+          },
+          "id" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Seperenam Ketiga"
+            }
+          },
+          "it" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Terzo sesto"
+            }
+          },
+          "ja" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "3番目の6分の1"
+            }
+          },
+          "ko" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "세 번째 1/6"
+            }
+          },
+          "lt" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Trečias šeštadalis"
+            }
+          },
+          "nb" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Tredje sjettedel"
+            }
+          },
+          "nl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Derde zesde"
+            }
+          },
+          "nn" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Tredje sjettedel"
+            }
+          },
+          "pl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Trzecia szósta"
+            }
+          },
+          "pt-BR" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Terceiro Sexto"
+            }
+          },
+          "pt-PT" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Terceiro Sexto"
+            }
+          },
+          "ro" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "A Treia Șesime"
+            }
+          },
+          "ru" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Третья шестая"
+            }
+          },
+          "sk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Tretia šestina"
+            }
+          },
+          "sv-SE" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Tredje sjättedelen"
+            }
+          },
+          "tr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Üçüncü Altıda Bir"
+            }
+          },
+          "uk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Третя шоста"
+            }
+          },
+          "vi" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Một Phần Sáu Thứ Ba"
+            }
+          },
+          "zh-Hans" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "第三个六分之一"
+            }
+          },
+          "zh-Hant" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "第三個六分之一"
+            }
+          },
+          "zh-Hant-HK" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "左三１／６"
+            }
+          }
+        }
+      },
+      "fourthSixth.title" : {
+        "comment" : "Column window action title",
+        "extractionState" : "manual",
+        "localizations" : {
+          "en" : {
+            "stringUnit" : {
+              "state" : "new",
+              "value" : "Fourth Sixth"
+            }
+          },
+          "ar" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "السدس الرابع"
+            }
+          },
+          "ca" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Quart sisè"
+            }
+          },
+          "ca-ES" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Quart sisè"
+            }
+          },
+          "cs" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Čtvrtá šestina"
+            }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Viertes Sechstel"
+            }
+          },
+          "en-GB" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Fourth Sixth"
+            }
+          },
+          "es" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Cuarto sexto"
+            }
+          },
+          "es-419" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Cuarto sexto"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Quatrième sixième"
+            }
+          },
+          "id" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Seperenam Keempat"
+            }
+          },
+          "it" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Quarto sesto"
+            }
+          },
+          "ja" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "4番目の6分の1"
+            }
+          },
+          "ko" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "네 번째 1/6"
+            }
+          },
+          "lt" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Ketvirtas šeštadalis"
+            }
+          },
+          "nb" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Fjerde sjettedel"
+            }
+          },
+          "nl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Vierde zesde"
+            }
+          },
+          "nn" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Fjerde sjettedel"
+            }
+          },
+          "pl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Czwarta szósta"
+            }
+          },
+          "pt-BR" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Quarto Sexto"
+            }
+          },
+          "pt-PT" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Quarto Sexto"
+            }
+          },
+          "ro" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "A Patra Șesime"
+            }
+          },
+          "ru" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Четвёртая шестая"
+            }
+          },
+          "sk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Štvrtá šestina"
+            }
+          },
+          "sv-SE" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Fjärde sjättedelen"
+            }
+          },
+          "tr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Dördüncü Altıda Bir"
+            }
+          },
+          "uk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Четверта шоста"
+            }
+          },
+          "vi" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Một Phần Sáu Thứ Tư"
+            }
+          },
+          "zh-Hans" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "第四个六分之一"
+            }
+          },
+          "zh-Hant" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "第四個六分之一"
+            }
+          },
+          "zh-Hant-HK" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "右三１／６"
+            }
+          }
+        }
+      },
+      "fifthSixth.title" : {
+        "comment" : "Column window action title",
+        "extractionState" : "manual",
+        "localizations" : {
+          "en" : {
+            "stringUnit" : {
+              "state" : "new",
+              "value" : "Fifth Sixth"
+            }
+          },
+          "ar" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "السدس الخامس"
+            }
+          },
+          "ca" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Cinquè sisè"
+            }
+          },
+          "ca-ES" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Cinquè sisè"
+            }
+          },
+          "cs" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Pátá šestina"
+            }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Fünftes Sechstel"
+            }
+          },
+          "en-GB" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Fifth Sixth"
+            }
+          },
+          "es" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Quinto sexto"
+            }
+          },
+          "es-419" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Quinto sexto"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Cinquième sixième"
+            }
+          },
+          "id" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Seperenam Kelima"
+            }
+          },
+          "it" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Quinto sesto"
+            }
+          },
+          "ja" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "5番目の6分の1"
+            }
+          },
+          "ko" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "다섯 번째 1/6"
+            }
+          },
+          "lt" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Penktas šeštadalis"
+            }
+          },
+          "nb" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Femte sjettedel"
+            }
+          },
+          "nl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Vijfde zesde"
+            }
+          },
+          "nn" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Femte sjettedel"
+            }
+          },
+          "pl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Piąta szósta"
+            }
+          },
+          "pt-BR" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Quinto Sexto"
+            }
+          },
+          "pt-PT" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Quinto Sexto"
+            }
+          },
+          "ro" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "A Cincea Șesime"
+            }
+          },
+          "ru" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Пятая шестая"
+            }
+          },
+          "sk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Piata šestina"
+            }
+          },
+          "sv-SE" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Femte sjättedelen"
+            }
+          },
+          "tr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Beşinci Altıda Bir"
+            }
+          },
+          "uk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "П'ята шоста"
+            }
+          },
+          "vi" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Một Phần Sáu Thứ Năm"
+            }
+          },
+          "zh-Hans" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "第五个六分之一"
+            }
+          },
+          "zh-Hant" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "第五個六分之一"
+            }
+          },
+          "zh-Hant-HK" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "右二１／６"
+            }
+          }
+        }
+      },
+      "lastSixth.title" : {
+        "comment" : "Column window action title",
+        "extractionState" : "manual",
+        "localizations" : {
+          "en" : {
+            "stringUnit" : {
+              "state" : "new",
+              "value" : "Last Sixth"
+            }
+          },
+          "ar" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "السدس الأخير"
+            }
+          },
+          "ca" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Últim sisè"
+            }
+          },
+          "ca-ES" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Últim sisè"
+            }
+          },
+          "cs" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Poslední šestina"
+            }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Letztes Sechstel"
+            }
+          },
+          "en-GB" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Last Sixth"
+            }
+          },
+          "es" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Último sexto"
+            }
+          },
+          "es-419" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Último sexto"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Dernier sixième"
+            }
+          },
+          "id" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Seperenam Terakhir"
+            }
+          },
+          "it" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Ultimo sesto"
+            }
+          },
+          "ja" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "最後の6分の1"
+            }
+          },
+          "ko" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "마지막 1/6"
+            }
+          },
+          "lt" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Paskutinis šeštadalis"
+            }
+          },
+          "nb" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Siste sjettedel"
+            }
+          },
+          "nl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Laatste zesde"
+            }
+          },
+          "nn" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Siste sjettedel"
+            }
+          },
+          "pl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Ostatnia szósta"
+            }
+          },
+          "pt-BR" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Último Sexto"
+            }
+          },
+          "pt-PT" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Último Sexto"
+            }
+          },
+          "ro" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Ultima Șesime"
+            }
+          },
+          "ru" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Последняя шестая"
+            }
+          },
+          "sk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Posledná šestina"
+            }
+          },
+          "sv-SE" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Sista sjättedelen"
+            }
+          },
+          "tr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Son Altıda Bir"
+            }
+          },
+          "uk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Остання шоста"
+            }
+          },
+          "vi" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Một Phần Sáu Cuối"
+            }
+          },
+          "zh-Hans" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "最后一个六分之一"
+            }
+          },
+          "zh-Hant" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "最後六分之一"
+            }
+          },
+          "zh-Hant-HK" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "右首１／６"
+            }
+          }
+        }
+      },
+      "firstEighth.title" : {
+        "comment" : "Column window action title",
+        "extractionState" : "manual",
+        "localizations" : {
+          "en" : {
+            "stringUnit" : {
+              "state" : "new",
+              "value" : "First Eighth"
+            }
+          },
+          "ar" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "الثمن الأول"
+            }
+          },
+          "ca" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Primer vuitè"
+            }
+          },
+          "ca-ES" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Primer vuitè"
+            }
+          },
+          "cs" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "První osmina"
+            }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Erstes Achtel"
+            }
+          },
+          "en-GB" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "First Eighth"
+            }
+          },
+          "es" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Primer octavo"
+            }
+          },
+          "es-419" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Primer octavo"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Premier huitième"
+            }
+          },
+          "id" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Seperdelapan Pertama"
+            }
+          },
+          "it" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Primo ottavo"
+            }
+          },
+          "ja" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "最初の8分の1"
+            }
+          },
+          "ko" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "첫 번째 1/8"
+            }
+          },
+          "lt" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Pirmas aštuntadalis"
+            }
+          },
+          "nb" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Første åttendedel"
+            }
+          },
+          "nl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Eerste achtste"
+            }
+          },
+          "nn" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Første åttandedel"
+            }
+          },
+          "pl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Pierwsza ósma"
+            }
+          },
+          "pt-BR" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Primeiro Oitavo"
+            }
+          },
+          "pt-PT" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Primeiro Oitavo"
+            }
+          },
+          "ro" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Prima Optime"
+            }
+          },
+          "ru" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Первая восьмая"
+            }
+          },
+          "sk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Prvá osmina"
+            }
+          },
+          "sv-SE" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Första åttondelen"
+            }
+          },
+          "tr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "İlk Sekizde Bir"
+            }
+          },
+          "uk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Перша восьма"
+            }
+          },
+          "vi" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Một Phần Tám Đầu"
+            }
+          },
+          "zh-Hans" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "第一个八分之一"
+            }
+          },
+          "zh-Hant" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "八分之一"
+            }
+          },
+          "zh-Hant-HK" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "左首１／８"
+            }
+          }
+        }
+      },
+      "secondEighth.title" : {
+        "comment" : "Column window action title",
+        "extractionState" : "manual",
+        "localizations" : {
+          "en" : {
+            "stringUnit" : {
+              "state" : "new",
+              "value" : "Second Eighth"
+            }
+          },
+          "ar" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "الثمن الثاني"
+            }
+          },
+          "ca" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Segon vuitè"
+            }
+          },
+          "ca-ES" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Segon vuitè"
+            }
+          },
+          "cs" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Druhá osmina"
+            }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Zweites Achtel"
+            }
+          },
+          "en-GB" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Second Eighth"
+            }
+          },
+          "es" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Segundo octavo"
+            }
+          },
+          "es-419" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Segundo octavo"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Deuxième huitième"
+            }
+          },
+          "id" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Seperdelapan Kedua"
+            }
+          },
+          "it" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Secondo ottavo"
+            }
+          },
+          "ja" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "2番目の8分の1"
+            }
+          },
+          "ko" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "두 번째 1/8"
+            }
+          },
+          "lt" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Antras aštuntadalis"
+            }
+          },
+          "nb" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Andre åttendedel"
+            }
+          },
+          "nl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Tweede achtste"
+            }
+          },
+          "nn" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Andre åttandedel"
+            }
+          },
+          "pl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Druga ósma"
+            }
+          },
+          "pt-BR" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Segundo Oitavo"
+            }
+          },
+          "pt-PT" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Segundo Oitavo"
+            }
+          },
+          "ro" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "A Doua Optime"
+            }
+          },
+          "ru" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Вторая восьмая"
+            }
+          },
+          "sk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Druhá osmina"
+            }
+          },
+          "sv-SE" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Andra åttondelen"
+            }
+          },
+          "tr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "İkinci Sekizde Bir"
+            }
+          },
+          "uk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Друга восьма"
+            }
+          },
+          "vi" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Một Phần Tám Thứ Hai"
+            }
+          },
+          "zh-Hans" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "第二个八分之一"
+            }
+          },
+          "zh-Hant" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "第二個八分之一"
+            }
+          },
+          "zh-Hant-HK" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "左二１／８"
+            }
+          }
+        }
+      },
+      "thirdEighth.title" : {
+        "comment" : "Column window action title",
+        "extractionState" : "manual",
+        "localizations" : {
+          "en" : {
+            "stringUnit" : {
+              "state" : "new",
+              "value" : "Third Eighth"
+            }
+          },
+          "ar" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "الثمن الثالث"
+            }
+          },
+          "ca" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Tercer vuitè"
+            }
+          },
+          "ca-ES" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Tercer vuitè"
+            }
+          },
+          "cs" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Třetí osmina"
+            }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Drittes Achtel"
+            }
+          },
+          "en-GB" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Third Eighth"
+            }
+          },
+          "es" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Tercer octavo"
+            }
+          },
+          "es-419" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Tercer octavo"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Troisième huitième"
+            }
+          },
+          "id" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Seperdelapan Ketiga"
+            }
+          },
+          "it" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Terzo ottavo"
+            }
+          },
+          "ja" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "3番目の8分の1"
+            }
+          },
+          "ko" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "세 번째 1/8"
+            }
+          },
+          "lt" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Trečias aštuntadalis"
+            }
+          },
+          "nb" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Tredje åttendedel"
+            }
+          },
+          "nl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Derde achtste"
+            }
+          },
+          "nn" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Tredje åttandedel"
+            }
+          },
+          "pl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Trzecia ósma"
+            }
+          },
+          "pt-BR" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Terceiro Oitavo"
+            }
+          },
+          "pt-PT" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Terceiro Oitavo"
+            }
+          },
+          "ro" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "A Treia Optime"
+            }
+          },
+          "ru" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Третья восьмая"
+            }
+          },
+          "sk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Tretia osmina"
+            }
+          },
+          "sv-SE" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Tredje åttondelen"
+            }
+          },
+          "tr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Üçüncü Sekizde Bir"
+            }
+          },
+          "uk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Третя восьма"
+            }
+          },
+          "vi" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Một Phần Tám Thứ Ba"
+            }
+          },
+          "zh-Hans" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "第三个八分之一"
+            }
+          },
+          "zh-Hant" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "第三個八分之一"
+            }
+          },
+          "zh-Hant-HK" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "左三１／８"
+            }
+          }
+        }
+      },
+      "fourthEighth.title" : {
+        "comment" : "Column window action title",
+        "extractionState" : "manual",
+        "localizations" : {
+          "en" : {
+            "stringUnit" : {
+              "state" : "new",
+              "value" : "Fourth Eighth"
+            }
+          },
+          "ar" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "الثمن الرابع"
+            }
+          },
+          "ca" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Quart vuitè"
+            }
+          },
+          "ca-ES" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Quart vuitè"
+            }
+          },
+          "cs" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Čtvrtá osmina"
+            }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Viertes Achtel"
+            }
+          },
+          "en-GB" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Fourth Eighth"
+            }
+          },
+          "es" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Cuarto octavo"
+            }
+          },
+          "es-419" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Cuarto octavo"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Quatrième huitième"
+            }
+          },
+          "id" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Seperdelapan Keempat"
+            }
+          },
+          "it" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Quarto ottavo"
+            }
+          },
+          "ja" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "4番目の8分の1"
+            }
+          },
+          "ko" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "네 번째 1/8"
+            }
+          },
+          "lt" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Ketvirtas aštuntadalis"
+            }
+          },
+          "nb" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Fjerde åttendedel"
+            }
+          },
+          "nl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Vierde achtste"
+            }
+          },
+          "nn" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Fjerde åttandedel"
+            }
+          },
+          "pl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Czwarta ósma"
+            }
+          },
+          "pt-BR" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Quarto Oitavo"
+            }
+          },
+          "pt-PT" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Quarto Oitavo"
+            }
+          },
+          "ro" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "A Patra Optime"
+            }
+          },
+          "ru" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Четвёртая восьмая"
+            }
+          },
+          "sk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Štvrtá osmina"
+            }
+          },
+          "sv-SE" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Fjärde åttondelen"
+            }
+          },
+          "tr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Dördüncü Sekizde Bir"
+            }
+          },
+          "uk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Четверта восьма"
+            }
+          },
+          "vi" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Một Phần Tám Thứ Tư"
+            }
+          },
+          "zh-Hans" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "第四个八分之一"
+            }
+          },
+          "zh-Hant" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "第四個八分之一"
+            }
+          },
+          "zh-Hant-HK" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "左四１／８"
+            }
+          }
+        }
+      },
+      "fifthEighth.title" : {
+        "comment" : "Column window action title",
+        "extractionState" : "manual",
+        "localizations" : {
+          "en" : {
+            "stringUnit" : {
+              "state" : "new",
+              "value" : "Fifth Eighth"
+            }
+          },
+          "ar" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "الثمن الخامس"
+            }
+          },
+          "ca" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Cinquè vuitè"
+            }
+          },
+          "ca-ES" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Cinquè vuitè"
+            }
+          },
+          "cs" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Pátá osmina"
+            }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Fünftes Achtel"
+            }
+          },
+          "en-GB" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Fifth Eighth"
+            }
+          },
+          "es" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Quinto octavo"
+            }
+          },
+          "es-419" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Quinto octavo"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Cinquième huitième"
+            }
+          },
+          "id" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Seperdelapan Kelima"
+            }
+          },
+          "it" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Quinto ottavo"
+            }
+          },
+          "ja" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "5番目の8分の1"
+            }
+          },
+          "ko" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "다섯 번째 1/8"
+            }
+          },
+          "lt" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Penktas aštuntadalis"
+            }
+          },
+          "nb" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Femte åttendedel"
+            }
+          },
+          "nl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Vijfde achtste"
+            }
+          },
+          "nn" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Femte åttandedel"
+            }
+          },
+          "pl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Piąta ósma"
+            }
+          },
+          "pt-BR" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Quinto Oitavo"
+            }
+          },
+          "pt-PT" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Quinto Oitavo"
+            }
+          },
+          "ro" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "A Cincea Optime"
+            }
+          },
+          "ru" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Пятая восьмая"
+            }
+          },
+          "sk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Piata osmina"
+            }
+          },
+          "sv-SE" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Femte åttondelen"
+            }
+          },
+          "tr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Beşinci Sekizde Bir"
+            }
+          },
+          "uk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "П'ята восьма"
+            }
+          },
+          "vi" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Một Phần Tám Thứ Năm"
+            }
+          },
+          "zh-Hans" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "第五个八分之一"
+            }
+          },
+          "zh-Hant" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "第五個八分之一"
+            }
+          },
+          "zh-Hant-HK" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "右四１／８"
+            }
+          }
+        }
+      },
+      "sixthEighth.title" : {
+        "comment" : "Column window action title",
+        "extractionState" : "manual",
+        "localizations" : {
+          "en" : {
+            "stringUnit" : {
+              "state" : "new",
+              "value" : "Sixth Eighth"
+            }
+          },
+          "ar" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "الثمن السادس"
+            }
+          },
+          "ca" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Sisè vuitè"
+            }
+          },
+          "ca-ES" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Sisè vuitè"
+            }
+          },
+          "cs" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Šestá osmina"
+            }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Sechstes Achtel"
+            }
+          },
+          "en-GB" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Sixth Eighth"
+            }
+          },
+          "es" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Sexto octavo"
+            }
+          },
+          "es-419" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Sexto octavo"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Sixième huitième"
+            }
+          },
+          "id" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Seperdelapan Keenam"
+            }
+          },
+          "it" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Sesto ottavo"
+            }
+          },
+          "ja" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "6番目の8分の1"
+            }
+          },
+          "ko" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "여섯 번째 1/8"
+            }
+          },
+          "lt" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Šeštas aštuntadalis"
+            }
+          },
+          "nb" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Sjette åttendedel"
+            }
+          },
+          "nl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Zesde achtste"
+            }
+          },
+          "nn" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Sjette åttandedel"
+            }
+          },
+          "pl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Szósta ósma"
+            }
+          },
+          "pt-BR" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Sexto Oitavo"
+            }
+          },
+          "pt-PT" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Sexto Oitavo"
+            }
+          },
+          "ro" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "A Șasea Optime"
+            }
+          },
+          "ru" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Шестая восьмая"
+            }
+          },
+          "sk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Šiesta osmina"
+            }
+          },
+          "sv-SE" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Sjätte åttondelen"
+            }
+          },
+          "tr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Altıncı Sekizde Bir"
+            }
+          },
+          "uk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Шоста восьма"
+            }
+          },
+          "vi" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Một Phần Tám Thứ Sáu"
+            }
+          },
+          "zh-Hans" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "第六个八分之一"
+            }
+          },
+          "zh-Hant" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "第六個八分之一"
+            }
+          },
+          "zh-Hant-HK" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "右三１／８"
+            }
+          }
+        }
+      },
+      "seventhEighth.title" : {
+        "comment" : "Column window action title",
+        "extractionState" : "manual",
+        "localizations" : {
+          "en" : {
+            "stringUnit" : {
+              "state" : "new",
+              "value" : "Seventh Eighth"
+            }
+          },
+          "ar" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "الثمن السابع"
+            }
+          },
+          "ca" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Setè vuitè"
+            }
+          },
+          "ca-ES" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Setè vuitè"
+            }
+          },
+          "cs" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Sedmá osmina"
+            }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Siebtes Achtel"
+            }
+          },
+          "en-GB" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Seventh Eighth"
+            }
+          },
+          "es" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Séptimo octavo"
+            }
+          },
+          "es-419" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Séptimo octavo"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Septième huitième"
+            }
+          },
+          "id" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Seperdelapan Ketujuh"
+            }
+          },
+          "it" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Settimo ottavo"
+            }
+          },
+          "ja" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "7番目の8分の1"
+            }
+          },
+          "ko" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "일곱 번째 1/8"
+            }
+          },
+          "lt" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Septintas aštuntadalis"
+            }
+          },
+          "nb" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Syvende åttendedel"
+            }
+          },
+          "nl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Zevende achtste"
+            }
+          },
+          "nn" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Sjuande åttandedel"
+            }
+          },
+          "pl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Siódma ósma"
+            }
+          },
+          "pt-BR" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Sétimo Oitavo"
+            }
+          },
+          "pt-PT" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Sétimo Oitavo"
+            }
+          },
+          "ro" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "A Șaptea Optime"
+            }
+          },
+          "ru" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Седьмая восьмая"
+            }
+          },
+          "sk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Siedma osmina"
+            }
+          },
+          "sv-SE" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Sjunde åttondelen"
+            }
+          },
+          "tr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Yedinci Sekizde Bir"
+            }
+          },
+          "uk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Сьома восьма"
+            }
+          },
+          "vi" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Một Phần Tám Thứ Bảy"
+            }
+          },
+          "zh-Hans" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "第七个八分之一"
+            }
+          },
+          "zh-Hant" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "第七個八分之一"
+            }
+          },
+          "zh-Hant-HK" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "右二１／８"
+            }
+          }
+        }
+      },
+      "lastEighth.title" : {
+        "comment" : "Column window action title",
+        "extractionState" : "manual",
+        "localizations" : {
+          "en" : {
+            "stringUnit" : {
+              "state" : "new",
+              "value" : "Last Eighth"
+            }
+          },
+          "ar" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "الثمن الأخير"
+            }
+          },
+          "ca" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Últim vuitè"
+            }
+          },
+          "ca-ES" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Últim vuitè"
+            }
+          },
+          "cs" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Poslední osmina"
+            }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Letztes Achtel"
+            }
+          },
+          "en-GB" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Last Eighth"
+            }
+          },
+          "es" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Último octavo"
+            }
+          },
+          "es-419" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Último octavo"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Dernier huitième"
+            }
+          },
+          "id" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Seperdelapan Terakhir"
+            }
+          },
+          "it" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Ultimo ottavo"
+            }
+          },
+          "ja" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "最後の8分の1"
+            }
+          },
+          "ko" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "마지막 1/8"
+            }
+          },
+          "lt" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Paskutinis aštuntadalis"
+            }
+          },
+          "nb" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Siste åttendedel"
+            }
+          },
+          "nl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Laatste achtste"
+            }
+          },
+          "nn" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Siste åttandedel"
+            }
+          },
+          "pl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Ostatnia ósma"
+            }
+          },
+          "pt-BR" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Último Oitavo"
+            }
+          },
+          "pt-PT" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Último Oitavo"
+            }
+          },
+          "ro" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Ultima Optime"
+            }
+          },
+          "ru" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Последняя восьмая"
+            }
+          },
+          "sk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Posledná osmina"
+            }
+          },
+          "sv-SE" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Sista åttondelen"
+            }
+          },
+          "tr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Son Sekizde Bir"
+            }
+          },
+          "uk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Остання восьма"
+            }
+          },
+          "vi" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Một Phần Tám Cuối"
+            }
+          },
+          "zh-Hans" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "最后一个八分之一"
+            }
+          },
+          "zh-Hant" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "最後八分之一"
+            }
+          },
+          "zh-Hant-HK" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "右首１／８"
+            }
+          }
+        }
+      },
+      "topHalfColumn1Of8.title" : {
+        "comment" : "Column window action title",
+        "extractionState" : "manual",
+        "localizations" : {
+          "en" : {
+            "stringUnit" : {
+              "state" : "new",
+              "value" : "Top Half — Column 1 of 8"
+            }
+          },
+          "ar" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "النصف العلوي — العمود 1 من 8"
+            }
+          },
+          "ca" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Meitat superior — Columna 1 de 8"
+            }
+          },
+          "ca-ES" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Meitat superior — Columna 1 de 8"
+            }
+          },
+          "cs" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Horní polovina — Sloupec 1 z 8"
+            }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Obere Hälfte — Spalte 1 von 8"
+            }
+          },
+          "en-GB" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Top Half — Column 1 of 8"
+            }
+          },
+          "es" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mitad superior — Columna 1 de 8"
+            }
+          },
+          "es-419" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mitad superior — Columna 1 de 8"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Moitié supérieure — Colonne 1 sur 8"
+            }
+          },
+          "id" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Setengah Atas — Kolom 1 dari 8"
+            }
+          },
+          "it" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metà superiore — Colonna 1 di 8"
+            }
+          },
+          "ja" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半分 — 8列中1列目"
+            }
+          },
+          "ko" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "상단 절반 — 8개 중 1번째 열"
+            }
+          },
+          "lt" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Viršutinė pusė — 1 stulpelis iš 8"
+            }
+          },
+          "nb" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Øverste halvdel — kolonne 1 av 8"
+            }
+          },
+          "nl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Bovenste helft — Kolom 1 van 8"
+            }
+          },
+          "nn" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Øvre halvdel — kolonne 1 av 8"
+            }
+          },
+          "pl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Górna połowa — kolumna 1 z 8"
+            }
+          },
+          "pt-BR" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metade Superior — Coluna 1 de 8"
+            }
+          },
+          "pt-PT" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metade Superior — Coluna 1 de 8"
+            }
+          },
+          "ro" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Jumătate Sus — Coloana 1 din 8"
+            }
+          },
+          "ru" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Верхняя половина — Столбец 1 из 8"
+            }
+          },
+          "sk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Horná polovica — Stĺpec 1 z 8"
+            }
+          },
+          "sv-SE" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Övre halvan — kolumn 1 av 8"
+            }
+          },
+          "tr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Üst Yarı — 8'de 1. Sütun"
+            }
+          },
+          "uk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Верхня половина — стовпець 1 з 8"
+            }
+          },
+          "vi" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Nửa Trên — Cột 1/8"
+            }
+          },
+          "zh-Hans" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部分 — 第 1 列（共 8 列）"
+            }
+          },
+          "zh-Hant" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部 — 第 1 欄，共 8 欄"
+            }
+          },
+          "zh-Hant-HK" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半 — 第 1 欄（共 8 欄）"
+            }
+          }
+        }
+      },
+      "topHalfColumn2Of8.title" : {
+        "comment" : "Column window action title",
+        "extractionState" : "manual",
+        "localizations" : {
+          "en" : {
+            "stringUnit" : {
+              "state" : "new",
+              "value" : "Top Half — Column 2 of 8"
+            }
+          },
+          "ar" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "النصف العلوي — العمود 2 من 8"
+            }
+          },
+          "ca" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Meitat superior — Columna 2 de 8"
+            }
+          },
+          "ca-ES" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Meitat superior — Columna 2 de 8"
+            }
+          },
+          "cs" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Horní polovina — Sloupec 2 z 8"
+            }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Obere Hälfte — Spalte 2 von 8"
+            }
+          },
+          "en-GB" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Top Half — Column 2 of 8"
+            }
+          },
+          "es" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mitad superior — Columna 2 de 8"
+            }
+          },
+          "es-419" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mitad superior — Columna 2 de 8"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Moitié supérieure — Colonne 2 sur 8"
+            }
+          },
+          "id" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Setengah Atas — Kolom 2 dari 8"
+            }
+          },
+          "it" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metà superiore — Colonna 2 di 8"
+            }
+          },
+          "ja" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半分 — 8列中2列目"
+            }
+          },
+          "ko" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "상단 절반 — 8개 중 2번째 열"
+            }
+          },
+          "lt" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Viršutinė pusė — 2 stulpelis iš 8"
+            }
+          },
+          "nb" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Øverste halvdel — kolonne 2 av 8"
+            }
+          },
+          "nl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Bovenste helft — Kolom 2 van 8"
+            }
+          },
+          "nn" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Øvre halvdel — kolonne 2 av 8"
+            }
+          },
+          "pl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Górna połowa — kolumna 2 z 8"
+            }
+          },
+          "pt-BR" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metade Superior — Coluna 2 de 8"
+            }
+          },
+          "pt-PT" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metade Superior — Coluna 2 de 8"
+            }
+          },
+          "ro" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Jumătate Sus — Coloana 2 din 8"
+            }
+          },
+          "ru" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Верхняя половина — Столбец 2 из 8"
+            }
+          },
+          "sk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Horná polovica — Stĺpec 2 z 8"
+            }
+          },
+          "sv-SE" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Övre halvan — kolumn 2 av 8"
+            }
+          },
+          "tr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Üst Yarı — 8'de 2. Sütun"
+            }
+          },
+          "uk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Верхня половина — стовпець 2 з 8"
+            }
+          },
+          "vi" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Nửa Trên — Cột 2/8"
+            }
+          },
+          "zh-Hans" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部分 — 第 2 列（共 8 列）"
+            }
+          },
+          "zh-Hant" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部 — 第 2 欄，共 8 欄"
+            }
+          },
+          "zh-Hant-HK" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半 — 第 2 欄（共 8 欄）"
+            }
+          }
+        }
+      },
+      "topHalfColumn3Of8.title" : {
+        "comment" : "Column window action title",
+        "extractionState" : "manual",
+        "localizations" : {
+          "en" : {
+            "stringUnit" : {
+              "state" : "new",
+              "value" : "Top Half — Column 3 of 8"
+            }
+          },
+          "ar" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "النصف العلوي — العمود 3 من 8"
+            }
+          },
+          "ca" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Meitat superior — Columna 3 de 8"
+            }
+          },
+          "ca-ES" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Meitat superior — Columna 3 de 8"
+            }
+          },
+          "cs" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Horní polovina — Sloupec 3 z 8"
+            }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Obere Hälfte — Spalte 3 von 8"
+            }
+          },
+          "en-GB" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Top Half — Column 3 of 8"
+            }
+          },
+          "es" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mitad superior — Columna 3 de 8"
+            }
+          },
+          "es-419" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mitad superior — Columna 3 de 8"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Moitié supérieure — Colonne 3 sur 8"
+            }
+          },
+          "id" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Setengah Atas — Kolom 3 dari 8"
+            }
+          },
+          "it" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metà superiore — Colonna 3 di 8"
+            }
+          },
+          "ja" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半分 — 8列中3列目"
+            }
+          },
+          "ko" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "상단 절반 — 8개 중 3번째 열"
+            }
+          },
+          "lt" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Viršutinė pusė — 3 stulpelis iš 8"
+            }
+          },
+          "nb" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Øverste halvdel — kolonne 3 av 8"
+            }
+          },
+          "nl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Bovenste helft — Kolom 3 van 8"
+            }
+          },
+          "nn" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Øvre halvdel — kolonne 3 av 8"
+            }
+          },
+          "pl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Górna połowa — kolumna 3 z 8"
+            }
+          },
+          "pt-BR" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metade Superior — Coluna 3 de 8"
+            }
+          },
+          "pt-PT" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metade Superior — Coluna 3 de 8"
+            }
+          },
+          "ro" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Jumătate Sus — Coloana 3 din 8"
+            }
+          },
+          "ru" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Верхняя половина — Столбец 3 из 8"
+            }
+          },
+          "sk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Horná polovica — Stĺpec 3 z 8"
+            }
+          },
+          "sv-SE" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Övre halvan — kolumn 3 av 8"
+            }
+          },
+          "tr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Üst Yarı — 8'de 3. Sütun"
+            }
+          },
+          "uk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Верхня половина — стовпець 3 з 8"
+            }
+          },
+          "vi" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Nửa Trên — Cột 3/8"
+            }
+          },
+          "zh-Hans" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部分 — 第 3 列（共 8 列）"
+            }
+          },
+          "zh-Hant" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部 — 第 3 欄，共 8 欄"
+            }
+          },
+          "zh-Hant-HK" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半 — 第 3 欄（共 8 欄）"
+            }
+          }
+        }
+      },
+      "topHalfColumn4Of8.title" : {
+        "comment" : "Column window action title",
+        "extractionState" : "manual",
+        "localizations" : {
+          "en" : {
+            "stringUnit" : {
+              "state" : "new",
+              "value" : "Top Half — Column 4 of 8"
+            }
+          },
+          "ar" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "النصف العلوي — العمود 4 من 8"
+            }
+          },
+          "ca" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Meitat superior — Columna 4 de 8"
+            }
+          },
+          "ca-ES" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Meitat superior — Columna 4 de 8"
+            }
+          },
+          "cs" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Horní polovina — Sloupec 4 z 8"
+            }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Obere Hälfte — Spalte 4 von 8"
+            }
+          },
+          "en-GB" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Top Half — Column 4 of 8"
+            }
+          },
+          "es" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mitad superior — Columna 4 de 8"
+            }
+          },
+          "es-419" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mitad superior — Columna 4 de 8"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Moitié supérieure — Colonne 4 sur 8"
+            }
+          },
+          "id" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Setengah Atas — Kolom 4 dari 8"
+            }
+          },
+          "it" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metà superiore — Colonna 4 di 8"
+            }
+          },
+          "ja" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半分 — 8列中4列目"
+            }
+          },
+          "ko" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "상단 절반 — 8개 중 4번째 열"
+            }
+          },
+          "lt" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Viršutinė pusė — 4 stulpelis iš 8"
+            }
+          },
+          "nb" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Øverste halvdel — kolonne 4 av 8"
+            }
+          },
+          "nl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Bovenste helft — Kolom 4 van 8"
+            }
+          },
+          "nn" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Øvre halvdel — kolonne 4 av 8"
+            }
+          },
+          "pl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Górna połowa — kolumna 4 z 8"
+            }
+          },
+          "pt-BR" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metade Superior — Coluna 4 de 8"
+            }
+          },
+          "pt-PT" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metade Superior — Coluna 4 de 8"
+            }
+          },
+          "ro" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Jumătate Sus — Coloana 4 din 8"
+            }
+          },
+          "ru" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Верхняя половина — Столбец 4 из 8"
+            }
+          },
+          "sk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Horná polovica — Stĺpec 4 z 8"
+            }
+          },
+          "sv-SE" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Övre halvan — kolumn 4 av 8"
+            }
+          },
+          "tr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Üst Yarı — 8'de 4. Sütun"
+            }
+          },
+          "uk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Верхня половина — стовпець 4 з 8"
+            }
+          },
+          "vi" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Nửa Trên — Cột 4/8"
+            }
+          },
+          "zh-Hans" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部分 — 第 4 列（共 8 列）"
+            }
+          },
+          "zh-Hant" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部 — 第 4 欄，共 8 欄"
+            }
+          },
+          "zh-Hant-HK" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半 — 第 4 欄（共 8 欄）"
+            }
+          }
+        }
+      },
+      "topHalfColumn5Of8.title" : {
+        "comment" : "Column window action title",
+        "extractionState" : "manual",
+        "localizations" : {
+          "en" : {
+            "stringUnit" : {
+              "state" : "new",
+              "value" : "Top Half — Column 5 of 8"
+            }
+          },
+          "ar" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "النصف العلوي — العمود 5 من 8"
+            }
+          },
+          "ca" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Meitat superior — Columna 5 de 8"
+            }
+          },
+          "ca-ES" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Meitat superior — Columna 5 de 8"
+            }
+          },
+          "cs" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Horní polovina — Sloupec 5 z 8"
+            }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Obere Hälfte — Spalte 5 von 8"
+            }
+          },
+          "en-GB" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Top Half — Column 5 of 8"
+            }
+          },
+          "es" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mitad superior — Columna 5 de 8"
+            }
+          },
+          "es-419" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mitad superior — Columna 5 de 8"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Moitié supérieure — Colonne 5 sur 8"
+            }
+          },
+          "id" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Setengah Atas — Kolom 5 dari 8"
+            }
+          },
+          "it" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metà superiore — Colonna 5 di 8"
+            }
+          },
+          "ja" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半分 — 8列中5列目"
+            }
+          },
+          "ko" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "상단 절반 — 8개 중 5번째 열"
+            }
+          },
+          "lt" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Viršutinė pusė — 5 stulpelis iš 8"
+            }
+          },
+          "nb" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Øverste halvdel — kolonne 5 av 8"
+            }
+          },
+          "nl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Bovenste helft — Kolom 5 van 8"
+            }
+          },
+          "nn" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Øvre halvdel — kolonne 5 av 8"
+            }
+          },
+          "pl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Górna połowa — kolumna 5 z 8"
+            }
+          },
+          "pt-BR" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metade Superior — Coluna 5 de 8"
+            }
+          },
+          "pt-PT" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metade Superior — Coluna 5 de 8"
+            }
+          },
+          "ro" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Jumătate Sus — Coloana 5 din 8"
+            }
+          },
+          "ru" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Верхняя половина — Столбец 5 из 8"
+            }
+          },
+          "sk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Horná polovica — Stĺpec 5 z 8"
+            }
+          },
+          "sv-SE" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Övre halvan — kolumn 5 av 8"
+            }
+          },
+          "tr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Üst Yarı — 8'de 5. Sütun"
+            }
+          },
+          "uk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Верхня половина — стовпець 5 з 8"
+            }
+          },
+          "vi" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Nửa Trên — Cột 5/8"
+            }
+          },
+          "zh-Hans" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部分 — 第 5 列（共 8 列）"
+            }
+          },
+          "zh-Hant" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部 — 第 5 欄，共 8 欄"
+            }
+          },
+          "zh-Hant-HK" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半 — 第 5 欄（共 8 欄）"
+            }
+          }
+        }
+      },
+      "topHalfColumn6Of8.title" : {
+        "comment" : "Column window action title",
+        "extractionState" : "manual",
+        "localizations" : {
+          "en" : {
+            "stringUnit" : {
+              "state" : "new",
+              "value" : "Top Half — Column 6 of 8"
+            }
+          },
+          "ar" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "النصف العلوي — العمود 6 من 8"
+            }
+          },
+          "ca" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Meitat superior — Columna 6 de 8"
+            }
+          },
+          "ca-ES" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Meitat superior — Columna 6 de 8"
+            }
+          },
+          "cs" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Horní polovina — Sloupec 6 z 8"
+            }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Obere Hälfte — Spalte 6 von 8"
+            }
+          },
+          "en-GB" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Top Half — Column 6 of 8"
+            }
+          },
+          "es" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mitad superior — Columna 6 de 8"
+            }
+          },
+          "es-419" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mitad superior — Columna 6 de 8"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Moitié supérieure — Colonne 6 sur 8"
+            }
+          },
+          "id" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Setengah Atas — Kolom 6 dari 8"
+            }
+          },
+          "it" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metà superiore — Colonna 6 di 8"
+            }
+          },
+          "ja" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半分 — 8列中6列目"
+            }
+          },
+          "ko" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "상단 절반 — 8개 중 6번째 열"
+            }
+          },
+          "lt" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Viršutinė pusė — 6 stulpelis iš 8"
+            }
+          },
+          "nb" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Øverste halvdel — kolonne 6 av 8"
+            }
+          },
+          "nl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Bovenste helft — Kolom 6 van 8"
+            }
+          },
+          "nn" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Øvre halvdel — kolonne 6 av 8"
+            }
+          },
+          "pl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Górna połowa — kolumna 6 z 8"
+            }
+          },
+          "pt-BR" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metade Superior — Coluna 6 de 8"
+            }
+          },
+          "pt-PT" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metade Superior — Coluna 6 de 8"
+            }
+          },
+          "ro" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Jumătate Sus — Coloana 6 din 8"
+            }
+          },
+          "ru" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Верхняя половина — Столбец 6 из 8"
+            }
+          },
+          "sk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Horná polovica — Stĺpec 6 z 8"
+            }
+          },
+          "sv-SE" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Övre halvan — kolumn 6 av 8"
+            }
+          },
+          "tr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Üst Yarı — 8'de 6. Sütun"
+            }
+          },
+          "uk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Верхня половина — стовпець 6 з 8"
+            }
+          },
+          "vi" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Nửa Trên — Cột 6/8"
+            }
+          },
+          "zh-Hans" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部分 — 第 6 列（共 8 列）"
+            }
+          },
+          "zh-Hant" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部 — 第 6 欄，共 8 欄"
+            }
+          },
+          "zh-Hant-HK" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半 — 第 6 欄（共 8 欄）"
+            }
+          }
+        }
+      },
+      "topHalfColumn7Of8.title" : {
+        "comment" : "Column window action title",
+        "extractionState" : "manual",
+        "localizations" : {
+          "en" : {
+            "stringUnit" : {
+              "state" : "new",
+              "value" : "Top Half — Column 7 of 8"
+            }
+          },
+          "ar" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "النصف العلوي — العمود 7 من 8"
+            }
+          },
+          "ca" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Meitat superior — Columna 7 de 8"
+            }
+          },
+          "ca-ES" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Meitat superior — Columna 7 de 8"
+            }
+          },
+          "cs" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Horní polovina — Sloupec 7 z 8"
+            }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Obere Hälfte — Spalte 7 von 8"
+            }
+          },
+          "en-GB" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Top Half — Column 7 of 8"
+            }
+          },
+          "es" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mitad superior — Columna 7 de 8"
+            }
+          },
+          "es-419" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mitad superior — Columna 7 de 8"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Moitié supérieure — Colonne 7 sur 8"
+            }
+          },
+          "id" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Setengah Atas — Kolom 7 dari 8"
+            }
+          },
+          "it" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metà superiore — Colonna 7 di 8"
+            }
+          },
+          "ja" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半分 — 8列中7列目"
+            }
+          },
+          "ko" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "상단 절반 — 8개 중 7번째 열"
+            }
+          },
+          "lt" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Viršutinė pusė — 7 stulpelis iš 8"
+            }
+          },
+          "nb" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Øverste halvdel — kolonne 7 av 8"
+            }
+          },
+          "nl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Bovenste helft — Kolom 7 van 8"
+            }
+          },
+          "nn" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Øvre halvdel — kolonne 7 av 8"
+            }
+          },
+          "pl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Górna połowa — kolumna 7 z 8"
+            }
+          },
+          "pt-BR" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metade Superior — Coluna 7 de 8"
+            }
+          },
+          "pt-PT" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metade Superior — Coluna 7 de 8"
+            }
+          },
+          "ro" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Jumătate Sus — Coloana 7 din 8"
+            }
+          },
+          "ru" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Верхняя половина — Столбец 7 из 8"
+            }
+          },
+          "sk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Horná polovica — Stĺpec 7 z 8"
+            }
+          },
+          "sv-SE" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Övre halvan — kolumn 7 av 8"
+            }
+          },
+          "tr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Üst Yarı — 8'de 7. Sütun"
+            }
+          },
+          "uk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Верхня половина — стовпець 7 з 8"
+            }
+          },
+          "vi" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Nửa Trên — Cột 7/8"
+            }
+          },
+          "zh-Hans" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部分 — 第 7 列（共 8 列）"
+            }
+          },
+          "zh-Hant" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部 — 第 7 欄，共 8 欄"
+            }
+          },
+          "zh-Hant-HK" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半 — 第 7 欄（共 8 欄）"
+            }
+          }
+        }
+      },
+      "topHalfColumn8Of8.title" : {
+        "comment" : "Column window action title",
+        "extractionState" : "manual",
+        "localizations" : {
+          "en" : {
+            "stringUnit" : {
+              "state" : "new",
+              "value" : "Top Half — Column 8 of 8"
+            }
+          },
+          "ar" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "النصف العلوي — العمود 8 من 8"
+            }
+          },
+          "ca" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Meitat superior — Columna 8 de 8"
+            }
+          },
+          "ca-ES" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Meitat superior — Columna 8 de 8"
+            }
+          },
+          "cs" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Horní polovina — Sloupec 8 z 8"
+            }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Obere Hälfte — Spalte 8 von 8"
+            }
+          },
+          "en-GB" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Top Half — Column 8 of 8"
+            }
+          },
+          "es" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mitad superior — Columna 8 de 8"
+            }
+          },
+          "es-419" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mitad superior — Columna 8 de 8"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Moitié supérieure — Colonne 8 sur 8"
+            }
+          },
+          "id" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Setengah Atas — Kolom 8 dari 8"
+            }
+          },
+          "it" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metà superiore — Colonna 8 di 8"
+            }
+          },
+          "ja" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半分 — 8列中8列目"
+            }
+          },
+          "ko" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "상단 절반 — 8개 중 8번째 열"
+            }
+          },
+          "lt" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Viršutinė pusė — 8 stulpelis iš 8"
+            }
+          },
+          "nb" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Øverste halvdel — kolonne 8 av 8"
+            }
+          },
+          "nl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Bovenste helft — Kolom 8 van 8"
+            }
+          },
+          "nn" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Øvre halvdel — kolonne 8 av 8"
+            }
+          },
+          "pl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Górna połowa — kolumna 8 z 8"
+            }
+          },
+          "pt-BR" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metade Superior — Coluna 8 de 8"
+            }
+          },
+          "pt-PT" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metade Superior — Coluna 8 de 8"
+            }
+          },
+          "ro" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Jumătate Sus — Coloana 8 din 8"
+            }
+          },
+          "ru" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Верхняя половина — Столбец 8 из 8"
+            }
+          },
+          "sk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Horná polovica — Stĺpec 8 z 8"
+            }
+          },
+          "sv-SE" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Övre halvan — kolumn 8 av 8"
+            }
+          },
+          "tr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Üst Yarı — 8'de 8. Sütun"
+            }
+          },
+          "uk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Верхня половина — стовпець 8 з 8"
+            }
+          },
+          "vi" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Nửa Trên — Cột 8/8"
+            }
+          },
+          "zh-Hans" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部分 — 第 8 列（共 8 列）"
+            }
+          },
+          "zh-Hant" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部 — 第 8 欄，共 8 欄"
+            }
+          },
+          "zh-Hant-HK" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半 — 第 8 欄（共 8 欄）"
+            }
+          }
+        }
+      },
+      "topHalfColumn1Of10.title" : {
+        "comment" : "Column window action title",
+        "extractionState" : "manual",
+        "localizations" : {
+          "en" : {
+            "stringUnit" : {
+              "state" : "new",
+              "value" : "Top Half — Column 1 of 10"
+            }
+          },
+          "ar" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "النصف العلوي — العمود 1 من 10"
+            }
+          },
+          "ca" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Meitat superior — Columna 1 de 10"
+            }
+          },
+          "ca-ES" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Meitat superior — Columna 1 de 10"
+            }
+          },
+          "cs" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Horní polovina — Sloupec 1 z 10"
+            }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Obere Hälfte — Spalte 1 von 10"
+            }
+          },
+          "en-GB" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Top Half — Column 1 of 10"
+            }
+          },
+          "es" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mitad superior — Columna 1 de 10"
+            }
+          },
+          "es-419" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mitad superior — Columna 1 de 10"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Moitié supérieure — Colonne 1 sur 10"
+            }
+          },
+          "id" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Setengah Atas — Kolom 1 dari 10"
+            }
+          },
+          "it" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metà superiore — Colonna 1 di 10"
+            }
+          },
+          "ja" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半分 — 10列中1列目"
+            }
+          },
+          "ko" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "상단 절반 — 10개 중 1번째 열"
+            }
+          },
+          "lt" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Viršutinė pusė — 1 stulpelis iš 10"
+            }
+          },
+          "nb" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Øverste halvdel — kolonne 1 av 10"
+            }
+          },
+          "nl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Bovenste helft — Kolom 1 van 10"
+            }
+          },
+          "nn" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Øvre halvdel — kolonne 1 av 10"
+            }
+          },
+          "pl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Górna połowa — kolumna 1 z 10"
+            }
+          },
+          "pt-BR" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metade Superior — Coluna 1 de 10"
+            }
+          },
+          "pt-PT" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metade Superior — Coluna 1 de 10"
+            }
+          },
+          "ro" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Jumătate Sus — Coloana 1 din 10"
+            }
+          },
+          "ru" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Верхняя половина — Столбец 1 из 10"
+            }
+          },
+          "sk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Horná polovica — Stĺpec 1 z 10"
+            }
+          },
+          "sv-SE" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Övre halvan — kolumn 1 av 10"
+            }
+          },
+          "tr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Üst Yarı — 10'da 1. Sütun"
+            }
+          },
+          "uk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Верхня половина — стовпець 1 з 10"
+            }
+          },
+          "vi" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Nửa Trên — Cột 1/10"
+            }
+          },
+          "zh-Hans" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部分 — 第 1 列（共 10 列）"
+            }
+          },
+          "zh-Hant" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部 — 第 1 欄，共 10 欄"
+            }
+          },
+          "zh-Hant-HK" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半 — 第 1 欄（共 10 欄）"
+            }
+          }
+        }
+      },
+      "topHalfColumn2Of10.title" : {
+        "comment" : "Column window action title",
+        "extractionState" : "manual",
+        "localizations" : {
+          "en" : {
+            "stringUnit" : {
+              "state" : "new",
+              "value" : "Top Half — Column 2 of 10"
+            }
+          },
+          "ar" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "النصف العلوي — العمود 2 من 10"
+            }
+          },
+          "ca" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Meitat superior — Columna 2 de 10"
+            }
+          },
+          "ca-ES" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Meitat superior — Columna 2 de 10"
+            }
+          },
+          "cs" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Horní polovina — Sloupec 2 z 10"
+            }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Obere Hälfte — Spalte 2 von 10"
+            }
+          },
+          "en-GB" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Top Half — Column 2 of 10"
+            }
+          },
+          "es" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mitad superior — Columna 2 de 10"
+            }
+          },
+          "es-419" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mitad superior — Columna 2 de 10"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Moitié supérieure — Colonne 2 sur 10"
+            }
+          },
+          "id" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Setengah Atas — Kolom 2 dari 10"
+            }
+          },
+          "it" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metà superiore — Colonna 2 di 10"
+            }
+          },
+          "ja" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半分 — 10列中2列目"
+            }
+          },
+          "ko" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "상단 절반 — 10개 중 2번째 열"
+            }
+          },
+          "lt" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Viršutinė pusė — 2 stulpelis iš 10"
+            }
+          },
+          "nb" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Øverste halvdel — kolonne 2 av 10"
+            }
+          },
+          "nl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Bovenste helft — Kolom 2 van 10"
+            }
+          },
+          "nn" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Øvre halvdel — kolonne 2 av 10"
+            }
+          },
+          "pl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Górna połowa — kolumna 2 z 10"
+            }
+          },
+          "pt-BR" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metade Superior — Coluna 2 de 10"
+            }
+          },
+          "pt-PT" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metade Superior — Coluna 2 de 10"
+            }
+          },
+          "ro" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Jumătate Sus — Coloana 2 din 10"
+            }
+          },
+          "ru" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Верхняя половина — Столбец 2 из 10"
+            }
+          },
+          "sk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Horná polovica — Stĺpec 2 z 10"
+            }
+          },
+          "sv-SE" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Övre halvan — kolumn 2 av 10"
+            }
+          },
+          "tr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Üst Yarı — 10'da 2. Sütun"
+            }
+          },
+          "uk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Верхня половина — стовпець 2 з 10"
+            }
+          },
+          "vi" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Nửa Trên — Cột 2/10"
+            }
+          },
+          "zh-Hans" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部分 — 第 2 列（共 10 列）"
+            }
+          },
+          "zh-Hant" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部 — 第 2 欄，共 10 欄"
+            }
+          },
+          "zh-Hant-HK" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半 — 第 2 欄（共 10 欄）"
+            }
+          }
+        }
+      },
+      "topHalfColumn3Of10.title" : {
+        "comment" : "Column window action title",
+        "extractionState" : "manual",
+        "localizations" : {
+          "en" : {
+            "stringUnit" : {
+              "state" : "new",
+              "value" : "Top Half — Column 3 of 10"
+            }
+          },
+          "ar" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "النصف العلوي — العمود 3 من 10"
+            }
+          },
+          "ca" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Meitat superior — Columna 3 de 10"
+            }
+          },
+          "ca-ES" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Meitat superior — Columna 3 de 10"
+            }
+          },
+          "cs" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Horní polovina — Sloupec 3 z 10"
+            }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Obere Hälfte — Spalte 3 von 10"
+            }
+          },
+          "en-GB" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Top Half — Column 3 of 10"
+            }
+          },
+          "es" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mitad superior — Columna 3 de 10"
+            }
+          },
+          "es-419" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mitad superior — Columna 3 de 10"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Moitié supérieure — Colonne 3 sur 10"
+            }
+          },
+          "id" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Setengah Atas — Kolom 3 dari 10"
+            }
+          },
+          "it" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metà superiore — Colonna 3 di 10"
+            }
+          },
+          "ja" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半分 — 10列中3列目"
+            }
+          },
+          "ko" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "상단 절반 — 10개 중 3번째 열"
+            }
+          },
+          "lt" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Viršutinė pusė — 3 stulpelis iš 10"
+            }
+          },
+          "nb" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Øverste halvdel — kolonne 3 av 10"
+            }
+          },
+          "nl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Bovenste helft — Kolom 3 van 10"
+            }
+          },
+          "nn" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Øvre halvdel — kolonne 3 av 10"
+            }
+          },
+          "pl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Górna połowa — kolumna 3 z 10"
+            }
+          },
+          "pt-BR" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metade Superior — Coluna 3 de 10"
+            }
+          },
+          "pt-PT" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metade Superior — Coluna 3 de 10"
+            }
+          },
+          "ro" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Jumătate Sus — Coloana 3 din 10"
+            }
+          },
+          "ru" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Верхняя половина — Столбец 3 из 10"
+            }
+          },
+          "sk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Horná polovica — Stĺpec 3 z 10"
+            }
+          },
+          "sv-SE" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Övre halvan — kolumn 3 av 10"
+            }
+          },
+          "tr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Üst Yarı — 10'da 3. Sütun"
+            }
+          },
+          "uk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Верхня половина — стовпець 3 з 10"
+            }
+          },
+          "vi" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Nửa Trên — Cột 3/10"
+            }
+          },
+          "zh-Hans" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部分 — 第 3 列（共 10 列）"
+            }
+          },
+          "zh-Hant" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部 — 第 3 欄，共 10 欄"
+            }
+          },
+          "zh-Hant-HK" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半 — 第 3 欄（共 10 欄）"
+            }
+          }
+        }
+      },
+      "topHalfColumn4Of10.title" : {
+        "comment" : "Column window action title",
+        "extractionState" : "manual",
+        "localizations" : {
+          "en" : {
+            "stringUnit" : {
+              "state" : "new",
+              "value" : "Top Half — Column 4 of 10"
+            }
+          },
+          "ar" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "النصف العلوي — العمود 4 من 10"
+            }
+          },
+          "ca" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Meitat superior — Columna 4 de 10"
+            }
+          },
+          "ca-ES" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Meitat superior — Columna 4 de 10"
+            }
+          },
+          "cs" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Horní polovina — Sloupec 4 z 10"
+            }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Obere Hälfte — Spalte 4 von 10"
+            }
+          },
+          "en-GB" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Top Half — Column 4 of 10"
+            }
+          },
+          "es" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mitad superior — Columna 4 de 10"
+            }
+          },
+          "es-419" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mitad superior — Columna 4 de 10"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Moitié supérieure — Colonne 4 sur 10"
+            }
+          },
+          "id" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Setengah Atas — Kolom 4 dari 10"
+            }
+          },
+          "it" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metà superiore — Colonna 4 di 10"
+            }
+          },
+          "ja" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半分 — 10列中4列目"
+            }
+          },
+          "ko" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "상단 절반 — 10개 중 4번째 열"
+            }
+          },
+          "lt" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Viršutinė pusė — 4 stulpelis iš 10"
+            }
+          },
+          "nb" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Øverste halvdel — kolonne 4 av 10"
+            }
+          },
+          "nl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Bovenste helft — Kolom 4 van 10"
+            }
+          },
+          "nn" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Øvre halvdel — kolonne 4 av 10"
+            }
+          },
+          "pl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Górna połowa — kolumna 4 z 10"
+            }
+          },
+          "pt-BR" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metade Superior — Coluna 4 de 10"
+            }
+          },
+          "pt-PT" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metade Superior — Coluna 4 de 10"
+            }
+          },
+          "ro" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Jumătate Sus — Coloana 4 din 10"
+            }
+          },
+          "ru" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Верхняя половина — Столбец 4 из 10"
+            }
+          },
+          "sk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Horná polovica — Stĺpec 4 z 10"
+            }
+          },
+          "sv-SE" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Övre halvan — kolumn 4 av 10"
+            }
+          },
+          "tr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Üst Yarı — 10'da 4. Sütun"
+            }
+          },
+          "uk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Верхня половина — стовпець 4 з 10"
+            }
+          },
+          "vi" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Nửa Trên — Cột 4/10"
+            }
+          },
+          "zh-Hans" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部分 — 第 4 列（共 10 列）"
+            }
+          },
+          "zh-Hant" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部 — 第 4 欄，共 10 欄"
+            }
+          },
+          "zh-Hant-HK" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半 — 第 4 欄（共 10 欄）"
+            }
+          }
+        }
+      },
+      "topHalfColumn5Of10.title" : {
+        "comment" : "Column window action title",
+        "extractionState" : "manual",
+        "localizations" : {
+          "en" : {
+            "stringUnit" : {
+              "state" : "new",
+              "value" : "Top Half — Column 5 of 10"
+            }
+          },
+          "ar" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "النصف العلوي — العمود 5 من 10"
+            }
+          },
+          "ca" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Meitat superior — Columna 5 de 10"
+            }
+          },
+          "ca-ES" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Meitat superior — Columna 5 de 10"
+            }
+          },
+          "cs" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Horní polovina — Sloupec 5 z 10"
+            }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Obere Hälfte — Spalte 5 von 10"
+            }
+          },
+          "en-GB" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Top Half — Column 5 of 10"
+            }
+          },
+          "es" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mitad superior — Columna 5 de 10"
+            }
+          },
+          "es-419" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mitad superior — Columna 5 de 10"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Moitié supérieure — Colonne 5 sur 10"
+            }
+          },
+          "id" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Setengah Atas — Kolom 5 dari 10"
+            }
+          },
+          "it" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metà superiore — Colonna 5 di 10"
+            }
+          },
+          "ja" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半分 — 10列中5列目"
+            }
+          },
+          "ko" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "상단 절반 — 10개 중 5번째 열"
+            }
+          },
+          "lt" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Viršutinė pusė — 5 stulpelis iš 10"
+            }
+          },
+          "nb" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Øverste halvdel — kolonne 5 av 10"
+            }
+          },
+          "nl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Bovenste helft — Kolom 5 van 10"
+            }
+          },
+          "nn" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Øvre halvdel — kolonne 5 av 10"
+            }
+          },
+          "pl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Górna połowa — kolumna 5 z 10"
+            }
+          },
+          "pt-BR" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metade Superior — Coluna 5 de 10"
+            }
+          },
+          "pt-PT" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metade Superior — Coluna 5 de 10"
+            }
+          },
+          "ro" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Jumătate Sus — Coloana 5 din 10"
+            }
+          },
+          "ru" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Верхняя половина — Столбец 5 из 10"
+            }
+          },
+          "sk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Horná polovica — Stĺpec 5 z 10"
+            }
+          },
+          "sv-SE" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Övre halvan — kolumn 5 av 10"
+            }
+          },
+          "tr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Üst Yarı — 10'da 5. Sütun"
+            }
+          },
+          "uk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Верхня половина — стовпець 5 з 10"
+            }
+          },
+          "vi" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Nửa Trên — Cột 5/10"
+            }
+          },
+          "zh-Hans" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部分 — 第 5 列（共 10 列）"
+            }
+          },
+          "zh-Hant" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部 — 第 5 欄，共 10 欄"
+            }
+          },
+          "zh-Hant-HK" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半 — 第 5 欄（共 10 欄）"
+            }
+          }
+        }
+      },
+      "topHalfColumn6Of10.title" : {
+        "comment" : "Column window action title",
+        "extractionState" : "manual",
+        "localizations" : {
+          "en" : {
+            "stringUnit" : {
+              "state" : "new",
+              "value" : "Top Half — Column 6 of 10"
+            }
+          },
+          "ar" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "النصف العلوي — العمود 6 من 10"
+            }
+          },
+          "ca" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Meitat superior — Columna 6 de 10"
+            }
+          },
+          "ca-ES" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Meitat superior — Columna 6 de 10"
+            }
+          },
+          "cs" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Horní polovina — Sloupec 6 z 10"
+            }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Obere Hälfte — Spalte 6 von 10"
+            }
+          },
+          "en-GB" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Top Half — Column 6 of 10"
+            }
+          },
+          "es" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mitad superior — Columna 6 de 10"
+            }
+          },
+          "es-419" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mitad superior — Columna 6 de 10"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Moitié supérieure — Colonne 6 sur 10"
+            }
+          },
+          "id" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Setengah Atas — Kolom 6 dari 10"
+            }
+          },
+          "it" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metà superiore — Colonna 6 di 10"
+            }
+          },
+          "ja" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半分 — 10列中6列目"
+            }
+          },
+          "ko" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "상단 절반 — 10개 중 6번째 열"
+            }
+          },
+          "lt" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Viršutinė pusė — 6 stulpelis iš 10"
+            }
+          },
+          "nb" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Øverste halvdel — kolonne 6 av 10"
+            }
+          },
+          "nl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Bovenste helft — Kolom 6 van 10"
+            }
+          },
+          "nn" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Øvre halvdel — kolonne 6 av 10"
+            }
+          },
+          "pl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Górna połowa — kolumna 6 z 10"
+            }
+          },
+          "pt-BR" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metade Superior — Coluna 6 de 10"
+            }
+          },
+          "pt-PT" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metade Superior — Coluna 6 de 10"
+            }
+          },
+          "ro" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Jumătate Sus — Coloana 6 din 10"
+            }
+          },
+          "ru" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Верхняя половина — Столбец 6 из 10"
+            }
+          },
+          "sk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Horná polovica — Stĺpec 6 z 10"
+            }
+          },
+          "sv-SE" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Övre halvan — kolumn 6 av 10"
+            }
+          },
+          "tr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Üst Yarı — 10'da 6. Sütun"
+            }
+          },
+          "uk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Верхня половина — стовпець 6 з 10"
+            }
+          },
+          "vi" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Nửa Trên — Cột 6/10"
+            }
+          },
+          "zh-Hans" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部分 — 第 6 列（共 10 列）"
+            }
+          },
+          "zh-Hant" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部 — 第 6 欄，共 10 欄"
+            }
+          },
+          "zh-Hant-HK" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半 — 第 6 欄（共 10 欄）"
+            }
+          }
+        }
+      },
+      "topHalfColumn7Of10.title" : {
+        "comment" : "Column window action title",
+        "extractionState" : "manual",
+        "localizations" : {
+          "en" : {
+            "stringUnit" : {
+              "state" : "new",
+              "value" : "Top Half — Column 7 of 10"
+            }
+          },
+          "ar" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "النصف العلوي — العمود 7 من 10"
+            }
+          },
+          "ca" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Meitat superior — Columna 7 de 10"
+            }
+          },
+          "ca-ES" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Meitat superior — Columna 7 de 10"
+            }
+          },
+          "cs" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Horní polovina — Sloupec 7 z 10"
+            }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Obere Hälfte — Spalte 7 von 10"
+            }
+          },
+          "en-GB" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Top Half — Column 7 of 10"
+            }
+          },
+          "es" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mitad superior — Columna 7 de 10"
+            }
+          },
+          "es-419" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mitad superior — Columna 7 de 10"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Moitié supérieure — Colonne 7 sur 10"
+            }
+          },
+          "id" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Setengah Atas — Kolom 7 dari 10"
+            }
+          },
+          "it" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metà superiore — Colonna 7 di 10"
+            }
+          },
+          "ja" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半分 — 10列中7列目"
+            }
+          },
+          "ko" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "상단 절반 — 10개 중 7번째 열"
+            }
+          },
+          "lt" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Viršutinė pusė — 7 stulpelis iš 10"
+            }
+          },
+          "nb" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Øverste halvdel — kolonne 7 av 10"
+            }
+          },
+          "nl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Bovenste helft — Kolom 7 van 10"
+            }
+          },
+          "nn" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Øvre halvdel — kolonne 7 av 10"
+            }
+          },
+          "pl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Górna połowa — kolumna 7 z 10"
+            }
+          },
+          "pt-BR" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metade Superior — Coluna 7 de 10"
+            }
+          },
+          "pt-PT" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metade Superior — Coluna 7 de 10"
+            }
+          },
+          "ro" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Jumătate Sus — Coloana 7 din 10"
+            }
+          },
+          "ru" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Верхняя половина — Столбец 7 из 10"
+            }
+          },
+          "sk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Horná polovica — Stĺpec 7 z 10"
+            }
+          },
+          "sv-SE" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Övre halvan — kolumn 7 av 10"
+            }
+          },
+          "tr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Üst Yarı — 10'da 7. Sütun"
+            }
+          },
+          "uk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Верхня половина — стовпець 7 з 10"
+            }
+          },
+          "vi" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Nửa Trên — Cột 7/10"
+            }
+          },
+          "zh-Hans" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部分 — 第 7 列（共 10 列）"
+            }
+          },
+          "zh-Hant" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部 — 第 7 欄，共 10 欄"
+            }
+          },
+          "zh-Hant-HK" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半 — 第 7 欄（共 10 欄）"
+            }
+          }
+        }
+      },
+      "topHalfColumn8Of10.title" : {
+        "comment" : "Column window action title",
+        "extractionState" : "manual",
+        "localizations" : {
+          "en" : {
+            "stringUnit" : {
+              "state" : "new",
+              "value" : "Top Half — Column 8 of 10"
+            }
+          },
+          "ar" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "النصف العلوي — العمود 8 من 10"
+            }
+          },
+          "ca" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Meitat superior — Columna 8 de 10"
+            }
+          },
+          "ca-ES" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Meitat superior — Columna 8 de 10"
+            }
+          },
+          "cs" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Horní polovina — Sloupec 8 z 10"
+            }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Obere Hälfte — Spalte 8 von 10"
+            }
+          },
+          "en-GB" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Top Half — Column 8 of 10"
+            }
+          },
+          "es" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mitad superior — Columna 8 de 10"
+            }
+          },
+          "es-419" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mitad superior — Columna 8 de 10"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Moitié supérieure — Colonne 8 sur 10"
+            }
+          },
+          "id" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Setengah Atas — Kolom 8 dari 10"
+            }
+          },
+          "it" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metà superiore — Colonna 8 di 10"
+            }
+          },
+          "ja" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半分 — 10列中8列目"
+            }
+          },
+          "ko" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "상단 절반 — 10개 중 8번째 열"
+            }
+          },
+          "lt" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Viršutinė pusė — 8 stulpelis iš 10"
+            }
+          },
+          "nb" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Øverste halvdel — kolonne 8 av 10"
+            }
+          },
+          "nl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Bovenste helft — Kolom 8 van 10"
+            }
+          },
+          "nn" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Øvre halvdel — kolonne 8 av 10"
+            }
+          },
+          "pl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Górna połowa — kolumna 8 z 10"
+            }
+          },
+          "pt-BR" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metade Superior — Coluna 8 de 10"
+            }
+          },
+          "pt-PT" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metade Superior — Coluna 8 de 10"
+            }
+          },
+          "ro" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Jumătate Sus — Coloana 8 din 10"
+            }
+          },
+          "ru" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Верхняя половина — Столбец 8 из 10"
+            }
+          },
+          "sk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Horná polovica — Stĺpec 8 z 10"
+            }
+          },
+          "sv-SE" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Övre halvan — kolumn 8 av 10"
+            }
+          },
+          "tr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Üst Yarı — 10'da 8. Sütun"
+            }
+          },
+          "uk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Верхня половина — стовпець 8 з 10"
+            }
+          },
+          "vi" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Nửa Trên — Cột 8/10"
+            }
+          },
+          "zh-Hans" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部分 — 第 8 列（共 10 列）"
+            }
+          },
+          "zh-Hant" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部 — 第 8 欄，共 10 欄"
+            }
+          },
+          "zh-Hant-HK" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半 — 第 8 欄（共 10 欄）"
+            }
+          }
+        }
+      },
+      "topHalfColumn9Of10.title" : {
+        "comment" : "Column window action title",
+        "extractionState" : "manual",
+        "localizations" : {
+          "en" : {
+            "stringUnit" : {
+              "state" : "new",
+              "value" : "Top Half — Column 9 of 10"
+            }
+          },
+          "ar" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "النصف العلوي — العمود 9 من 10"
+            }
+          },
+          "ca" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Meitat superior — Columna 9 de 10"
+            }
+          },
+          "ca-ES" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Meitat superior — Columna 9 de 10"
+            }
+          },
+          "cs" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Horní polovina — Sloupec 9 z 10"
+            }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Obere Hälfte — Spalte 9 von 10"
+            }
+          },
+          "en-GB" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Top Half — Column 9 of 10"
+            }
+          },
+          "es" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mitad superior — Columna 9 de 10"
+            }
+          },
+          "es-419" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mitad superior — Columna 9 de 10"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Moitié supérieure — Colonne 9 sur 10"
+            }
+          },
+          "id" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Setengah Atas — Kolom 9 dari 10"
+            }
+          },
+          "it" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metà superiore — Colonna 9 di 10"
+            }
+          },
+          "ja" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半分 — 10列中9列目"
+            }
+          },
+          "ko" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "상단 절반 — 10개 중 9번째 열"
+            }
+          },
+          "lt" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Viršutinė pusė — 9 stulpelis iš 10"
+            }
+          },
+          "nb" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Øverste halvdel — kolonne 9 av 10"
+            }
+          },
+          "nl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Bovenste helft — Kolom 9 van 10"
+            }
+          },
+          "nn" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Øvre halvdel — kolonne 9 av 10"
+            }
+          },
+          "pl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Górna połowa — kolumna 9 z 10"
+            }
+          },
+          "pt-BR" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metade Superior — Coluna 9 de 10"
+            }
+          },
+          "pt-PT" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metade Superior — Coluna 9 de 10"
+            }
+          },
+          "ro" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Jumătate Sus — Coloana 9 din 10"
+            }
+          },
+          "ru" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Верхняя половина — Столбец 9 из 10"
+            }
+          },
+          "sk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Horná polovica — Stĺpec 9 z 10"
+            }
+          },
+          "sv-SE" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Övre halvan — kolumn 9 av 10"
+            }
+          },
+          "tr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Üst Yarı — 10'da 9. Sütun"
+            }
+          },
+          "uk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Верхня половина — стовпець 9 з 10"
+            }
+          },
+          "vi" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Nửa Trên — Cột 9/10"
+            }
+          },
+          "zh-Hans" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部分 — 第 9 列（共 10 列）"
+            }
+          },
+          "zh-Hant" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部 — 第 9 欄，共 10 欄"
+            }
+          },
+          "zh-Hant-HK" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半 — 第 9 欄（共 10 欄）"
+            }
+          }
+        }
+      },
+      "topHalfColumn10Of10.title" : {
+        "comment" : "Column window action title",
+        "extractionState" : "manual",
+        "localizations" : {
+          "en" : {
+            "stringUnit" : {
+              "state" : "new",
+              "value" : "Top Half — Column 10 of 10"
+            }
+          },
+          "ar" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "النصف العلوي — العمود 10 من 10"
+            }
+          },
+          "ca" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Meitat superior — Columna 10 de 10"
+            }
+          },
+          "ca-ES" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Meitat superior — Columna 10 de 10"
+            }
+          },
+          "cs" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Horní polovina — Sloupec 10 z 10"
+            }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Obere Hälfte — Spalte 10 von 10"
+            }
+          },
+          "en-GB" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Top Half — Column 10 of 10"
+            }
+          },
+          "es" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mitad superior — Columna 10 de 10"
+            }
+          },
+          "es-419" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Mitad superior — Columna 10 de 10"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Moitié supérieure — Colonne 10 sur 10"
+            }
+          },
+          "id" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Setengah Atas — Kolom 10 dari 10"
+            }
+          },
+          "it" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metà superiore — Colonna 10 di 10"
+            }
+          },
+          "ja" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半分 — 10列中10列目"
+            }
+          },
+          "ko" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "상단 절반 — 10개 중 10번째 열"
+            }
+          },
+          "lt" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Viršutinė pusė — 10 stulpelis iš 10"
+            }
+          },
+          "nb" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Øverste halvdel — kolonne 10 av 10"
+            }
+          },
+          "nl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Bovenste helft — Kolom 10 van 10"
+            }
+          },
+          "nn" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Øvre halvdel — kolonne 10 av 10"
+            }
+          },
+          "pl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Górna połowa — kolumna 10 z 10"
+            }
+          },
+          "pt-BR" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metade Superior — Coluna 10 de 10"
+            }
+          },
+          "pt-PT" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Metade Superior — Coluna 10 de 10"
+            }
+          },
+          "ro" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Jumătate Sus — Coloana 10 din 10"
+            }
+          },
+          "ru" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Верхняя половина — Столбец 10 из 10"
+            }
+          },
+          "sk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Horná polovica — Stĺpec 10 z 10"
+            }
+          },
+          "sv-SE" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Övre halvan — kolumn 10 av 10"
+            }
+          },
+          "tr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Üst Yarı — 10'da 10. Sütun"
+            }
+          },
+          "uk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Верхня половина — стовпець 10 з 10"
+            }
+          },
+          "vi" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Nửa Trên — Cột 10/10"
+            }
+          },
+          "zh-Hans" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部分 — 第 10 列（共 10 列）"
+            }
+          },
+          "zh-Hant" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部 — 第 10 欄，共 10 欄"
+            }
+          },
+          "zh-Hant-HK" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半 — 第 10 欄（共 10 欄）"
+            }
+          }
+        }
+      },
+      "Full-Height Sixths" : {
+        "comment" : "Column shortcut group title",
+        "extractionState" : "manual",
+        "localizations" : {
+          "en" : {
+            "stringUnit" : {
+              "state" : "new",
+              "value" : "Full-Height Sixths"
+            }
+          },
+          "ar" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "أسداس بكامل الارتفاع"
+            }
+          },
+          "ca" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Sisens d'alçada completa"
+            }
+          },
+          "ca-ES" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Sisens d'alçada completa"
+            }
+          },
+          "cs" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Šestiny na celou výšku"
+            }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Sechstel in voller Höhe"
+            }
+          },
+          "en-GB" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Full-Height Sixths"
+            }
+          },
+          "es" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Sextos de altura completa"
+            }
+          },
+          "es-419" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Sextos de altura completa"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Sixièmes pleine hauteur"
+            }
+          },
+          "id" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Seperenam Tinggi Penuh"
+            }
+          },
+          "it" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Sesti a tutta altezza"
+            }
+          },
+          "ja" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "全高の6分の1"
+            }
+          },
+          "ko" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "전체 높이 1/6"
+            }
+          },
+          "lt" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Viso aukščio šeštadaliai"
+            }
+          },
+          "nb" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Sjettedeler i full høyde"
+            }
+          },
+          "nl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Zesden op volle hoogte"
+            }
+          },
+          "nn" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Sjettedelar i full høgd"
+            }
+          },
+          "pl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Szóste na pełną wysokość"
+            }
+          },
+          "pt-BR" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Sextos de Altura Total"
+            }
+          },
+          "pt-PT" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Sextos de Altura Total"
+            }
+          },
+          "ro" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Șesimi pe Toată Înălțimea"
+            }
+          },
+          "ru" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Полная высота, шестые"
+            }
+          },
+          "sk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Šestiny na celú výšku"
+            }
+          },
+          "sv-SE" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Sjättedelar i full höjd"
+            }
+          },
+          "tr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Tam Yükseklik Altıda Birler"
+            }
+          },
+          "uk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Шості на всю висоту"
+            }
+          },
+          "vi" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Phần Sáu Toàn Chiều Cao"
+            }
+          },
+          "zh-Hans" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "全高六等分"
+            }
+          },
+          "zh-Hant" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "全高六分之一"
+            }
+          },
+          "zh-Hant-HK" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "六等分直欄"
+            }
+          }
+        }
+      },
+      "Full-Height Eighths" : {
+        "comment" : "Column shortcut group title",
+        "extractionState" : "manual",
+        "localizations" : {
+          "en" : {
+            "stringUnit" : {
+              "state" : "new",
+              "value" : "Full-Height Eighths"
+            }
+          },
+          "ar" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "أثمان بكامل الارتفاع"
+            }
+          },
+          "ca" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Vuitens d'alçada completa"
+            }
+          },
+          "ca-ES" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Vuitens d'alçada completa"
+            }
+          },
+          "cs" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Osminy na celou výšku"
+            }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Achtel in voller Höhe"
+            }
+          },
+          "en-GB" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Full-Height Eighths"
+            }
+          },
+          "es" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Octavos de altura completa"
+            }
+          },
+          "es-419" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Octavos de altura completa"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Huitièmes pleine hauteur"
+            }
+          },
+          "id" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Seperdelapan Tinggi Penuh"
+            }
+          },
+          "it" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Ottavi a tutta altezza"
+            }
+          },
+          "ja" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "全高の8分の1"
+            }
+          },
+          "ko" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "전체 높이 1/8"
+            }
+          },
+          "lt" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Viso aukščio aštuntadaliai"
+            }
+          },
+          "nb" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Åttendedeler i full høyde"
+            }
+          },
+          "nl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Achtsten op volle hoogte"
+            }
+          },
+          "nn" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Åttandedelar i full høgd"
+            }
+          },
+          "pl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Ósme na pełną wysokość"
+            }
+          },
+          "pt-BR" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Oitavos de Altura Total"
+            }
+          },
+          "pt-PT" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Oitavos de Altura Total"
+            }
+          },
+          "ro" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Optimi pe Toată Înălțimea"
+            }
+          },
+          "ru" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Полная высота, восьмые"
+            }
+          },
+          "sk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Osminy na celú výšku"
+            }
+          },
+          "sv-SE" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Åttondelar i full höjd"
+            }
+          },
+          "tr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Tam Yükseklik Sekizde Birler"
+            }
+          },
+          "uk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Восьмі на всю висоту"
+            }
+          },
+          "vi" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Phần Tám Toàn Chiều Cao"
+            }
+          },
+          "zh-Hans" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "全高八等分"
+            }
+          },
+          "zh-Hant" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "全高八分之一"
+            }
+          },
+          "zh-Hant-HK" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "八等分直欄"
+            }
+          }
+        }
+      },
+      "Top-Half Eighths" : {
+        "comment" : "Column shortcut group title",
+        "extractionState" : "manual",
+        "localizations" : {
+          "en" : {
+            "stringUnit" : {
+              "state" : "new",
+              "value" : "Top-Half Eighths"
+            }
+          },
+          "ar" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "أثمان النصف العلوي"
+            }
+          },
+          "ca" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Vuitens de la meitat superior"
+            }
+          },
+          "ca-ES" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Vuitens de la meitat superior"
+            }
+          },
+          "cs" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Osminy v horní polovině"
+            }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Achtel der oberen Hälfte"
+            }
+          },
+          "en-GB" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Top-Half Eighths"
+            }
+          },
+          "es" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Octavos de la mitad superior"
+            }
+          },
+          "es-419" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Octavos de la mitad superior"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Huitièmes de la moitié supérieure"
+            }
+          },
+          "id" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Seperdelapan Setengah Atas"
+            }
+          },
+          "it" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Ottavi nella metà superiore"
+            }
+          },
+          "ja" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半分の8分の1"
+            }
+          },
+          "ko" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "상단 절반 1/8"
+            }
+          },
+          "lt" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Viršutinės pusės aštuntadaliai"
+            }
+          },
+          "nb" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Åttendedeler i øverste halvdel"
+            }
+          },
+          "nl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Achtsten bovenste helft"
+            }
+          },
+          "nn" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Åttandedelar i øvre halvdel"
+            }
+          },
+          "pl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Ósme w górnej połowie"
+            }
+          },
+          "pt-BR" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Oitavos da Metade Superior"
+            }
+          },
+          "pt-PT" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Oitavos da Metade Superior"
+            }
+          },
+          "ro" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Optimi în Jumătatea Superioară"
+            }
+          },
+          "ru" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Верхняя половина, восьмые"
+            }
+          },
+          "sk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Osminy v hornej polovici"
+            }
+          },
+          "sv-SE" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Övre halvans åttondelar"
+            }
+          },
+          "tr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Üst Yarı Sekizde Birler"
+            }
+          },
+          "uk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Восьмі верхньої половини"
+            }
+          },
+          "vi" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Phần Tám Nửa Trên"
+            }
+          },
+          "zh-Hans" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部分八等分"
+            }
+          },
+          "zh-Hant" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部八分之一"
+            }
+          },
+          "zh-Hant-HK" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半八等分直欄"
+            }
+          }
+        }
+      },
+      "Top-Half Tenths" : {
+        "comment" : "Column shortcut group title",
+        "extractionState" : "manual",
+        "localizations" : {
+          "en" : {
+            "stringUnit" : {
+              "state" : "new",
+              "value" : "Top-Half Tenths"
+            }
+          },
+          "ar" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "أعشار النصف العلوي"
+            }
+          },
+          "ca" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Desens de la meitat superior"
+            }
+          },
+          "ca-ES" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Desens de la meitat superior"
+            }
+          },
+          "cs" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Desetiny v horní polovině"
+            }
+          },
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Zehntel der oberen Hälfte"
+            }
+          },
+          "en-GB" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Top-Half Tenths"
+            }
+          },
+          "es" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Décimos de la mitad superior"
+            }
+          },
+          "es-419" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Décimos de la mitad superior"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Dixièmes de la moitié supérieure"
+            }
+          },
+          "id" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Sepersepuluh Setengah Atas"
+            }
+          },
+          "it" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Decimi nella metà superiore"
+            }
+          },
+          "ja" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半分の10分の1"
+            }
+          },
+          "ko" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "상단 절반 1/10"
+            }
+          },
+          "lt" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Viršutinės pusės dešimtadaliai"
+            }
+          },
+          "nb" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Tiendedeler i øverste halvdel"
+            }
+          },
+          "nl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Tienden bovenste helft"
+            }
+          },
+          "nn" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Tiandedelar i øvre halvdel"
+            }
+          },
+          "pl" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Dziesiąte w górnej połowie"
+            }
+          },
+          "pt-BR" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Décimos da Metade Superior"
+            }
+          },
+          "pt-PT" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Décimos da Metade Superior"
+            }
+          },
+          "ro" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Zecimi în Jumătatea Superioară"
+            }
+          },
+          "ru" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Верхняя половина, десятые"
+            }
+          },
+          "sk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Desatiny v hornej polovici"
+            }
+          },
+          "sv-SE" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Övre halvans tiondelar"
+            }
+          },
+          "tr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Üst Yarı Onda Birler"
+            }
+          },
+          "uk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Десяті верхньої половини"
+            }
+          },
+          "vi" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Phần Mười Nửa Trên"
+            }
+          },
+          "zh-Hans" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部分十等分"
+            }
+          },
+          "zh-Hant" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半部十分之一"
+            }
+          },
+          "zh-Hant-HK" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "上半十等分直欄"
+            }
+          }
+        }
+      }
   },
   "version" : "1.0"
 }

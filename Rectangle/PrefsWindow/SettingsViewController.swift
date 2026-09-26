@@ -5,6 +5,10 @@ import ServiceManagement
 import Sparkle
 import MASShortcut
 
+private final class FlippedView: NSView {
+    override var isFlipped: Bool { true }
+}
+
 class SettingsViewController: NSViewController {
         
     @IBOutlet weak var launchOnLoginCheckbox: NSButton!
@@ -869,6 +873,39 @@ class SettingsViewController: NSViewController {
             let twelfthsCyclingRow = makeRow(makeLabelStack(twelfthsCyclingLabel, twelfthsCyclingIcon), twelfthsCyclingShortcutView)
             let sixteenthsCyclingRow = makeRow(makeLabelStack(sixteenthsCyclingLabel, sixteenthsCyclingIcon), sixteenthsCyclingShortcutView)
 
+            var columnShortcutViews = [MASShortcutView]()
+            var columnLabels = [NSTextField]()
+            let columnGroups = WindowAction.columnLayoutGroups.map { actions -> (NSTextField, [NSStackView]) in
+                let header = NSTextField(labelWithString: actions.first?.category?.displayName ?? "")
+                header.font = NSFont.boldSystemFont(ofSize: NSFont.systemFontSize)
+                header.alignment = .center
+                header.translatesAutoresizingMaskIntoConstraints = false
+
+                let rows = actions.map { action -> NSStackView in
+                    let label = NSTextField(labelWithString: action.displayName ?? action.name)
+                    label.alignment = .right
+                    label.translatesAutoresizingMaskIntoConstraints = false
+                    columnLabels.append(label)
+
+                    let icon = NSImageView(frame: NSRect(x: 0, y: 0, width: 21, height: 14))
+                    icon.image = action.image
+                    icon.imageScaling = .scaleProportionallyDown
+                    icon.setAccessibilityLabel(action.displayName ?? action.name)
+
+                    let shortcutView = MASShortcutView(frame: NSRect(x: 0, y: 0, width: 160, height: 19))
+                    shortcutView.setAssociatedUserDefaultsKey(action.name, withTransformerName: MASDictionaryTransformerName)
+                    if Defaults.allowAnyShortcut.enabled {
+                        shortcutView.shortcutValidator = PassthroughShortcutValidator()
+                    }
+                    columnShortcutViews.append(shortcutView)
+
+                    let row = makeRow(makeLabelStack(label, icon), shortcutView)
+                    shortcutView.widthAnchor.constraint(equalToConstant: 160).isActive = true
+                    return row
+                }
+                return (header, rows)
+            }
+
             if Defaults.allowAnyShortcut.enabled {
                 let passThroughValidator = PassthroughShortcutValidator()
                 ninthsCyclingShortcutView.shortcutValidator = passThroughValidator
@@ -895,6 +932,7 @@ class SettingsViewController: NSViewController {
                 twelfthsCyclingShortcutView,
                 sixteenthsCyclingShortcutView
             ])
+            shortcutRecordingObserver.observe(columnShortcutViews)
 
             let overlapOffsetCheckbox = NSButton(checkboxWithTitle: NSLocalizedString("Offset cycling position on overlap", tableName: "Main", value: "", comment: ""), target: self, action: #selector(toggleCyclingOverlapOffset(_:)))
             overlapOffsetCheckbox.state = Defaults.cyclingOverlapOffset.userEnabled ? .on : .off
@@ -919,6 +957,17 @@ class SettingsViewController: NSViewController {
             mainStackView.addArrangedSubview(ninthsCyclingRow)
             mainStackView.addArrangedSubview(twelfthsCyclingRow)
             mainStackView.addArrangedSubview(sixteenthsCyclingRow)
+
+            for (header, rows) in columnGroups {
+                mainStackView.setCustomSpacing(14, after: mainStackView.arrangedSubviews.last!)
+                mainStackView.addArrangedSubview(header)
+                mainStackView.setCustomSpacing(6, after: header)
+                rows.forEach(mainStackView.addArrangedSubview)
+                header.widthAnchor.constraint(equalTo: mainStackView.widthAnchor).isActive = true
+            }
+            for label in columnLabels.dropFirst() {
+                label.widthAnchor.constraint(equalTo: columnLabels[0].widthAnchor).isActive = true
+            }
 
 
             mainStackView.addArrangedSubview(splitRatioHeaderLabel)
@@ -1001,7 +1050,8 @@ class SettingsViewController: NSViewController {
                 vSplitControlsStack.trailingAnchor.constraint(equalTo: largerWidthShortcutView.trailingAnchor)
             ])
 
-            let containerView = NSView()
+            let contentSize = NSSize(width: max(440, mainStackView.fittingSize.width + 30), height: mainStackView.fittingSize.height + 20)
+            let containerView = FlippedView(frame: NSRect(origin: .zero, size: contentSize))
             containerView.addSubview(mainStackView)
 
             NSLayoutConstraint.activate([
@@ -1011,8 +1061,17 @@ class SettingsViewController: NSViewController {
                 mainStackView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -15)
             ])
 
-            viewController.view = containerView
+            let scrollView = NSScrollView()
+            scrollView.hasVerticalScroller = true
+            scrollView.autohidesScrollers = true
+            scrollView.borderType = .noBorder
+            scrollView.drawsBackground = false
+            scrollView.frame = NSRect(origin: .zero, size: NSSize(width: contentSize.width, height: min(contentSize.height, 680)))
+            scrollView.documentView = containerView
+
+            viewController.view = scrollView
             popover.contentViewController = viewController
+            popover.contentSize = scrollView.frame.size
             extraSettingsPopover = popover
         }
         extraSettingsPopover?.show(relativeTo: sender.bounds, of: sender, preferredEdge: .maxY)
