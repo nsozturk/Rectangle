@@ -30,6 +30,10 @@ These 71 actions keep the same grid dimensions, including on portrait screens. R
 
 URL examples: `rectangle://execute-action?name=grid2x4-row1-column1` and `rectangle://execute-action?name=grid3x8-row3-column8`.
 
+## Duplicate shortcut assignments
+
+All shortcut recorders check for assignments already used by another Rectangle action or Todo shortcut. A conflicting candidate opens the existing native shortcut warning, names the assigned action, and leaves the saved shortcut unchanged. Re-recording the current action’s own shortcut is allowed. This check also applies when **Allow any shortcut** is enabled; that option only relaxes normal key/system validation. Existing saved assignments are not automatically removed.
+
 ## Screenshots
 
 Actual screenshots captured from the installed Debug build after code review, 2026-09-26.
@@ -42,7 +46,11 @@ Actual screenshots captured from the installed Debug build after code review, 20
 
 ![Three-row six- and eight-column shortcuts](https://raw.githubusercontent.com/nsozturk/Rectangle/feature/codex-gpt6-001-column-layouts/docs/screenshots/column-layouts/three-row-grids.png)
 
+![Native duplicate shortcut warning](https://raw.githubusercontent.com/nsozturk/Rectangle/feature/codex-gpt6-001-column-layouts/docs/screenshots/column-layouts/shortcut-conflict.png)
+
 ## Verification
+
+- Duplicate-assignment update: 21 focused validator, recorder wiring/observer, and existing shortcut-cycle tests passed. Native installed-app verification rejected Control+Option+A in the last 3×8 cell, named First Fourth in the existing warning, and preserved both stored values with Allow any shortcut enabled. The explanation covers all 31 locales.
 
 - Xcode 26.6 Debug build succeeded; deployment target stays macOS 10.15.
 - Focused coverage includes geometry, odd/fractional dimensions, negative origins, portrait screens, two complete group cycles from every assigned cell, row-major grid traversal, wrapping, effective gap edges, reset behavior, menu entries, shortcut bindings, disclosure visibility and scrolling.

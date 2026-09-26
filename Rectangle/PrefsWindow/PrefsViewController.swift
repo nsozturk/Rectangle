@@ -123,16 +123,10 @@ class PrefsViewController: NSViewController {
         appendDynamicShortcuts()
         
         for (action, view) in actionsToViews {
+            view.shortcutValidator = AppShortcutValidator(defaultsKey: action.name)
             view.setAssociatedUserDefaultsKey(action.name, withTransformerName: MASDictionaryTransformerName)
         }
         shortcutRecordingObserver.observe(Array(actionsToViews.values))
-        
-        if Defaults.allowAnyShortcut.enabled {
-            let passThroughValidator = PassthroughShortcutValidator()
-            actionsToViews.values.forEach { $0.shortcutValidator = passThroughValidator }
-        }
-        
-        subscribeToAllowAnyShortcutToggle()
         
         additionalShortcutsStackView.isHidden = true
         installShortcutScrollView()
@@ -364,30 +358,6 @@ class PrefsViewController: NSViewController {
             scrollView.contentView.scroll(to: NSPoint(x: 0, y: top))
             scrollView.reflectScrolledClipView(scrollView.contentView)
         }
-    }
-    
-    private func subscribeToAllowAnyShortcutToggle() {
-        Notification.Name.allowAnyShortcut.onPost { notification in
-            guard let enabled = notification.object as? Bool else { return }
-            let validator = enabled ? PassthroughShortcutValidator() : MASShortcutValidator()
-            self.actionsToViews.values.forEach { $0.shortcutValidator = validator }
-        }
-    }
-    
-}
-
-class PassthroughShortcutValidator: MASShortcutValidator {
-    
-    override func isShortcutValid(_ shortcut: MASShortcut!) -> Bool {
-        return true
-    }
-    
-    override func isShortcutAlreadyTaken(bySystem shortcut: MASShortcut!, explanation: AutoreleasingUnsafeMutablePointer<NSString?>!) -> Bool {
-        return false
-    }
-    
-    override func isShortcut(_ shortcut: MASShortcut!, alreadyTakenIn menu: NSMenu!, explanation: AutoreleasingUnsafeMutablePointer<NSString?>!) -> Bool {
-        return false
     }
     
 }

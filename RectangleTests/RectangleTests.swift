@@ -3234,7 +3234,28 @@ class ShortcutCycleTests: XCTestCase {
     }
 }
 
-class TodoShortcutValidatorTests: XCTestCase {
+class AppShortcutValidatorTests: XCTestCase {
+
+    private var savedAllowAnyShortcut: Any?
+    private var savedAllowAnyShortcutEnabled = false
+
+    override func setUp() {
+        super.setUp()
+        savedAllowAnyShortcutEnabled = Defaults.allowAnyShortcut.enabled
+        savedAllowAnyShortcut = Bundle.main.bundleIdentifier.flatMap {
+            UserDefaults.standard.persistentDomain(forName: $0)?[Defaults.allowAnyShortcut.key]
+        }
+    }
+
+    override func tearDown() {
+        if let savedAllowAnyShortcut {
+            UserDefaults.standard.set(savedAllowAnyShortcut, forKey: Defaults.allowAnyShortcut.key)
+        } else {
+            UserDefaults.standard.removeObject(forKey: Defaults.allowAnyShortcut.key)
+        }
+        Notification.Name.allowAnyShortcut.post(object: savedAllowAnyShortcutEnabled)
+        super.tearDown()
+    }
 
     private func shortcut(_ keyCode: Int, _ flags: NSEvent.ModifierFlags) -> MASShortcut {
         MASShortcut(keyCode: keyCode, modifierFlags: flags)
@@ -3247,11 +3268,11 @@ class TodoShortcutValidatorTests: XCTestCase {
     }
 
     private func userDefaultsSuite() -> (String, UserDefaults) {
-        let suiteName = "TodoShortcutValidatorTests.\(UUID().uuidString)"
+        let suiteName = "AppShortcutValidatorTests.\(UUID().uuidString)"
         return (suiteName, UserDefaults(suiteName: suiteName)!)
     }
 
-    func testInvalidatesShortcutUsedByWindowActionWithoutAlreadyTakenError() {
+    func testAppDuplicateUsesAlreadyTakenAlertPathRegardlessOfAllowAnySetting() {
         let (suiteName, userDefaults) = userDefaultsSuite()
         defer {
             userDefaults.removePersistentDomain(forName: suiteName)
@@ -3259,46 +3280,129 @@ class TodoShortcutValidatorTests: XCTestCase {
 
         let duplicateShortcut = shortcut(1, [.option, .command])
         save(duplicateShortcut, forKey: WindowAction.centerHalf.name, in: userDefaults)
-        let validator = TodoShortcutValidator(defaultsKey: TodoManager.toggleDefaultsKey, userDefaults: userDefaults)
-        var explanation: NSString?
+        let validator = AppShortcutValidator(defaultsKey: WindowAction.centerThird.name,
+                                             userDefaults: userDefaults)
 
-        let isTaken = validator.isShortcutAlreadyTaken(bySystem: duplicateShortcut, explanation: &explanation)
+        for allowAny in [false, true] {
+            Defaults.allowAnyShortcut.enabled = allowAny
+            var explanation: NSString?
 
-        XCTAssertFalse(validator.isShortcutValid(duplicateShortcut))
-        XCTAssertFalse(isTaken)
-        XCTAssertNil(explanation)
+            XCTAssertTrue(validator.isShortcutValid(duplicateShortcut),
+                          "Internal conflicts must reach MASShortcut's alert path")
+            XCTAssertTrue(validator.isShortcutAlreadyTaken(bySystem: duplicateShortcut,
+                                                           explanation: &explanation))
+            XCTAssertTrue(explanation?.contains(WindowAction.centerHalf.displayName ?? "") == true)
+        }
     }
 
-    func testInvalidatesShortcutUsedByOtherTodoActionWithoutAlreadyTakenError() {
+    func testTodoAndWindowShortcutConflictsAreRejectedInBothDirections() {
         let (suiteName, userDefaults) = userDefaultsSuite()
         defer {
             userDefaults.removePersistentDomain(forName: suiteName)
         }
 
-        let duplicateShortcut = shortcut(1, [.option, .command])
-        save(duplicateShortcut, forKey: TodoManager.reflowDefaultsKey, in: userDefaults)
-        let validator = TodoShortcutValidator(defaultsKey: TodoManager.toggleDefaultsKey, userDefaults: userDefaults)
-        var explanation: NSString?
+        let windowShortcut = shortcut(1, [.option, .command])
+        let todoShortcut = shortcut(2, [.option, .command])
+        save(windowShortcut, forKey: WindowAction.centerHalf.name, in: userDefaults)
+        save(todoShortcut, forKey: TodoManager.reflowDefaultsKey, in: userDefaults)
 
-        let isTaken = validator.isShortcutAlreadyTaken(bySystem: duplicateShortcut, explanation: &explanation)
+        let todoValidator = AppShortcutValidator(defaultsKey: TodoManager.toggleDefaultsKey,
+                                                 userDefaults: userDefaults)
+        let windowValidator = AppShortcutValidator(defaultsKey: WindowAction.centerThird.name,
+                                                   userDefaults: userDefaults)
+        var todoExplanation: NSString?
+        var windowExplanation: NSString?
 
-        XCTAssertFalse(validator.isShortcutValid(duplicateShortcut))
-        XCTAssertFalse(isTaken)
-        XCTAssertNil(explanation)
+        XCTAssertTrue(todoValidator.isShortcutAlreadyTaken(bySystem: windowShortcut,
+                                                           explanation: &todoExplanation))
+        XCTAssertTrue(todoExplanation?.contains(WindowAction.centerHalf.displayName ?? "") == true)
+        XCTAssertTrue(windowValidator.isShortcutAlreadyTaken(bySystem: todoShortcut,
+                                                             explanation: &windowExplanation))
+        XCTAssertTrue(windowExplanation?.contains("Reflow Todo") == true)
     }
 
-    func testAllowsExistingShortcutForSameTodoAction() {
+    func testStoredAndRegisteredDefaultShortcutsAreBothConflictsThroughShortcutCycle() throws {
         let (suiteName, userDefaults) = userDefaultsSuite()
         defer {
             userDefaults.removePersistentDomain(forName: suiteName)
         }
 
-        let existingShortcut = shortcut(1, [.option, .command])
+        let storedShortcut = shortcut(1, [.option, .command])
+        let registeredShortcut = shortcut(2, [.option, .command])
+        save(storedShortcut, forKey: WindowAction.centerHalf.name, in: userDefaults)
+        let transformer = try XCTUnwrap(
+            ValueTransformer(forName: NSValueTransformerName(rawValue: MASDictionaryTransformerName))
+        )
+        let registeredDictionary = try XCTUnwrap(
+            transformer.reverseTransformedValue(registeredShortcut) as? [String: Any]
+        )
+        userDefaults.register(defaults: [WindowAction.centerThird.name: registeredDictionary])
+
+        XCTAssertEqual(ShortcutCycle.shortcut(for: .centerHalf, userDefaults: userDefaults)?.keyCode,
+                       storedShortcut.keyCode)
+        XCTAssertEqual(ShortcutCycle.shortcut(for: .centerThird, userDefaults: userDefaults)?.keyCode,
+                       registeredShortcut.keyCode)
+        XCTAssertNil(userDefaults.persistentDomain(forName: suiteName)?[WindowAction.centerThird.name])
+
+        let validator = AppShortcutValidator(defaultsKey: WindowAction.maximize.name,
+                                             userDefaults: userDefaults)
+        XCTAssertTrue(validator.isShortcutAlreadyTaken(bySystem: storedShortcut, explanation: nil))
+        XCTAssertTrue(validator.isShortcutAlreadyTaken(bySystem: registeredShortcut, explanation: nil))
+    }
+
+    func testCurrentAssignmentAndNilClearingCandidateAreAllowed() {
+        let (suiteName, userDefaults) = userDefaultsSuite()
+        defer {
+            userDefaults.removePersistentDomain(forName: suiteName)
+        }
+
+        let existingShortcut = shortcut(1, [])
         save(existingShortcut, forKey: TodoManager.toggleDefaultsKey, in: userDefaults)
-        let validator = TodoShortcutValidator(defaultsKey: TodoManager.toggleDefaultsKey, userDefaults: userDefaults)
+        let validator = AppShortcutValidator(defaultsKey: TodoManager.toggleDefaultsKey,
+                                             userDefaults: userDefaults)
 
+        Defaults.allowAnyShortcut.enabled = true
         XCTAssertTrue(validator.isShortcutValid(existingShortcut))
         XCTAssertFalse(validator.isShortcutAlreadyTaken(bySystem: existingShortcut, explanation: nil))
+
+        Defaults.allowAnyShortcut.enabled = false
+        XCTAssertTrue(validator.isShortcutValid(existingShortcut))
+        XCTAssertFalse(validator.isShortcutAlreadyTaken(bySystem: existingShortcut, explanation: nil))
+
+        var explanation: NSString?
+        XCTAssertTrue(validator.isShortcutValid(nil))
+        XCTAssertFalse(validator.isShortcutAlreadyTaken(bySystem: nil, explanation: &explanation))
+        XCTAssertNil(explanation)
+    }
+
+    func testValidationDoesNotRewriteExistingDuplicateAssignments() throws {
+        let (suiteName, userDefaults) = userDefaultsSuite()
+        defer {
+            userDefaults.removePersistentDomain(forName: suiteName)
+        }
+
+        let duplicatedShortcut = shortcut(1, [.option, .command])
+        save(duplicatedShortcut, forKey: WindowAction.centerHalf.name, in: userDefaults)
+        save(duplicatedShortcut, forKey: WindowAction.centerThird.name, in: userDefaults)
+        let beforeCenterHalf = try XCTUnwrap(userDefaults.dictionary(forKey: WindowAction.centerHalf.name))
+        let beforeCenterThird = try XCTUnwrap(userDefaults.dictionary(forKey: WindowAction.centerThird.name))
+        let validator = AppShortcutValidator(defaultsKey: WindowAction.maximize.name,
+                                             userDefaults: userDefaults)
+
+        XCTAssertTrue(validator.isShortcutAlreadyTaken(bySystem: duplicatedShortcut, explanation: nil))
+
+        XCTAssertTrue(NSDictionary(dictionary: beforeCenterHalf).isEqual(
+            to: try XCTUnwrap(userDefaults.dictionary(forKey: WindowAction.centerHalf.name))))
+        XCTAssertTrue(NSDictionary(dictionary: beforeCenterThird).isEqual(
+            to: try XCTUnwrap(userDefaults.dictionary(forKey: WindowAction.centerThird.name))))
+        let groups = ShortcutCycle.groups(
+            actions: [.centerHalf, .centerThird],
+            shortcutsByAction: ShortcutCycle.shortcutsByAction(
+                actions: [.centerHalf, .centerThird],
+                userDefaults: userDefaults
+            )
+        )
+        XCTAssertEqual(groups.map(\.actions), [[.centerHalf, .centerThird]])
     }
 }
 

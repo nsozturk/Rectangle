@@ -291,6 +291,11 @@ class SettingsViewController: NSViewController {
             popover.behavior = .transient
             let viewController = NSViewController()
 
+            func bind(_ shortcutView: MASShortcutView, to action: WindowAction) {
+                shortcutView.shortcutValidator = AppShortcutValidator(defaultsKey: action.name)
+                shortcutView.setAssociatedUserDefaultsKey(action.name, withTransformerName: MASDictionaryTransformerName)
+            }
+
             let mainStackView = NSStackView()
             mainStackView.orientation = .vertical
             mainStackView.alignment = .leading
@@ -446,42 +451,23 @@ class SettingsViewController: NSViewController {
                 vSplitPopUpButton?.selectCurrentValue()
             }
 
-            largerWidthShortcutView.setAssociatedUserDefaultsKey(WindowAction.largerWidth.name, withTransformerName: MASDictionaryTransformerName)
-            smallerWidthShortcutView.setAssociatedUserDefaultsKey(WindowAction.smallerWidth.name, withTransformerName: MASDictionaryTransformerName)
+            bind(largerWidthShortcutView, to: .largerWidth)
+            bind(smallerWidthShortcutView, to: .smallerWidth)
             
-            topVerticalThirdShortcutView.setAssociatedUserDefaultsKey(WindowAction.topVerticalThird.name, withTransformerName: MASDictionaryTransformerName)
-            middleVerticalThirdShortcutView.setAssociatedUserDefaultsKey(WindowAction.middleVerticalThird.name, withTransformerName: MASDictionaryTransformerName)
-            bottomVerticalThirdShortcutView.setAssociatedUserDefaultsKey(WindowAction.bottomVerticalThird.name, withTransformerName: MASDictionaryTransformerName)
-            topVerticalTwoThirdsShortcutView.setAssociatedUserDefaultsKey(WindowAction.topVerticalTwoThirds.name, withTransformerName: MASDictionaryTransformerName)
-            bottomVerticalTwoThirdsShortcutView.setAssociatedUserDefaultsKey(WindowAction.bottomVerticalTwoThirds.name, withTransformerName: MASDictionaryTransformerName)
+            bind(topVerticalThirdShortcutView, to: .topVerticalThird)
+            bind(middleVerticalThirdShortcutView, to: .middleVerticalThird)
+            bind(bottomVerticalThirdShortcutView, to: .bottomVerticalThird)
+            bind(topVerticalTwoThirdsShortcutView, to: .topVerticalTwoThirds)
+            bind(bottomVerticalTwoThirdsShortcutView, to: .bottomVerticalTwoThirds)
 
-            topLeftEighthShortcutView.setAssociatedUserDefaultsKey(WindowAction.topLeftEighth.name, withTransformerName: MASDictionaryTransformerName)
-            topCenterLeftEighthShortcutView.setAssociatedUserDefaultsKey(WindowAction.topCenterLeftEighth.name, withTransformerName: MASDictionaryTransformerName)
-            topCenterRightEighthShortcutView.setAssociatedUserDefaultsKey(WindowAction.topCenterRightEighth.name, withTransformerName: MASDictionaryTransformerName)
-            topRightEighthShortcutView.setAssociatedUserDefaultsKey(WindowAction.topRightEighth.name, withTransformerName: MASDictionaryTransformerName)
-            bottomLeftEighthShortcutView.setAssociatedUserDefaultsKey(WindowAction.bottomLeftEighth.name, withTransformerName: MASDictionaryTransformerName)
-            bottomCenterLeftEighthShortcutView.setAssociatedUserDefaultsKey(WindowAction.bottomCenterLeftEighth.name, withTransformerName: MASDictionaryTransformerName)
-            bottomCenterRightEighthShortcutView.setAssociatedUserDefaultsKey(WindowAction.bottomCenterRightEighth.name, withTransformerName: MASDictionaryTransformerName)
-            bottomRightEighthShortcutView.setAssociatedUserDefaultsKey(WindowAction.bottomRightEighth.name, withTransformerName: MASDictionaryTransformerName)
-
-            if Defaults.allowAnyShortcut.enabled {
-                let passThroughValidator = PassthroughShortcutValidator()
-                largerWidthShortcutView.shortcutValidator = passThroughValidator
-                smallerWidthShortcutView.shortcutValidator = passThroughValidator
-                topVerticalThirdShortcutView.shortcutValidator = passThroughValidator
-                middleVerticalThirdShortcutView.shortcutValidator = passThroughValidator
-                bottomVerticalThirdShortcutView.shortcutValidator = passThroughValidator
-                topVerticalTwoThirdsShortcutView.shortcutValidator = passThroughValidator
-                bottomVerticalTwoThirdsShortcutView.shortcutValidator = passThroughValidator
-                topLeftEighthShortcutView.shortcutValidator = passThroughValidator
-                topCenterLeftEighthShortcutView.shortcutValidator = passThroughValidator
-                topCenterRightEighthShortcutView.shortcutValidator = passThroughValidator
-                topRightEighthShortcutView.shortcutValidator = passThroughValidator
-                bottomLeftEighthShortcutView.shortcutValidator = passThroughValidator
-                bottomCenterLeftEighthShortcutView.shortcutValidator = passThroughValidator
-                bottomCenterRightEighthShortcutView.shortcutValidator = passThroughValidator
-                bottomRightEighthShortcutView.shortcutValidator = passThroughValidator
-            }
+            bind(topLeftEighthShortcutView, to: .topLeftEighth)
+            bind(topCenterLeftEighthShortcutView, to: .topCenterLeftEighth)
+            bind(topCenterRightEighthShortcutView, to: .topCenterRightEighth)
+            bind(topRightEighthShortcutView, to: .topRightEighth)
+            bind(bottomLeftEighthShortcutView, to: .bottomLeftEighth)
+            bind(bottomCenterLeftEighthShortcutView, to: .bottomCenterLeftEighth)
+            bind(bottomCenterRightEighthShortcutView, to: .bottomCenterRightEighth)
+            bind(bottomRightEighthShortcutView, to: .bottomRightEighth)
 
             let largerWidthIcon = NSImageView(frame: NSRect(x: 0, y: 0, width: 21, height: 14))
             largerWidthIcon.image = WindowAction.largerWidth.image
@@ -831,9 +817,9 @@ class SettingsViewController: NSViewController {
             let twelfthsCyclingShortcutView = MASShortcutView(frame: NSRect(x: 0, y: 0, width: 160, height: 19))
             let sixteenthsCyclingShortcutView = MASShortcutView(frame: NSRect(x: 0, y: 0, width: 160, height: 19))
 
-            ninthsCyclingShortcutView.setAssociatedUserDefaultsKey(WindowAction.topLeftNinth.name, withTransformerName: MASDictionaryTransformerName)
-            twelfthsCyclingShortcutView.setAssociatedUserDefaultsKey(WindowAction.topLeftTwelfth.name, withTransformerName: MASDictionaryTransformerName)
-            sixteenthsCyclingShortcutView.setAssociatedUserDefaultsKey(WindowAction.topLeftSixteenth.name, withTransformerName: MASDictionaryTransformerName)
+            bind(ninthsCyclingShortcutView, to: .topLeftNinth)
+            bind(twelfthsCyclingShortcutView, to: .topLeftTwelfth)
+            bind(sixteenthsCyclingShortcutView, to: .topLeftSixteenth)
 
             let ninthsCyclingIcon = NSImageView(frame: NSRect(x: 0, y: 0, width: 21, height: 14))
             ninthsCyclingIcon.image = WindowAction.topLeftNinth.image
@@ -869,12 +855,6 @@ class SettingsViewController: NSViewController {
             let twelfthsCyclingRow = makeRow(makeLabelStack(twelfthsCyclingLabel, twelfthsCyclingIcon), twelfthsCyclingShortcutView)
             let sixteenthsCyclingRow = makeRow(makeLabelStack(sixteenthsCyclingLabel, sixteenthsCyclingIcon), sixteenthsCyclingShortcutView)
 
-            if Defaults.allowAnyShortcut.enabled {
-                let passThroughValidator = PassthroughShortcutValidator()
-                ninthsCyclingShortcutView.shortcutValidator = passThroughValidator
-                twelfthsCyclingShortcutView.shortcutValidator = passThroughValidator
-                sixteenthsCyclingShortcutView.shortcutValidator = passThroughValidator
-            }
             shortcutRecordingObserver.observe([
                 largerWidthShortcutView,
                 smallerWidthShortcutView,
@@ -1092,8 +1072,8 @@ class SettingsViewController: NSViewController {
         todoAppSidePopUpButton.selectItem(withTag: Defaults.todoSidebarSide.value.rawValue)
         TodoManager.initToggleShortcut()
         TodoManager.initReflowShortcut()
-        toggleTodoShortcutView.shortcutValidator = TodoShortcutValidator(defaultsKey: TodoManager.toggleDefaultsKey)
-        reflowTodoShortcutView.shortcutValidator = TodoShortcutValidator(defaultsKey: TodoManager.reflowDefaultsKey)
+        toggleTodoShortcutView.shortcutValidator = AppShortcutValidator(defaultsKey: TodoManager.toggleDefaultsKey)
+        reflowTodoShortcutView.shortcutValidator = AppShortcutValidator(defaultsKey: TodoManager.reflowDefaultsKey)
         toggleTodoShortcutView.setAssociatedUserDefaultsKey(TodoManager.toggleDefaultsKey, withTransformerName: MASDictionaryTransformerName)
         reflowTodoShortcutView.setAssociatedUserDefaultsKey(TodoManager.reflowDefaultsKey, withTransformerName: MASDictionaryTransformerName)
         showHideTodoModeSettings(animated: false)

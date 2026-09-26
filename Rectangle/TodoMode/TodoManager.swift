@@ -88,7 +88,7 @@ class TodoManager {
 
     private static func isTodoShortcutBindable(_ defaultsKey: String) -> Bool {
         guard let shortcut = shortcut(for: defaultsKey) else { return true }
-        return TodoShortcutConflict.conflict(for: shortcut, ignoringTodoDefaultsKey: defaultsKey) == nil
+        return ShortcutConflict.conflict(for: shortcut, ignoringDefaultsKey: defaultsKey) == nil
     }
 
     private static func shortcut(for defaultsKey: String, userDefaults: UserDefaults = .standard) -> MASShortcut? {
@@ -277,21 +277,21 @@ class TodoManager {
     }
 }
 
-struct TodoShortcutConflict {
+struct ShortcutConflict {
 
     let shortcutName: String
 
     static func conflict(for shortcut: MASShortcut,
-                         ignoringTodoDefaultsKey ignoredDefaultsKey: String,
-                         userDefaults: UserDefaults = .standard) -> TodoShortcutConflict? {
+                         ignoringDefaultsKey ignoredDefaultsKey: String,
+                         userDefaults: UserDefaults = .standard) -> ShortcutConflict? {
         let identity = ShortcutCycle.ShortcutIdentity(shortcut)
 
-        for action in WindowAction.active {
+        for action in WindowAction.active where action.name != ignoredDefaultsKey {
             guard let actionShortcut = ShortcutCycle.shortcut(for: action, userDefaults: userDefaults),
                   ShortcutCycle.ShortcutIdentity(actionShortcut) == identity
             else { continue }
 
-            return TodoShortcutConflict(shortcutName: action.displayName ?? action.name)
+            return ShortcutConflict(shortcutName: action.displayName ?? action.name)
         }
 
         for defaultsKey in TodoManager.defaultsKeys where defaultsKey != ignoredDefaultsKey {
@@ -299,7 +299,7 @@ struct TodoShortcutConflict {
                   ShortcutCycle.ShortcutIdentity(todoShortcut) == identity
             else { continue }
 
-            return TodoShortcutConflict(shortcutName: displayName(forTodoDefaultsKey: defaultsKey))
+            return ShortcutConflict(shortcutName: displayName(forTodoDefaultsKey: defaultsKey))
         }
 
         return nil
@@ -317,7 +317,7 @@ struct TodoShortcutConflict {
     }
 }
 
-class TodoShortcutValidator: MASShortcutValidator {
+class AppShortcutValidator: MASShortcutValidator {
 
     private let defaultsKey: String
     private let userDefaults: UserDefaults
@@ -329,18 +329,54 @@ class TodoShortcutValidator: MASShortcutValidator {
     }
 
     override func isShortcutValid(_ shortcut: MASShortcut!) -> Bool {
-        guard super.isShortcutValid(shortcut) else { return false }
+        guard let shortcut else { return true }
 
-        // Preserve previous behavior by rejecting Rectangle-internal conflicts quietly,
-        // without routing them through MASShortcut's "already used" alert.
-        return TodoShortcutConflict.conflict(for: shortcut,
-                                             ignoringTodoDefaultsKey: defaultsKey,
-                                             userDefaults: userDefaults) == nil
+        if ShortcutConflict.conflict(for: shortcut,
+                                     ignoringDefaultsKey: defaultsKey,
+                                     userDefaults: userDefaults) != nil {
+            return true
+        }
+
+        if isCurrentShortcut(shortcut) {
+            return true
+        }
+
+        return Defaults.allowAnyShortcut.enabled || super.isShortcutValid(shortcut)
     }
 
     override func isShortcutAlreadyTaken(bySystem shortcut: MASShortcut!,
                                          explanation: AutoreleasingUnsafeMutablePointer<NSString?>!) -> Bool {
+        guard let shortcut else { return false }
+
+        if let conflict = ShortcutConflict.conflict(for: shortcut,
+                                                     ignoringDefaultsKey: defaultsKey,
+                                                     userDefaults: userDefaults) {
+            let format = NSLocalizedString(
+                "This shortcut is already assigned to “%@”. Choose a different shortcut.",
+                tableName: "Main",
+                value: "This shortcut is already assigned to “%@”. Choose a different shortcut.",
+                comment: "Shortcut conflict explanation"
+            )
+            explanation?.pointee = String(format: format, conflict.shortcutName) as NSString
+            return true
+        }
+
+        if isCurrentShortcut(shortcut) {
+            return false
+        }
+
+        if Defaults.allowAnyShortcut.enabled {
+            return false
+        }
+
         return super.isShortcutAlreadyTaken(bySystem: shortcut, explanation: explanation)
+    }
+
+    private func isCurrentShortcut(_ shortcut: MASShortcut) -> Bool {
+        guard let currentShortcut = ShortcutCycle.shortcut(forDefaultsKey: defaultsKey, userDefaults: userDefaults) else {
+            return false
+        }
+        return ShortcutCycle.ShortcutIdentity(currentShortcut) == ShortcutCycle.ShortcutIdentity(shortcut)
     }
 }
 

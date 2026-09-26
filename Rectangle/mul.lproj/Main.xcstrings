@@ -59469,6 +59469,198 @@
           }
         }
       }
+    },
+    "This shortcut is already assigned to “%@”. Choose a different shortcut." : {
+      "comment" : "Shown when assigning a shortcut that is already used by another action",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "This shortcut is already assigned to “%@”. Choose a different shortcut."
+          }
+        },
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هذا الاختصار مُعيَّن بالفعل لـ ”%@“. اختر اختصارًا مختلفًا."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aquesta drecera ja està assignada a “%@”. Trieu una drecera diferent."
+          }
+        },
+        "ca-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aquesta drecera ja s'ha assignat a «%@». Trieu una drecera diferent."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tato klávesová zkratka je již přiřazena k „%@“. Vyberte jinou zkratku."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diese Tastenkombination ist bereits „%@“ zugewiesen. Wählen Sie eine andere Tastenkombination."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This shortcut is already assigned to “%@”. Choose a different shortcut."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este atajo ya está asignado a “%@”. Elige un atajo diferente."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este atajo ya está asignado a “%@”. Elige un atajo diferente."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ce raccourci est déjà attribué à « %@ ». Choisissez un raccourci différent."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pintasan ini sudah ditetapkan ke “%@”. Pilih pintasan lain."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Questa scorciatoia è già assegnata a “%@”. Scegli una scorciatoia diversa."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このショートカットはすでに「%@」に割り当てられています。別のショートカットを選択してください。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이 단축키는 이미 “%@”에 할당되어 있습니다. 다른 단축키를 선택하십시오."
+          }
+        },
+        "lt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ši parinktis jau priskirta „%@“. Pasirinkite kitą parinktį."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denne snarveien er allerede tildelt «%@». Velg en annen snarvei."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deze snelkoppeling is al toegewezen aan “%@”. Kies een andere snelkoppeling."
+          }
+        },
+        "nn" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denne snarvegen er allereie tilordna til “%@”. Vel ein annan snarveg."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ten skrót jest już przypisany do „%@”. Wybierz inny skrót."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este atalho já está atribuído a “%@”. Escolha um atalho diferente."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este atalho já está atribuído a “%@”. Escolha um atalho diferente."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Această comandă rapidă este deja atribuită pentru „%@”. Alegeți o comandă rapidă diferită."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Эта комбинация клавиш уже назначена «%@». Выберите другую комбинацию."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Táto klávesová skratka je už priradená k „%@“. Zvoľte inú skratku."
+          }
+        },
+        "sv-SE" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denna genväg är redan tilldelad till ”%@”. Välj en annan genväg."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu kısayol zaten “%@” için atanmış. Farklı bir kısayol seçin."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Цей ярлик вже призначено «%@». Виберіть інший ярлик."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Phím tắt này đã được gán cho “%@”. Vui lòng chọn một phím tắt khác."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "此快捷键已分配给“%@”。请选择其他快捷键。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "此快捷鍵已指派給「%@」。請選擇其他快捷鍵。"
+          }
+        },
+        "zh-Hant-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "此快捷鍵已指派畀「%@」。請選擇其他快捷鍵。"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

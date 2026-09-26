@@ -253,4 +253,92 @@ class ColumnShortcutPopoverTests: XCTestCase {
             XCTAssertFalse(controls.contains { $0.associatedUserDefaultsKey == action.name }, action.name)
         }
     }
+
+    func testEveryRecorderUsesSharedValidatorAndKeepsItAcrossLiveAllowAnyToggle() throws {
+        let defaultsDomain = Bundle.main.bundleIdentifier.flatMap {
+            UserDefaults.standard.persistentDomain(forName: $0)
+        } ?? [:]
+        let savedAllowAnyShortcut = Defaults.allowAnyShortcut.enabled
+        let savedAllowAnyShortcutValue = defaultsDomain[Defaults.allowAnyShortcut.key]
+        let savedTodoValues = Dictionary(uniqueKeysWithValues: TodoManager.defaultsKeys.map {
+            ($0, defaultsDomain[$0])
+        })
+        defer {
+            if let savedAllowAnyShortcutValue {
+                UserDefaults.standard.set(savedAllowAnyShortcutValue,
+                                          forKey: Defaults.allowAnyShortcut.key)
+            } else {
+                UserDefaults.standard.removeObject(forKey: Defaults.allowAnyShortcut.key)
+            }
+            Notification.Name.allowAnyShortcut.post(object: savedAllowAnyShortcut)
+            for (key, value) in savedTodoValues {
+                if let value {
+                    UserDefaults.standard.set(value, forKey: key)
+                } else {
+                    UserDefaults.standard.removeObject(forKey: key)
+                }
+            }
+        }
+        Defaults.allowAnyShortcut.enabled = false
+
+        let originalWindows = Set(NSApp.windows.map(ObjectIdentifier.init))
+        let windowController = try XCTUnwrap(
+            NSStoryboard(name: "Main", bundle: nil)
+                .instantiateController(withIdentifier: "PrefsWindowController") as? NSWindowController
+        )
+        let tabController = try XCTUnwrap(windowController.contentViewController as? NSTabViewController)
+        let prefsController = try XCTUnwrap(
+            tabController.tabViewItems.compactMap(\.viewController)
+                .compactMap { $0 as? PrefsViewController }
+                .first
+        )
+        let settingsController = try XCTUnwrap(
+            tabController.tabViewItems.compactMap(\.viewController)
+                .compactMap { $0 as? SettingsViewController }
+                .first
+        )
+        let window = try XCTUnwrap(windowController.window)
+        windowController.showWindow(nil)
+        defer {
+            for candidate in NSApp.windows where !originalWindows.contains(ObjectIdentifier(candidate)) {
+                candidate.orderOut(nil)
+            }
+            window.close()
+        }
+
+        let popoverHost = NSButton(frame: NSRect(x: 40, y: 40, width: 120, height: 30))
+        window.contentView?.addSubview(popoverHost)
+        let windowsBeforePopover = Set(NSApp.windows.map(ObjectIdentifier.init))
+        settingsController.showExtraSettings(popoverHost)
+        let popoverControls = NSApp.windows
+            .filter { !windowsBeforePopover.contains(ObjectIdentifier($0)) }
+            .compactMap(\.contentView)
+            .flatMap { descendants(of: $0) }
+            .compactMap { $0 as? MASShortcutView }
+
+        let mainControls = Array(prefsController.actionsToViews.values)
+        let todoControls = [settingsController.toggleTodoShortcutView,
+                            settingsController.reflowTodoShortcutView].compactMap { $0 }
+        XCTAssertGreaterThanOrEqual(mainControls.count, 141)
+        XCTAssertEqual(popoverControls.count, 18)
+        XCTAssertEqual(todoControls.count, 2)
+        XCTAssertTrue(mainControls.allSatisfy { $0.shortcutValidator is AppShortcutValidator })
+        XCTAssertTrue(popoverControls.allSatisfy { $0.shortcutValidator is AppShortcutValidator })
+        XCTAssertTrue(todoControls.allSatisfy { $0.shortcutValidator is AppShortcutValidator })
+
+        let allControls = mainControls + popoverControls + todoControls
+        let originalValidators = try allControls.map {
+            ObjectIdentifier(try XCTUnwrap($0.shortcutValidator))
+        }
+
+        Defaults.allowAnyShortcut.enabled = true
+        Notification.Name.allowAnyShortcut.post(object: true)
+        XCTAssertEqual(try allControls.map { ObjectIdentifier(try XCTUnwrap($0.shortcutValidator)) },
+                       originalValidators)
+
+        Defaults.allowAnyShortcut.enabled = false
+        Notification.Name.allowAnyShortcut.post(object: false)
+        XCTAssertEqual(try allControls.map { ObjectIdentifier(try XCTUnwrap($0.shortcutValidator)) },
+                       originalValidators)
+    }
 }
