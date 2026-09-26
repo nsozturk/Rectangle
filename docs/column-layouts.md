@@ -9,7 +9,7 @@ Adds 32 fixed positions to the expanded Shortcuts section and the additional-siz
 | Top-Half Eighths | 8 | 1/8 width, half height |
 | Top-Half Tenths | 10 | 1/10 width, half height |
 
-Open **Shortcuts → disclosure arrow** to assign shortcuts. The four new groups continue the existing two-column shortcut rows. Enable **Show additional sizes in menu** for the menu entries. No shortcuts are assigned by default. Positions stay left-to-right on portrait displays and repeated execution targets the same column.
+Open **Shortcuts → disclosure arrow** to assign shortcuts. The four new groups continue the existing two-column shortcut rows. Enable **Show additional sizes in menu** for the menu entries. No shortcuts are assigned by default. Positions stay left-to-right on portrait displays. Repeating an assigned column action moves one position right within its 6-, 8-, or 10-column group and wraps after the final position; a new action, window, or externally moved window starts again from the assigned position. Selecting **Do nothing** for repeated commands keeps the assigned position fixed.
 
 A shared calculation divides the usable screen area using adjacent rounded boundaries, respecting existing gap handling. Existing action identifiers and shortcut keys are preserved. Titles are localized across all 31 supported locales.
 
@@ -26,7 +26,7 @@ The expanded Shortcuts section also has two fixed-grid categories:
 
 The three-row category has one subgroup per column count. Rows are ordered Top, Middle (three-row grids), then Bottom; columns run left to right. The native shortcut controls and cell icons match the existing Shortcuts rows.
 
-These 71 actions always target the same cell, including on portrait screens and repeated invocation. They are separate from the existing orientation-aware Eighths, Ninths and Twelfths, whose stored shortcuts and behavior are unchanged. No default shortcuts or drag regions are added.
+These 71 actions keep the same grid dimensions, including on portrait screens. Repeated invocation traverses that whole grid in row-major order—Top left-to-right, then Middle, then Bottom—continues from the final cell to the first, and returns to the assigned cell after one complete grid cycle. A 2×4 action never enters a 3-row grid, and each 3-row column count remains independent. They are separate from the existing orientation-aware Eighths, Ninths and Twelfths, whose stored shortcuts and behavior are unchanged. No default shortcuts or drag regions are added.
 
 URL examples: `rectangle://execute-action?name=grid2x4-row1-column1` and `rectangle://execute-action?name=grid3x8-row3-column8`.
 
@@ -45,7 +45,7 @@ Actual screenshots captured from the installed Debug build after code review, 20
 ## Verification
 
 - Xcode 26.6 Debug build succeeded; deployment target stays macOS 10.15.
-- All 19 focused tests passed on the combined local build; isolated geometry and storyboard checks also passed: geometry, odd/fractional dimensions, negative origins, portrait screens, repeat execution, gaps, menu entries, shortcut bindings, disclosure visibility and scrolling.
+- Focused coverage includes geometry, odd/fractional dimensions, negative origins, portrait screens, two complete group cycles from every assigned cell, row-major grid traversal, wrapping, effective gap edges, reset behavior, menu entries, shortcut bindings, disclosure visibility and scrolling.
 - Existing IDs/names and prior catalog entries remain unchanged; The original 36 column keys and 10 shared grid keys cover all 31 locales.
 - Native Shortcuts UI was inspected through the final 3×8 cell. The storyboard test verifies all 103 dynamic rows are fully reachable, share the existing 18-point icon/control gap, and hide on collapse. Two fixed-grid categories contain 8 and 63 menu actions. A temporary grid shortcut was recorded and cleared; the existing First Fourth shortcut was preserved. No Auto Layout conflicts appeared in the final focused run.
 - Live external-window movement remains unverified: the automation-created TextEdit window did not become the macOS foreground application, so URL/key movement was not treated as a valid end-to-end check. URL-name lookup and geometry are covered by tests.

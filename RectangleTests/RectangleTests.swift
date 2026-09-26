@@ -92,7 +92,7 @@ class ColumnLayoutTests: XCTestCase {
         XCTAssertTrue(actions.allSatisfy { WindowAction.active.contains($0) })
         XCTAssertTrue(actions.allSatisfy { $0.displayName != nil })
         XCTAssertTrue(actions.allSatisfy { $0.spectacleDefault == nil && $0.alternateDefault == nil })
-        XCTAssertTrue(actions.allSatisfy { !$0.positionCycles })
+        XCTAssertTrue(actions.allSatisfy(\.positionCycles))
     }
 
     func testAllColumnLayoutsPartitionOddNegativeOriginFrameWithoutGapsOrOverflow() {
@@ -105,23 +105,6 @@ class ColumnLayoutTests: XCTestCase {
 
     func testAllColumnLayoutsRemainHorizontalOnPortraitFrame() {
         assertColumnPartitions(in: CGRect(x: 45, y: 70, width: 901, height: 1601))
-    }
-
-    func testRepeatedExecutionKeepsEachFixedColumn() {
-        let frame = CGRect(x: -80, y: 25, width: 1003, height: 777)
-
-        for action in WindowAction.columnLayoutGroups.flatMap({ $0 }) {
-            let calculation = WindowCalculationFactory.calculationsByAction[action]
-            let initial = calculation?.calculateRect(params(for: action, frame: frame)).rect
-            let repeatedParams = RectCalculationParameters(window: Window(id: 1, rect: initial ?? .null),
-                                                            visibleFrameOfScreen: frame,
-                                                            action: action,
-                                                            lastAction: RectangleAction(action: action,
-                                                                                        subAction: nil,
-                                                                                        rect: initial ?? .null,
-                                                                                        count: 1))
-            XCTAssertEqual(calculation?.calculateRect(repeatedParams).rect, initial, action.name)
-        }
     }
 
     func testColumnGapEdgesMatchOuterAndSharedBoundaries() {
@@ -201,7 +184,7 @@ class FixedGridLayoutTests: XCTestCase {
         XCTAssertTrue(actions.allSatisfy { WindowAction.active.contains($0) })
         XCTAssertTrue(actions.allSatisfy { $0.displayName != nil })
         XCTAssertTrue(actions.allSatisfy { $0.spectacleDefault == nil && $0.alternateDefault == nil })
-        XCTAssertTrue(actions.allSatisfy { !$0.positionCycles })
+        XCTAssertTrue(actions.allSatisfy(\.positionCycles))
         XCTAssertEqual(actions.filter(\.firstInGroup), [.grid2x4Row1Column1, .grid3x3Row1Column1])
         XCTAssertTrue(WindowAction.gridLayoutGroups[0].allSatisfy { $0.category == .twoRowGrids })
         XCTAssertTrue(WindowAction.gridLayoutGroups.dropFirst().flatMap { $0 }.allSatisfy { $0.category == .threeRowGrids })
@@ -235,23 +218,6 @@ class FixedGridLayoutTests: XCTestCase {
 
     func testAllFixedGridsRemainFixedOnPortraitFrame() {
         assertGridPartitions(in: CGRect(x: 45, y: 70, width: 901, height: 1601))
-    }
-
-    func testRepeatedExecutionKeepsEveryFixedGridCell() {
-        let frame = CGRect(x: -80.25, y: 25.5, width: 1003.5, height: 777.25)
-
-        for action in WindowAction.gridLayoutGroups.flatMap({ $0 }) {
-            let calculation = WindowCalculationFactory.calculationsByAction[action]
-            let initial = calculation?.calculateRect(params(for: action, frame: frame)).rect
-            let repeatedParams = RectCalculationParameters(window: Window(id: 1, rect: initial ?? .null),
-                                                            visibleFrameOfScreen: frame,
-                                                            action: action,
-                                                            lastAction: RectangleAction(action: action,
-                                                                                        subAction: nil,
-                                                                                        rect: initial ?? .null,
-                                                                                        count: 1))
-            XCTAssertEqual(calculation?.calculateRect(repeatedParams).rect, initial, action.name)
-        }
     }
 
     func testGridGapEdgesMatchEverySharedBoundary() {
@@ -377,6 +343,140 @@ class FixedGridLayoutTests: XCTestCase {
         let x = Int(point.x / 21 * CGFloat(bitmap.pixelsWide))
         let y = bitmap.pixelsHigh - 1 - Int(point.y / 14 * CGFloat(bitmap.pixelsHigh))
         return bitmap.colorAt(x: x, y: y)?.alphaComponent ?? 0
+    }
+}
+
+class FixedLayoutCycleTests: XCTestCase {
+
+    private let frame = CGRect(x: -80.25, y: 25.5, width: 1003.5, height: 777.25)
+    private var savedSubsequentExecutionMode: SubsequentExecutionMode = .resize
+
+    override func setUp() {
+        super.setUp()
+        savedSubsequentExecutionMode = Defaults.subsequentExecutionMode.value
+        Defaults.subsequentExecutionMode.value = .resize
+    }
+
+    override func tearDown() {
+        Defaults.subsequentExecutionMode.value = savedSubsequentExecutionMode
+        super.tearDown()
+    }
+
+    func testEveryAssignedCellCyclesItsWholeGroupAndWrapsTwice() throws {
+        XCTAssertEqual(fixedActions.count, 103)
+
+        for group in fixedGroups {
+            for (assignedIndex, assignedAction) in group.enumerated() {
+                assertResult(for: assignedAction,
+                             lastAction: nil,
+                             expectedAction: assignedAction)
+
+                for count in 1...(group.count * 2) {
+                    let priorAction = group[(assignedIndex + count - 1) % group.count]
+                    let expectedAction = group[(assignedIndex + count) % group.count]
+                    let lastAction = RectangleAction(action: assignedAction,
+                                                     subAction: .columnLayout(priorAction),
+                                                     rect: expectedRect(for: priorAction),
+                                                     count: count)
+
+                    assertResult(for: assignedAction,
+                                 lastAction: lastAction,
+                                 expectedAction: expectedAction)
+                }
+            }
+        }
+    }
+
+    func testDifferentPreviousActionAndNoHistoryStartAtAssignedCell() {
+        for action in fixedActions {
+            let unrelatedHistory = RectangleAction(action: .maximize,
+                                                   subAction: nil,
+                                                   rect: frame,
+                                                   count: 99)
+            assertResult(for: action, lastAction: unrelatedHistory, expectedAction: action)
+            assertResult(for: action, lastAction: nil, expectedAction: action)
+        }
+    }
+
+    func testAcrossMonitorModeStillCrossesRowsAndWraps() {
+        Defaults.subsequentExecutionMode.value = .acrossMonitor
+
+        assertResult(for: .grid2x4Row1Column4,
+                     lastAction: history(for: .grid2x4Row1Column4, count: 1),
+                     expectedAction: .grid2x4Row2Column1)
+        assertResult(for: .grid3x3Row3Column3,
+                     lastAction: history(for: .grid3x3Row3Column3, count: 1),
+                     expectedAction: .grid3x3Row1Column1)
+    }
+
+    func testNoneModeKeepsEveryAssignedCellDespiteMatchingHistory() {
+        Defaults.subsequentExecutionMode.value = .none
+
+        for action in fixedActions {
+            let history = RectangleAction(action: action,
+                                          subAction: .columnLayout(action),
+                                          rect: expectedRect(for: action),
+                                          count: 99)
+            assertResult(for: action, lastAction: history, expectedAction: action)
+        }
+    }
+
+    private var fixedActions: [WindowAction] {
+        fixedGroups.flatMap { $0 }
+    }
+
+    private var fixedGroups: [[WindowAction]] {
+        WindowAction.columnLayoutGroups + WindowAction.gridLayoutGroups
+    }
+
+    private func history(for action: WindowAction, count: Int) -> RectangleAction {
+        RectangleAction(action: action,
+                        subAction: .columnLayout(action),
+                        rect: expectedRect(for: action),
+                        count: count)
+    }
+
+    private func assertResult(for assignedAction: WindowAction,
+                              lastAction: RectangleAction?,
+                              expectedAction: WindowAction,
+                              file: StaticString = #filePath,
+                              line: UInt = #line) {
+        guard let calculation = WindowCalculationFactory.calculationsByAction[assignedAction] else {
+            XCTFail("Missing calculation for \(assignedAction.name)", file: file, line: line)
+            return
+        }
+        let result = calculation.calculateRect(
+            RectCalculationParameters(window: Window(id: 1, rect: lastAction?.rect ?? frame),
+                                      visibleFrameOfScreen: frame,
+                                      action: assignedAction,
+                                      lastAction: lastAction)
+        )
+
+        XCTAssertEqual(result.rect, expectedRect(for: expectedAction), assignedAction.name, file: file, line: line)
+        XCTAssertEqual(result.subAction, .columnLayout(expectedAction), assignedAction.name, file: file, line: line)
+        XCTAssertEqual(result.subAction?.gapSharedEdge,
+                       expectedAction.gapSharedEdge,
+                       assignedAction.name,
+                       file: file,
+                       line: line)
+    }
+
+    private func expectedRect(for action: WindowAction) -> CGRect {
+        guard let layout = action.fixedLayout else { return .null }
+        let left = (frame.width * CGFloat(layout.index) / CGFloat(layout.columnCount)).rounded()
+        let right = layout.index == layout.columnCount - 1
+            ? frame.width
+            : (frame.width * CGFloat(layout.index + 1) / CGFloat(layout.columnCount)).rounded()
+        let bottom = layout.rowIndex == layout.rowCount - 1
+            ? 0
+            : (frame.height * CGFloat(layout.rowCount - layout.rowIndex - 1) / CGFloat(layout.rowCount)).rounded()
+        let top = layout.rowIndex == 0
+            ? frame.height
+            : (frame.height * CGFloat(layout.rowCount - layout.rowIndex) / CGFloat(layout.rowCount)).rounded()
+        return CGRect(x: frame.minX + left,
+                      y: frame.minY + bottom,
+                      width: right - left,
+                      height: top - bottom)
     }
 }
 

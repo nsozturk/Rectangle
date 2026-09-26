@@ -1323,6 +1323,8 @@ enum WindowAction: Int, Codable {
     }
 
     var positionCycles: Bool {
+        if fixedLayout != nil { return true }
+
         switch self {
         case .maximize, .almostMaximize, .maximizeHeight,
              .larger, .smaller, .largerWidth, .smallerWidth, .largerHeight, .smallerHeight,
@@ -1336,32 +1338,7 @@ enum WindowAction: Int, Codable {
              .halveHeightUp, .halveHeightDown, .halveWidthLeft, .halveWidthRight,
              .reverseAll, .tileAll, .cascadeAll, .cascadeActiveApp, .tileActiveApp,
              .leftTodo, .rightTodo,
-             .specified,
-             .firstSixth, .secondSixth, .thirdSixth, .fourthSixth, .fifthSixth, .lastSixth,
-             .firstEighth, .secondEighth, .thirdEighth, .fourthEighth, .fifthEighth, .sixthEighth, .seventhEighth, .lastEighth,
-             .topHalfColumn1Of8, .topHalfColumn2Of8, .topHalfColumn3Of8, .topHalfColumn4Of8,
-             .topHalfColumn5Of8, .topHalfColumn6Of8, .topHalfColumn7Of8, .topHalfColumn8Of8,
-             .topHalfColumn1Of10, .topHalfColumn2Of10, .topHalfColumn3Of10, .topHalfColumn4Of10, .topHalfColumn5Of10,
-             .topHalfColumn6Of10, .topHalfColumn7Of10, .topHalfColumn8Of10, .topHalfColumn9Of10, .topHalfColumn10Of10,
-             .grid2x4Row1Column1, .grid2x4Row1Column2, .grid2x4Row1Column3, .grid2x4Row1Column4,
-             .grid2x4Row2Column1, .grid2x4Row2Column2, .grid2x4Row2Column3, .grid2x4Row2Column4,
-             .grid3x3Row1Column1, .grid3x3Row1Column2, .grid3x3Row1Column3, .grid3x3Row2Column1,
-             .grid3x3Row2Column2, .grid3x3Row2Column3, .grid3x3Row3Column1, .grid3x3Row3Column2,
-             .grid3x3Row3Column3, .grid3x4Row1Column1, .grid3x4Row1Column2, .grid3x4Row1Column3,
-             .grid3x4Row1Column4, .grid3x4Row2Column1, .grid3x4Row2Column2, .grid3x4Row2Column3,
-             .grid3x4Row2Column4, .grid3x4Row3Column1, .grid3x4Row3Column2, .grid3x4Row3Column3,
-             .grid3x4Row3Column4, .grid3x6Row1Column1, .grid3x6Row1Column2, .grid3x6Row1Column3,
-             .grid3x6Row1Column4, .grid3x6Row1Column5, .grid3x6Row1Column6, .grid3x6Row2Column1,
-             .grid3x6Row2Column2, .grid3x6Row2Column3, .grid3x6Row2Column4, .grid3x6Row2Column5,
-             .grid3x6Row2Column6, .grid3x6Row3Column1, .grid3x6Row3Column2, .grid3x6Row3Column3,
-             .grid3x6Row3Column4, .grid3x6Row3Column5, .grid3x6Row3Column6, .grid3x8Row1Column1,
-             .grid3x8Row1Column2, .grid3x8Row1Column3, .grid3x8Row1Column4, .grid3x8Row1Column5,
-             .grid3x8Row1Column6, .grid3x8Row1Column7, .grid3x8Row1Column8, .grid3x8Row2Column1,
-             .grid3x8Row2Column2, .grid3x8Row2Column3, .grid3x8Row2Column4, .grid3x8Row2Column5,
-             .grid3x8Row2Column6, .grid3x8Row2Column7, .grid3x8Row2Column8, .grid3x8Row3Column1,
-             .grid3x8Row3Column2, .grid3x8Row3Column3, .grid3x8Row3Column4, .grid3x8Row3Column5,
-             .grid3x8Row3Column6, .grid3x8Row3Column7, .grid3x8Row3Column8
-             :
+             .specified:
             return false
         default:
             return true
@@ -1410,7 +1387,9 @@ enum WindowAction: Int, Codable {
     }
 }
 
-enum SubWindowAction {
+enum SubWindowAction: Equatable {
+    case columnLayout(WindowAction)
+
     case leftThird,
     centerVerticalThird,
     rightThird,
@@ -1533,6 +1512,7 @@ enum SubWindowAction {
 
     var gapSharedEdge: Edge {
         switch self {
+        case .columnLayout(let action): return action.gapSharedEdge
         case .leftThird: return .right
         case .centerVerticalThird: return [.right, .left]
         case .rightThird: return .left

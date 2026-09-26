@@ -170,7 +170,20 @@ struct HalfSplitFrameCalculation {
 class ColumnLayoutCalculation: WindowCalculation {
 
     override func calculateRect(_ params: RectCalculationParameters) -> RectResult {
-        guard let layout = params.action.fixedLayout else { return RectResult(.null) }
+        let groups = WindowAction.columnLayoutGroups + WindowAction.gridLayoutGroups
+        guard let group = groups.first(where: { $0.contains(params.action) }) else { return RectResult(.null) }
+
+        let action: WindowAction
+        if Defaults.subsequentExecutionMode.value != .none,
+           let lastAction = params.lastAction,
+           lastAction.action == params.action,
+           let initialIndex = group.firstIndex(of: params.action) {
+            action = group[(initialIndex + lastAction.count) % group.count]
+        } else {
+            action = params.action
+        }
+
+        guard let layout = action.fixedLayout else { return RectResult(.null) }
 
         let frame = params.visibleFrameOfScreen
         let columnCount = CGFloat(layout.columnCount)
@@ -190,7 +203,7 @@ class ColumnLayoutCalculation: WindowCalculation {
                           width: rightOffset - leftOffset,
                           height: topOffset - bottomOffset)
 
-        return RectResult(rect)
+        return RectResult(rect, subAction: .columnLayout(action))
     }
 }
 
