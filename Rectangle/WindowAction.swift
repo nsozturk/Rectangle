@@ -167,7 +167,78 @@ enum WindowAction: Int, Codable {
          topHalfColumn7Of10 = 158,
          topHalfColumn8Of10 = 159,
          topHalfColumn9Of10 = 160,
-         topHalfColumn10Of10 = 161
+         topHalfColumn10Of10 = 161,
+         grid2x4Row1Column1 = 162,
+         grid2x4Row1Column2 = 163,
+         grid2x4Row1Column3 = 164,
+         grid2x4Row1Column4 = 165,
+         grid2x4Row2Column1 = 166,
+         grid2x4Row2Column2 = 167,
+         grid2x4Row2Column3 = 168,
+         grid2x4Row2Column4 = 169,
+         grid3x3Row1Column1 = 170,
+         grid3x3Row1Column2 = 171,
+         grid3x3Row1Column3 = 172,
+         grid3x3Row2Column1 = 173,
+         grid3x3Row2Column2 = 174,
+         grid3x3Row2Column3 = 175,
+         grid3x3Row3Column1 = 176,
+         grid3x3Row3Column2 = 177,
+         grid3x3Row3Column3 = 178,
+         grid3x4Row1Column1 = 179,
+         grid3x4Row1Column2 = 180,
+         grid3x4Row1Column3 = 181,
+         grid3x4Row1Column4 = 182,
+         grid3x4Row2Column1 = 183,
+         grid3x4Row2Column2 = 184,
+         grid3x4Row2Column3 = 185,
+         grid3x4Row2Column4 = 186,
+         grid3x4Row3Column1 = 187,
+         grid3x4Row3Column2 = 188,
+         grid3x4Row3Column3 = 189,
+         grid3x4Row3Column4 = 190,
+         grid3x6Row1Column1 = 191,
+         grid3x6Row1Column2 = 192,
+         grid3x6Row1Column3 = 193,
+         grid3x6Row1Column4 = 194,
+         grid3x6Row1Column5 = 195,
+         grid3x6Row1Column6 = 196,
+         grid3x6Row2Column1 = 197,
+         grid3x6Row2Column2 = 198,
+         grid3x6Row2Column3 = 199,
+         grid3x6Row2Column4 = 200,
+         grid3x6Row2Column5 = 201,
+         grid3x6Row2Column6 = 202,
+         grid3x6Row3Column1 = 203,
+         grid3x6Row3Column2 = 204,
+         grid3x6Row3Column3 = 205,
+         grid3x6Row3Column4 = 206,
+         grid3x6Row3Column5 = 207,
+         grid3x6Row3Column6 = 208,
+         grid3x8Row1Column1 = 209,
+         grid3x8Row1Column2 = 210,
+         grid3x8Row1Column3 = 211,
+         grid3x8Row1Column4 = 212,
+         grid3x8Row1Column5 = 213,
+         grid3x8Row1Column6 = 214,
+         grid3x8Row1Column7 = 215,
+         grid3x8Row1Column8 = 216,
+         grid3x8Row2Column1 = 217,
+         grid3x8Row2Column2 = 218,
+         grid3x8Row2Column3 = 219,
+         grid3x8Row2Column4 = 220,
+         grid3x8Row2Column5 = 221,
+         grid3x8Row2Column6 = 222,
+         grid3x8Row2Column7 = 223,
+         grid3x8Row2Column8 = 224,
+         grid3x8Row3Column1 = 225,
+         grid3x8Row3Column2 = 226,
+         grid3x8Row3Column3 = 227,
+         grid3x8Row3Column4 = 228,
+         grid3x8Row3Column5 = 229,
+         grid3x8Row3Column6 = 230,
+         grid3x8Row3Column7 = 231,
+         grid3x8Row3Column8 = 232
 
     static let columnLayoutGroups: [[WindowAction]] = [
         [.firstSixth, .secondSixth, .thirdSixth, .fourthSixth, .fifthSixth, .lastSixth],
@@ -176,6 +247,38 @@ enum WindowAction: Int, Codable {
          .topHalfColumn5Of8, .topHalfColumn6Of8, .topHalfColumn7Of8, .topHalfColumn8Of8],
         [.topHalfColumn1Of10, .topHalfColumn2Of10, .topHalfColumn3Of10, .topHalfColumn4Of10, .topHalfColumn5Of10,
          .topHalfColumn6Of10, .topHalfColumn7Of10, .topHalfColumn8Of10, .topHalfColumn9Of10, .topHalfColumn10Of10]
+    ]
+
+    static let gridLayoutGroups: [[WindowAction]] = [
+        [
+            .grid2x4Row1Column1, .grid2x4Row1Column2, .grid2x4Row1Column3, .grid2x4Row1Column4,
+            .grid2x4Row2Column1, .grid2x4Row2Column2, .grid2x4Row2Column3, .grid2x4Row2Column4
+        ],
+        [
+            .grid3x3Row1Column1, .grid3x3Row1Column2, .grid3x3Row1Column3, .grid3x3Row2Column1,
+            .grid3x3Row2Column2, .grid3x3Row2Column3, .grid3x3Row3Column1, .grid3x3Row3Column2,
+            .grid3x3Row3Column3
+        ],
+        [
+            .grid3x4Row1Column1, .grid3x4Row1Column2, .grid3x4Row1Column3, .grid3x4Row1Column4,
+            .grid3x4Row2Column1, .grid3x4Row2Column2, .grid3x4Row2Column3, .grid3x4Row2Column4,
+            .grid3x4Row3Column1, .grid3x4Row3Column2, .grid3x4Row3Column3, .grid3x4Row3Column4
+        ],
+        [
+            .grid3x6Row1Column1, .grid3x6Row1Column2, .grid3x6Row1Column3, .grid3x6Row1Column4,
+            .grid3x6Row1Column5, .grid3x6Row1Column6, .grid3x6Row2Column1, .grid3x6Row2Column2,
+            .grid3x6Row2Column3, .grid3x6Row2Column4, .grid3x6Row2Column5, .grid3x6Row2Column6,
+            .grid3x6Row3Column1, .grid3x6Row3Column2, .grid3x6Row3Column3, .grid3x6Row3Column4,
+            .grid3x6Row3Column5, .grid3x6Row3Column6
+        ],
+        [
+            .grid3x8Row1Column1, .grid3x8Row1Column2, .grid3x8Row1Column3, .grid3x8Row1Column4,
+            .grid3x8Row1Column5, .grid3x8Row1Column6, .grid3x8Row1Column7, .grid3x8Row1Column8,
+            .grid3x8Row2Column1, .grid3x8Row2Column2, .grid3x8Row2Column3, .grid3x8Row2Column4,
+            .grid3x8Row2Column5, .grid3x8Row2Column6, .grid3x8Row2Column7, .grid3x8Row2Column8,
+            .grid3x8Row3Column1, .grid3x8Row3Column2, .grid3x8Row3Column3, .grid3x8Row3Column4,
+            .grid3x8Row3Column5, .grid3x8Row3Column6, .grid3x8Row3Column7, .grid3x8Row3Column8
+        ]
     ]
 
     // Order matters here - it's used in the menu
@@ -210,18 +313,24 @@ enum WindowAction: Int, Codable {
                          cascadeActiveApp, tileActiveApp,
                          displayOne, displayTwo, displayThree, displayFour, displayFive,
                          displaySix, displaySeven, displayEight, displayNine
-    ] + columnLayoutGroups.flatMap { $0 }
+    ] + columnLayoutGroups.flatMap { $0 } + gridLayoutGroups.flatMap { $0 }
 
     struct ColumnLayout {
         let index: Int
         let columnCount: Int
-        let isTopHalf: Bool
+        let rowIndex: Int
+        let rowCount: Int
+
+        var isTopHalf: Bool {
+            rowCount == 2 && rowIndex == 0
+        }
 
         var gapSharedEdges: Edge {
             var edges: Edge = .none
             if index > 0 { edges.insert(.left) }
             if index < columnCount - 1 { edges.insert(.right) }
-            if isTopHalf { edges.insert(.bottom) }
+            if rowIndex > 0 { edges.insert(.top) }
+            if rowIndex < rowCount - 1 { edges.insert(.bottom) }
             return edges
         }
     }
@@ -229,23 +338,84 @@ enum WindowAction: Int, Codable {
     var columnLayout: ColumnLayout? {
         switch self {
         case .firstSixth, .secondSixth, .thirdSixth, .fourthSixth, .fifthSixth, .lastSixth:
-            return ColumnLayout(index: rawValue - Self.firstSixth.rawValue, columnCount: 6, isTopHalf: false)
+            return ColumnLayout(index: rawValue - Self.firstSixth.rawValue, columnCount: 6, rowIndex: 0, rowCount: 1)
         case .firstEighth, .secondEighth, .thirdEighth, .fourthEighth, .fifthEighth, .sixthEighth, .seventhEighth, .lastEighth:
-            return ColumnLayout(index: rawValue - Self.firstEighth.rawValue, columnCount: 8, isTopHalf: false)
+            return ColumnLayout(index: rawValue - Self.firstEighth.rawValue, columnCount: 8, rowIndex: 0, rowCount: 1)
         case .topHalfColumn1Of8, .topHalfColumn2Of8, .topHalfColumn3Of8, .topHalfColumn4Of8,
              .topHalfColumn5Of8, .topHalfColumn6Of8, .topHalfColumn7Of8, .topHalfColumn8Of8:
-            return ColumnLayout(index: rawValue - Self.topHalfColumn1Of8.rawValue, columnCount: 8, isTopHalf: true)
+            return ColumnLayout(index: rawValue - Self.topHalfColumn1Of8.rawValue, columnCount: 8, rowIndex: 0, rowCount: 2)
         case .topHalfColumn1Of10, .topHalfColumn2Of10, .topHalfColumn3Of10, .topHalfColumn4Of10, .topHalfColumn5Of10,
              .topHalfColumn6Of10, .topHalfColumn7Of10, .topHalfColumn8Of10, .topHalfColumn9Of10, .topHalfColumn10Of10:
-            return ColumnLayout(index: rawValue - Self.topHalfColumn1Of10.rawValue, columnCount: 10, isTopHalf: true)
+            return ColumnLayout(index: rawValue - Self.topHalfColumn1Of10.rawValue, columnCount: 10, rowIndex: 0, rowCount: 2)
         default: return nil
         }
     }
 
-    private var columnLayoutDisplayName: String? {
-        guard let layout = columnLayout else { return nil }
+    var gridLayout: ColumnLayout? {
+        let start: Int
+        let rowCount: Int
+        let columnCount: Int
+        switch self {
+        case
+             .grid2x4Row1Column1, .grid2x4Row1Column2, .grid2x4Row1Column3, .grid2x4Row1Column4,
+             .grid2x4Row2Column1, .grid2x4Row2Column2, .grid2x4Row2Column3, .grid2x4Row2Column4:
+            (start, rowCount, columnCount) = (Self.grid2x4Row1Column1.rawValue, 2, 4)
+        case
+             .grid3x3Row1Column1, .grid3x3Row1Column2, .grid3x3Row1Column3, .grid3x3Row2Column1,
+             .grid3x3Row2Column2, .grid3x3Row2Column3, .grid3x3Row3Column1, .grid3x3Row3Column2,
+             .grid3x3Row3Column3:
+            (start, rowCount, columnCount) = (Self.grid3x3Row1Column1.rawValue, 3, 3)
+        case
+             .grid3x4Row1Column1, .grid3x4Row1Column2, .grid3x4Row1Column3, .grid3x4Row1Column4,
+             .grid3x4Row2Column1, .grid3x4Row2Column2, .grid3x4Row2Column3, .grid3x4Row2Column4,
+             .grid3x4Row3Column1, .grid3x4Row3Column2, .grid3x4Row3Column3, .grid3x4Row3Column4:
+            (start, rowCount, columnCount) = (Self.grid3x4Row1Column1.rawValue, 3, 4)
+        case
+             .grid3x6Row1Column1, .grid3x6Row1Column2, .grid3x6Row1Column3, .grid3x6Row1Column4,
+             .grid3x6Row1Column5, .grid3x6Row1Column6, .grid3x6Row2Column1, .grid3x6Row2Column2,
+             .grid3x6Row2Column3, .grid3x6Row2Column4, .grid3x6Row2Column5, .grid3x6Row2Column6,
+             .grid3x6Row3Column1, .grid3x6Row3Column2, .grid3x6Row3Column3, .grid3x6Row3Column4,
+             .grid3x6Row3Column5, .grid3x6Row3Column6:
+            (start, rowCount, columnCount) = (Self.grid3x6Row1Column1.rawValue, 3, 6)
+        case
+             .grid3x8Row1Column1, .grid3x8Row1Column2, .grid3x8Row1Column3, .grid3x8Row1Column4,
+             .grid3x8Row1Column5, .grid3x8Row1Column6, .grid3x8Row1Column7, .grid3x8Row1Column8,
+             .grid3x8Row2Column1, .grid3x8Row2Column2, .grid3x8Row2Column3, .grid3x8Row2Column4,
+             .grid3x8Row2Column5, .grid3x8Row2Column6, .grid3x8Row2Column7, .grid3x8Row2Column8,
+             .grid3x8Row3Column1, .grid3x8Row3Column2, .grid3x8Row3Column3, .grid3x8Row3Column4,
+             .grid3x8Row3Column5, .grid3x8Row3Column6, .grid3x8Row3Column7, .grid3x8Row3Column8:
+            (start, rowCount, columnCount) = (Self.grid3x8Row1Column1.rawValue, 3, 8)
+        default: return nil
+        }
+        let offset = rawValue - start
+        return ColumnLayout(index: offset % columnCount,
+                            columnCount: columnCount,
+                            rowIndex: offset / columnCount,
+                            rowCount: rowCount)
+    }
+
+    var fixedLayout: ColumnLayout? {
+        columnLayout ?? gridLayout
+    }
+
+    private var fixedLayoutDisplayName: String? {
+        guard let layout = fixedLayout else { return nil }
         let value: String
-        if layout.isTopHalf {
+        if gridLayout != nil {
+            let rowKey: String
+            let rowValue: String
+            switch layout.rowIndex {
+            case 0: (rowKey, rowValue) = ("Fixed Grid Row Top", "Top")
+            case layout.rowCount - 1: (rowKey, rowValue) = ("Fixed Grid Row Bottom", "Bottom")
+            default: (rowKey, rowValue) = ("Fixed Grid Row Middle", "Middle")
+            }
+            let row = NSLocalizedString(rowKey, tableName: "Main", value: rowValue, comment: "")
+            let format = NSLocalizedString("Fixed Grid Column Format",
+                                           tableName: "Main",
+                                           value: "Column %d of %d",
+                                           comment: "")
+            return "\(row) — \(String(format: format, layout.index + 1, layout.columnCount))"
+        } else if layout.isTopHalf {
             value = "Top Half — Column \(layout.index + 1) of \(layout.columnCount)"
         } else {
             let ordinals = ["First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth"]
@@ -255,8 +425,8 @@ enum WindowAction: Int, Codable {
         return NSLocalizedString("\(name).title", tableName: "Main", value: value, comment: "")
     }
 
-    private var columnLayoutImage: NSImage? {
-        guard let layout = columnLayout else { return nil }
+    private var fixedLayoutImage: NSImage? {
+        guard let layout = fixedLayout else { return nil }
         let image = NSImage(size: NSSize(width: 21, height: 14), flipped: false) { _ in
             let frame = NSRect(x: 0.5, y: 0.5, width: 20, height: 13)
             NSColor.black.setStroke()
@@ -264,10 +434,11 @@ enum WindowAction: Int, Codable {
 
             let left = frame.minX + frame.width * CGFloat(layout.index) / CGFloat(layout.columnCount)
             let right = frame.minX + frame.width * CGFloat(layout.index + 1) / CGFloat(layout.columnCount)
+            let rowHeight = frame.height / CGFloat(layout.rowCount)
             let selected = NSRect(x: left,
-                                  y: layout.isTopHalf ? frame.midY : frame.minY,
+                                  y: frame.minY + rowHeight * CGFloat(layout.rowCount - layout.rowIndex - 1),
                                   width: right - left,
-                                  height: layout.isTopHalf ? frame.height / 2 : frame.height)
+                                  height: rowHeight)
             NSColor.black.setFill()
             NSBezierPath(rect: selected).fill()
             return true
@@ -300,7 +471,8 @@ enum WindowAction: Int, Codable {
     var firstInGroup: Bool {
         switch self {
         case .leftHalf, .topLeft, .firstThird, .maximize, .almostMaximize, .nextDisplay, .moveLeft, .firstFourth, .topLeftSixth, .topLeftEighth, .topLeftNinth, .topLeftTwelfth, .topLeftSixteenth,
-             .firstSixth, .firstEighth, .topHalfColumn1Of8, .topHalfColumn1Of10:
+             .firstSixth, .firstEighth, .topHalfColumn1Of8, .topHalfColumn1Of10,
+             .grid2x4Row1Column1, .grid3x3Row1Column1:
             return true
         default:
             return false
@@ -466,6 +638,27 @@ enum WindowAction: Int, Codable {
         case .topHalfColumn8Of10: return "topHalfColumn8Of10"
         case .topHalfColumn9Of10: return "topHalfColumn9Of10"
         case .topHalfColumn10Of10: return "topHalfColumn10Of10"
+        case
+             .grid2x4Row1Column1, .grid2x4Row1Column2, .grid2x4Row1Column3, .grid2x4Row1Column4,
+             .grid2x4Row2Column1, .grid2x4Row2Column2, .grid2x4Row2Column3, .grid2x4Row2Column4,
+             .grid3x3Row1Column1, .grid3x3Row1Column2, .grid3x3Row1Column3, .grid3x3Row2Column1,
+             .grid3x3Row2Column2, .grid3x3Row2Column3, .grid3x3Row3Column1, .grid3x3Row3Column2,
+             .grid3x3Row3Column3, .grid3x4Row1Column1, .grid3x4Row1Column2, .grid3x4Row1Column3,
+             .grid3x4Row1Column4, .grid3x4Row2Column1, .grid3x4Row2Column2, .grid3x4Row2Column3,
+             .grid3x4Row2Column4, .grid3x4Row3Column1, .grid3x4Row3Column2, .grid3x4Row3Column3,
+             .grid3x4Row3Column4, .grid3x6Row1Column1, .grid3x6Row1Column2, .grid3x6Row1Column3,
+             .grid3x6Row1Column4, .grid3x6Row1Column5, .grid3x6Row1Column6, .grid3x6Row2Column1,
+             .grid3x6Row2Column2, .grid3x6Row2Column3, .grid3x6Row2Column4, .grid3x6Row2Column5,
+             .grid3x6Row2Column6, .grid3x6Row3Column1, .grid3x6Row3Column2, .grid3x6Row3Column3,
+             .grid3x6Row3Column4, .grid3x6Row3Column5, .grid3x6Row3Column6, .grid3x8Row1Column1,
+             .grid3x8Row1Column2, .grid3x8Row1Column3, .grid3x8Row1Column4, .grid3x8Row1Column5,
+             .grid3x8Row1Column6, .grid3x8Row1Column7, .grid3x8Row1Column8, .grid3x8Row2Column1,
+             .grid3x8Row2Column2, .grid3x8Row2Column3, .grid3x8Row2Column4, .grid3x8Row2Column5,
+             .grid3x8Row2Column6, .grid3x8Row2Column7, .grid3x8Row2Column8, .grid3x8Row3Column1,
+             .grid3x8Row3Column2, .grid3x8Row3Column3, .grid3x8Row3Column4, .grid3x8Row3Column5,
+             .grid3x8Row3Column6, .grid3x8Row3Column7, .grid3x8Row3Column8:
+            guard let layout = gridLayout else { preconditionFailure("Missing fixed-grid metadata") }
+            return "grid\(layout.rowCount)x\(layout.columnCount)Row\(layout.rowIndex + 1)Column\(layout.index + 1)"
         }
     }
 
@@ -777,7 +970,28 @@ enum WindowAction: Int, Codable {
              .topHalfColumn5Of8, .topHalfColumn6Of8, .topHalfColumn7Of8, .topHalfColumn8Of8,
              .topHalfColumn1Of10, .topHalfColumn2Of10, .topHalfColumn3Of10, .topHalfColumn4Of10, .topHalfColumn5Of10,
              .topHalfColumn6Of10, .topHalfColumn7Of10, .topHalfColumn8Of10, .topHalfColumn9Of10, .topHalfColumn10Of10:
-            return columnLayoutDisplayName
+            return fixedLayoutDisplayName
+        case
+             .grid2x4Row1Column1, .grid2x4Row1Column2, .grid2x4Row1Column3, .grid2x4Row1Column4,
+             .grid2x4Row2Column1, .grid2x4Row2Column2, .grid2x4Row2Column3, .grid2x4Row2Column4,
+             .grid3x3Row1Column1, .grid3x3Row1Column2, .grid3x3Row1Column3, .grid3x3Row2Column1,
+             .grid3x3Row2Column2, .grid3x3Row2Column3, .grid3x3Row3Column1, .grid3x3Row3Column2,
+             .grid3x3Row3Column3, .grid3x4Row1Column1, .grid3x4Row1Column2, .grid3x4Row1Column3,
+             .grid3x4Row1Column4, .grid3x4Row2Column1, .grid3x4Row2Column2, .grid3x4Row2Column3,
+             .grid3x4Row2Column4, .grid3x4Row3Column1, .grid3x4Row3Column2, .grid3x4Row3Column3,
+             .grid3x4Row3Column4, .grid3x6Row1Column1, .grid3x6Row1Column2, .grid3x6Row1Column3,
+             .grid3x6Row1Column4, .grid3x6Row1Column5, .grid3x6Row1Column6, .grid3x6Row2Column1,
+             .grid3x6Row2Column2, .grid3x6Row2Column3, .grid3x6Row2Column4, .grid3x6Row2Column5,
+             .grid3x6Row2Column6, .grid3x6Row3Column1, .grid3x6Row3Column2, .grid3x6Row3Column3,
+             .grid3x6Row3Column4, .grid3x6Row3Column5, .grid3x6Row3Column6, .grid3x8Row1Column1,
+             .grid3x8Row1Column2, .grid3x8Row1Column3, .grid3x8Row1Column4, .grid3x8Row1Column5,
+             .grid3x8Row1Column6, .grid3x8Row1Column7, .grid3x8Row1Column8, .grid3x8Row2Column1,
+             .grid3x8Row2Column2, .grid3x8Row2Column3, .grid3x8Row2Column4, .grid3x8Row2Column5,
+             .grid3x8Row2Column6, .grid3x8Row2Column7, .grid3x8Row2Column8, .grid3x8Row3Column1,
+             .grid3x8Row3Column2, .grid3x8Row3Column3, .grid3x8Row3Column4, .grid3x8Row3Column5,
+             .grid3x8Row3Column6, .grid3x8Row3Column7, .grid3x8Row3Column8
+            :
+            return fixedLayoutDisplayName
         }
 
         return NSLocalizedString(key, tableName: "Main", value: value, comment: "")
@@ -1004,12 +1218,33 @@ enum WindowAction: Int, Codable {
              .topHalfColumn5Of8, .topHalfColumn6Of8, .topHalfColumn7Of8, .topHalfColumn8Of8,
              .topHalfColumn1Of10, .topHalfColumn2Of10, .topHalfColumn3Of10, .topHalfColumn4Of10, .topHalfColumn5Of10,
              .topHalfColumn6Of10, .topHalfColumn7Of10, .topHalfColumn8Of10, .topHalfColumn9Of10, .topHalfColumn10Of10:
-            return columnLayoutImage ?? NSImage()
+            return fixedLayoutImage ?? NSImage()
+        case
+             .grid2x4Row1Column1, .grid2x4Row1Column2, .grid2x4Row1Column3, .grid2x4Row1Column4,
+             .grid2x4Row2Column1, .grid2x4Row2Column2, .grid2x4Row2Column3, .grid2x4Row2Column4,
+             .grid3x3Row1Column1, .grid3x3Row1Column2, .grid3x3Row1Column3, .grid3x3Row2Column1,
+             .grid3x3Row2Column2, .grid3x3Row2Column3, .grid3x3Row3Column1, .grid3x3Row3Column2,
+             .grid3x3Row3Column3, .grid3x4Row1Column1, .grid3x4Row1Column2, .grid3x4Row1Column3,
+             .grid3x4Row1Column4, .grid3x4Row2Column1, .grid3x4Row2Column2, .grid3x4Row2Column3,
+             .grid3x4Row2Column4, .grid3x4Row3Column1, .grid3x4Row3Column2, .grid3x4Row3Column3,
+             .grid3x4Row3Column4, .grid3x6Row1Column1, .grid3x6Row1Column2, .grid3x6Row1Column3,
+             .grid3x6Row1Column4, .grid3x6Row1Column5, .grid3x6Row1Column6, .grid3x6Row2Column1,
+             .grid3x6Row2Column2, .grid3x6Row2Column3, .grid3x6Row2Column4, .grid3x6Row2Column5,
+             .grid3x6Row2Column6, .grid3x6Row3Column1, .grid3x6Row3Column2, .grid3x6Row3Column3,
+             .grid3x6Row3Column4, .grid3x6Row3Column5, .grid3x6Row3Column6, .grid3x8Row1Column1,
+             .grid3x8Row1Column2, .grid3x8Row1Column3, .grid3x8Row1Column4, .grid3x8Row1Column5,
+             .grid3x8Row1Column6, .grid3x8Row1Column7, .grid3x8Row1Column8, .grid3x8Row2Column1,
+             .grid3x8Row2Column2, .grid3x8Row2Column3, .grid3x8Row2Column4, .grid3x8Row2Column5,
+             .grid3x8Row2Column6, .grid3x8Row2Column7, .grid3x8Row2Column8, .grid3x8Row3Column1,
+             .grid3x8Row3Column2, .grid3x8Row3Column3, .grid3x8Row3Column4, .grid3x8Row3Column5,
+             .grid3x8Row3Column6, .grid3x8Row3Column7, .grid3x8Row3Column8
+            :
+            return fixedLayoutImage ?? NSImage()
         }
     }
 
     var gapSharedEdge: Edge {
-        if let columnLayout { return columnLayout.gapSharedEdges }
+        if let fixedLayout { return fixedLayout.gapSharedEdges }
         switch self {
         case .leftHalf: return .right
         case .rightHalf: return .left
@@ -1049,6 +1284,24 @@ enum WindowAction: Int, Codable {
             .topHalfColumn5Of8, .topHalfColumn6Of8, .topHalfColumn7Of8, .topHalfColumn8Of8,
             .topHalfColumn1Of10, .topHalfColumn2Of10, .topHalfColumn3Of10, .topHalfColumn4Of10, .topHalfColumn5Of10,
             .topHalfColumn6Of10, .topHalfColumn7Of10, .topHalfColumn8Of10, .topHalfColumn9Of10, .topHalfColumn10Of10,
+            .grid2x4Row1Column1, .grid2x4Row1Column2, .grid2x4Row1Column3, .grid2x4Row1Column4,
+            .grid2x4Row2Column1, .grid2x4Row2Column2, .grid2x4Row2Column3, .grid2x4Row2Column4,
+            .grid3x3Row1Column1, .grid3x3Row1Column2, .grid3x3Row1Column3, .grid3x3Row2Column1,
+            .grid3x3Row2Column2, .grid3x3Row2Column3, .grid3x3Row3Column1, .grid3x3Row3Column2,
+            .grid3x3Row3Column3, .grid3x4Row1Column1, .grid3x4Row1Column2, .grid3x4Row1Column3,
+            .grid3x4Row1Column4, .grid3x4Row2Column1, .grid3x4Row2Column2, .grid3x4Row2Column3,
+            .grid3x4Row2Column4, .grid3x4Row3Column1, .grid3x4Row3Column2, .grid3x4Row3Column3,
+            .grid3x4Row3Column4, .grid3x6Row1Column1, .grid3x6Row1Column2, .grid3x6Row1Column3,
+            .grid3x6Row1Column4, .grid3x6Row1Column5, .grid3x6Row1Column6, .grid3x6Row2Column1,
+            .grid3x6Row2Column2, .grid3x6Row2Column3, .grid3x6Row2Column4, .grid3x6Row2Column5,
+            .grid3x6Row2Column6, .grid3x6Row3Column1, .grid3x6Row3Column2, .grid3x6Row3Column3,
+            .grid3x6Row3Column4, .grid3x6Row3Column5, .grid3x6Row3Column6, .grid3x8Row1Column1,
+            .grid3x8Row1Column2, .grid3x8Row1Column3, .grid3x8Row1Column4, .grid3x8Row1Column5,
+            .grid3x8Row1Column6, .grid3x8Row1Column7, .grid3x8Row1Column8, .grid3x8Row2Column1,
+            .grid3x8Row2Column2, .grid3x8Row2Column3, .grid3x8Row2Column4, .grid3x8Row2Column5,
+            .grid3x8Row2Column6, .grid3x8Row2Column7, .grid3x8Row2Column8, .grid3x8Row3Column1,
+            .grid3x8Row3Column2, .grid3x8Row3Column3, .grid3x8Row3Column4, .grid3x8Row3Column5,
+            .grid3x8Row3Column6, .grid3x8Row3Column7, .grid3x8Row3Column8,
              .doubleHeightUp, .doubleHeightDown, .doubleWidthLeft, .doubleWidthRight,
              .halveHeightUp, .halveHeightDown, .halveWidthLeft, .halveWidthRight,
             .leftTodo, .rightTodo,
@@ -1089,7 +1342,26 @@ enum WindowAction: Int, Codable {
              .topHalfColumn1Of8, .topHalfColumn2Of8, .topHalfColumn3Of8, .topHalfColumn4Of8,
              .topHalfColumn5Of8, .topHalfColumn6Of8, .topHalfColumn7Of8, .topHalfColumn8Of8,
              .topHalfColumn1Of10, .topHalfColumn2Of10, .topHalfColumn3Of10, .topHalfColumn4Of10, .topHalfColumn5Of10,
-             .topHalfColumn6Of10, .topHalfColumn7Of10, .topHalfColumn8Of10, .topHalfColumn9Of10, .topHalfColumn10Of10:
+             .topHalfColumn6Of10, .topHalfColumn7Of10, .topHalfColumn8Of10, .topHalfColumn9Of10, .topHalfColumn10Of10,
+             .grid2x4Row1Column1, .grid2x4Row1Column2, .grid2x4Row1Column3, .grid2x4Row1Column4,
+             .grid2x4Row2Column1, .grid2x4Row2Column2, .grid2x4Row2Column3, .grid2x4Row2Column4,
+             .grid3x3Row1Column1, .grid3x3Row1Column2, .grid3x3Row1Column3, .grid3x3Row2Column1,
+             .grid3x3Row2Column2, .grid3x3Row2Column3, .grid3x3Row3Column1, .grid3x3Row3Column2,
+             .grid3x3Row3Column3, .grid3x4Row1Column1, .grid3x4Row1Column2, .grid3x4Row1Column3,
+             .grid3x4Row1Column4, .grid3x4Row2Column1, .grid3x4Row2Column2, .grid3x4Row2Column3,
+             .grid3x4Row2Column4, .grid3x4Row3Column1, .grid3x4Row3Column2, .grid3x4Row3Column3,
+             .grid3x4Row3Column4, .grid3x6Row1Column1, .grid3x6Row1Column2, .grid3x6Row1Column3,
+             .grid3x6Row1Column4, .grid3x6Row1Column5, .grid3x6Row1Column6, .grid3x6Row2Column1,
+             .grid3x6Row2Column2, .grid3x6Row2Column3, .grid3x6Row2Column4, .grid3x6Row2Column5,
+             .grid3x6Row2Column6, .grid3x6Row3Column1, .grid3x6Row3Column2, .grid3x6Row3Column3,
+             .grid3x6Row3Column4, .grid3x6Row3Column5, .grid3x6Row3Column6, .grid3x8Row1Column1,
+             .grid3x8Row1Column2, .grid3x8Row1Column3, .grid3x8Row1Column4, .grid3x8Row1Column5,
+             .grid3x8Row1Column6, .grid3x8Row1Column7, .grid3x8Row1Column8, .grid3x8Row2Column1,
+             .grid3x8Row2Column2, .grid3x8Row2Column3, .grid3x8Row2Column4, .grid3x8Row2Column5,
+             .grid3x8Row2Column6, .grid3x8Row2Column7, .grid3x8Row2Column8, .grid3x8Row3Column1,
+             .grid3x8Row3Column2, .grid3x8Row3Column3, .grid3x8Row3Column4, .grid3x8Row3Column5,
+             .grid3x8Row3Column6, .grid3x8Row3Column7, .grid3x8Row3Column8
+             :
             return false
         default:
             return true
@@ -1097,6 +1369,9 @@ enum WindowAction: Int, Codable {
     }
 
     var category: WindowActionCategory? { // used to specify a submenu
+        if let layout = gridLayout {
+            return layout.rowCount == 2 ? .twoRowGrids : .threeRowGrids
+        }
         if let layout = columnLayout {
             switch (layout.columnCount, layout.isTopHalf) {
             case (6, false): return .sixthColumns

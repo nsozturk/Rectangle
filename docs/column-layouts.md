@@ -1,4 +1,4 @@
-# Fixed column layouts
+# Fixed column and grid layouts
 
 Adds 32 fixed positions to the expanded Shortcuts section and the additional-size menu:
 
@@ -15,6 +15,21 @@ A shared calculation divides the usable screen area using adjacent rounded bound
 
 URL examples: `rectangle://execute-action?name=first-sixth`, `rectangle://execute-action?name=last-eighth`, and `rectangle://execute-action?name=top-half-column10-of10`.
 
+## Fixed grids
+
+The expanded Shortcuts section also has two fixed-grid categories:
+
+| Category | Grid (rows × columns) | Positions |
+|---|---|---:|
+| Two-Row Layouts | 2 × 4 | 8 |
+| Three-Row Layouts | 3 × 3, 3 × 4, 3 × 6, 3 × 8 | 63 |
+
+The three-row category has one subgroup per column count. Rows are ordered Top, Middle (three-row grids), then Bottom; columns run left to right. The native shortcut controls and cell icons match the existing Shortcuts rows.
+
+These 71 actions always target the same cell, including on portrait screens and repeated invocation. They are separate from the existing orientation-aware Eighths, Ninths and Twelfths, whose stored shortcuts and behavior are unchanged. No default shortcuts or drag regions are added.
+
+URL examples: `rectangle://execute-action?name=grid2x4-row1-column1` and `rectangle://execute-action?name=grid3x8-row3-column8`.
+
 ## Screenshots
 
 Actual screenshots captured from the installed Debug build after code review, 2026-09-26.
@@ -23,11 +38,16 @@ Actual screenshots captured from the installed Debug build after code review, 20
 
 ![Top-half eight- and ten-column shortcuts](https://raw.githubusercontent.com/nsozturk/Rectangle/feature/codex-gpt6-001-column-layouts/docs/screenshots/column-layouts/top-half-columns.png)
 
+![Two-row grids and three-row subgroups](https://raw.githubusercontent.com/nsozturk/Rectangle/feature/codex-gpt6-001-column-layouts/docs/screenshots/column-layouts/two-row-grids.png)
+
+![Three-row six- and eight-column shortcuts](https://raw.githubusercontent.com/nsozturk/Rectangle/feature/codex-gpt6-001-column-layouts/docs/screenshots/column-layouts/three-row-grids.png)
+
 ## Verification
 
 - Xcode 26.6 Debug build succeeded; deployment target stays macOS 10.15.
-- All 9 focused tests passed on the isolated feature branch and the combined local build: geometry, odd/fractional dimensions, negative origins, portrait screens, repeat execution, gaps, menu entries, shortcut bindings, disclosure visibility and scrolling.
-- Existing IDs/names and prior catalog entries remain unchanged; 36 new keys cover 31 locales.
-- Native preference UI was inspected, including Fourth Eighth. The real storyboard window test verifies all 32 rows are fully reachable, share the existing 18-point icon/control gap, and hide on collapse. No Auto Layout warnings remain in the focused run. Real window movement remains unverified: both new and legacy URL probes left the test window unchanged in the automation session. Do not interpret these screenshots as movement verification.
+- All 19 focused tests passed on the combined local build; isolated geometry and storyboard checks also passed: geometry, odd/fractional dimensions, negative origins, portrait screens, repeat execution, gaps, menu entries, shortcut bindings, disclosure visibility and scrolling.
+- Existing IDs/names and prior catalog entries remain unchanged; The original 36 column keys and 10 shared grid keys cover all 31 locales.
+- Native Shortcuts UI was inspected through the final 3×8 cell. The storyboard test verifies all 103 dynamic rows are fully reachable, share the existing 18-point icon/control gap, and hide on collapse. Two fixed-grid categories contain 8 and 63 menu actions. A temporary grid shortcut was recorded and cleared; the existing First Fourth shortcut was preserved. No Auto Layout conflicts appeared in the final focused run.
+- Live external-window movement remains unverified: the automation-created TextEdit window did not become the macOS foreground application, so URL/key movement was not treated as a valid end-to-end check. URL-name lookup and geometry are covered by tests.
 - The earlier full-suite comparison produced the same 22 assertion failures before and after the feature, in existing tests depending on ambient preferences.
 - Applications may enforce a minimum window width larger than a requested column.

@@ -170,7 +170,7 @@ struct HalfSplitFrameCalculation {
 class ColumnLayoutCalculation: WindowCalculation {
 
     override func calculateRect(_ params: RectCalculationParameters) -> RectResult {
-        guard let layout = params.action.columnLayout else { return RectResult(.null) }
+        guard let layout = params.action.fixedLayout else { return RectResult(.null) }
 
         let frame = params.visibleFrameOfScreen
         let columnCount = CGFloat(layout.columnCount)
@@ -178,15 +178,17 @@ class ColumnLayoutCalculation: WindowCalculation {
         let rightOffset = layout.index == layout.columnCount - 1
             ? frame.width
             : (frame.width * CGFloat(layout.index + 1) / columnCount).rounded()
-        var rect = CGRect(x: frame.minX + leftOffset,
-                          y: frame.minY,
+        let rowCount = CGFloat(layout.rowCount)
+        let bottomOffset = layout.rowIndex == layout.rowCount - 1
+            ? 0
+            : (frame.height * CGFloat(layout.rowCount - layout.rowIndex - 1) / rowCount).rounded()
+        let topOffset = layout.rowIndex == 0
+            ? frame.height
+            : (frame.height * CGFloat(layout.rowCount - layout.rowIndex) / rowCount).rounded()
+        let rect = CGRect(x: frame.minX + leftOffset,
+                          y: frame.minY + bottomOffset,
                           width: rightOffset - leftOffset,
-                          height: frame.height)
-
-        if layout.isTopHalf {
-            rect.origin.y = frame.minY + (frame.height / 2).rounded()
-            rect.size.height = frame.maxY - rect.minY
-        }
+                          height: topOffset - bottomOffset)
 
         return RectResult(rect)
     }
@@ -416,7 +418,7 @@ class WindowCalculationFactory {
      .displayNine: specificDisplayCalculation
         //     .restore: nil
         ]
-        for action in WindowAction.columnLayoutGroups.flatMap({ $0 }) {
+        for action in (WindowAction.columnLayoutGroups + WindowAction.gridLayoutGroups).flatMap({ $0 }) {
             calculations[action] = columnLayoutCalculation
         }
         return calculations

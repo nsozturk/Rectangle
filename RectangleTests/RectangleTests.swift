@@ -1,6 +1,7 @@
 /// RectangleTests.swift
 
 import MASShortcut
+import Cocoa
 import XCTest
 @testable import Rectangle
 
@@ -181,6 +182,201 @@ class ColumnLayoutTests: XCTestCase {
                                   visibleFrameOfScreen: frame,
                                   action: action,
                                   lastAction: nil)
+    }
+}
+
+class FixedGridLayoutTests: XCTestCase {
+
+    private let specifications = [(rows: 2, columns: 4), (rows: 3, columns: 3),
+                                  (rows: 3, columns: 4), (rows: 3, columns: 6),
+                                  (rows: 3, columns: 8)]
+
+    func testGroupsExposeAllActionsWithStableIdsNamesAndCategories() {
+        XCTAssertEqual(WindowAction.gridLayoutGroups.map(\.count), [8, 9, 12, 18, 24])
+
+        let actions = WindowAction.gridLayoutGroups.flatMap { $0 }
+        XCTAssertEqual(actions.map(\.rawValue), Array(162...232))
+        XCTAssertEqual(actions.map(\.name), expectedNames())
+        XCTAssertEqual(Set(actions.map(\.name)).count, 71)
+        XCTAssertTrue(actions.allSatisfy { WindowAction.active.contains($0) })
+        XCTAssertTrue(actions.allSatisfy { $0.displayName != nil })
+        XCTAssertTrue(actions.allSatisfy { $0.spectacleDefault == nil && $0.alternateDefault == nil })
+        XCTAssertTrue(actions.allSatisfy { !$0.positionCycles })
+        XCTAssertEqual(actions.filter(\.firstInGroup), [.grid2x4Row1Column1, .grid3x3Row1Column1])
+        XCTAssertTrue(WindowAction.gridLayoutGroups[0].allSatisfy { $0.category == .twoRowGrids })
+        XCTAssertTrue(WindowAction.gridLayoutGroups.dropFirst().flatMap { $0 }.allSatisfy { $0.category == .threeRowGrids })
+    }
+
+    func testDisplayNamesUseRowAndColumnCoordinates() {
+        XCTAssertEqual(WindowAction.grid2x4Row1Column1.displayName, "Top — Column 1 of 4")
+        XCTAssertEqual(WindowAction.grid2x4Row2Column4.displayName, "Bottom — Column 4 of 4")
+        XCTAssertEqual(WindowAction.grid3x8Row1Column8.displayName, "Top — Column 8 of 8")
+        XCTAssertEqual(WindowAction.grid3x8Row2Column4.displayName, "Middle — Column 4 of 8")
+        XCTAssertEqual(WindowAction.grid3x8Row3Column1.displayName, "Bottom — Column 1 of 8")
+    }
+
+    func testUrlNamesAreUniqueAndResolveThroughActiveActions() {
+        let actions = WindowAction.gridLayoutGroups.flatMap { $0 }
+        let urlNames = actions.map { urlName($0.name) }
+        XCTAssertEqual(Set(urlNames).count, 71)
+
+        for (action, name) in zip(actions, urlNames) {
+            XCTAssertEqual(WindowAction.active.first { urlName($0.name) == name }, action)
+        }
+    }
+
+    func testAllFixedGridsPartitionOddNegativeOriginFrame() {
+        assertGridPartitions(in: CGRect(x: -1500, y: -200, width: 1001, height: 901))
+    }
+
+    func testAllFixedGridsPreserveFractionalOuterBoundaries() {
+        assertGridPartitions(in: CGRect(x: -1500.25, y: -200.5, width: 1001.25, height: 901.5))
+    }
+
+    func testAllFixedGridsRemainFixedOnPortraitFrame() {
+        assertGridPartitions(in: CGRect(x: 45, y: 70, width: 901, height: 1601))
+    }
+
+    func testRepeatedExecutionKeepsEveryFixedGridCell() {
+        let frame = CGRect(x: -80.25, y: 25.5, width: 1003.5, height: 777.25)
+
+        for action in WindowAction.gridLayoutGroups.flatMap({ $0 }) {
+            let calculation = WindowCalculationFactory.calculationsByAction[action]
+            let initial = calculation?.calculateRect(params(for: action, frame: frame)).rect
+            let repeatedParams = RectCalculationParameters(window: Window(id: 1, rect: initial ?? .null),
+                                                            visibleFrameOfScreen: frame,
+                                                            action: action,
+                                                            lastAction: RectangleAction(action: action,
+                                                                                        subAction: nil,
+                                                                                        rect: initial ?? .null,
+                                                                                        count: 1))
+            XCTAssertEqual(calculation?.calculateRect(repeatedParams).rect, initial, action.name)
+        }
+    }
+
+    func testGridGapEdgesMatchEverySharedBoundary() {
+        for (group, specification) in zip(WindowAction.gridLayoutGroups, specifications) {
+            for (offset, action) in group.enumerated() {
+                let row = offset / specification.columns
+                let column = offset % specification.columns
+                var expected: Edge = .none
+                if column > 0 { expected.insert(.left) }
+                if column < specification.columns - 1 { expected.insert(.right) }
+                if row > 0 { expected.insert(.top) }
+                if row < specification.rows - 1 { expected.insert(.bottom) }
+                XCTAssertEqual(action.gapSharedEdge, expected, action.name)
+            }
+        }
+    }
+
+    func testIconsKeepTopAndBottomRowsUnflipped() throws {
+        let top = try bitmap(for: .grid2x4Row1Column1)
+        let bottom = try bitmap(for: .grid2x4Row2Column1)
+
+        XCTAssertGreaterThan(alpha(at: CGPoint(x: 3, y: 10), in: top),
+                             alpha(at: CGPoint(x: 3, y: 3), in: top))
+        XCTAssertGreaterThan(alpha(at: CGPoint(x: 3, y: 3), in: bottom),
+                             alpha(at: CGPoint(x: 3, y: 10), in: bottom))
+    }
+
+    func testExistingColumnActionsKeepIdsAndIndependentLegacyGeometry() {
+        let actions = WindowAction.columnLayoutGroups.flatMap { $0 }
+        XCTAssertEqual(actions.map(\.rawValue), Array(130...161))
+        let frames = [
+            CGRect(x: -1500, y: -200, width: 1001, height: 901),
+            CGRect(x: -1500.25, y: -200.5, width: 1001.25, height: 901.5),
+            CGRect(x: 45, y: 70, width: 901, height: 1601)
+        ]
+
+        for frame in frames {
+            for (groupIndex, group) in WindowAction.columnLayoutGroups.enumerated() {
+                let columnCount = [6, 8, 8, 10][groupIndex]
+                let isTopHalf = groupIndex >= 2
+                for (column, action) in group.enumerated() {
+                    let left = (frame.width * CGFloat(column) / CGFloat(columnCount)).rounded()
+                    let right = column == columnCount - 1
+                        ? frame.width
+                        : (frame.width * CGFloat(column + 1) / CGFloat(columnCount)).rounded()
+                    let y = isTopHalf ? frame.minY + (frame.height / 2).rounded() : frame.minY
+                    let expected = CGRect(x: frame.minX + left,
+                                          y: y,
+                                          width: right - left,
+                                          height: frame.maxY - y)
+                    let actual = WindowCalculationFactory.calculationsByAction[action]?
+                        .calculateRect(params(for: action, frame: frame)).rect
+                    XCTAssertEqual(actual, expected, action.name)
+                }
+            }
+        }
+    }
+
+    private func assertGridPartitions(in frame: CGRect,
+                                      file: StaticString = #filePath,
+                                      line: UInt = #line) {
+        for (group, specification) in zip(WindowAction.gridLayoutGroups, specifications) {
+            for row in 0..<specification.rows {
+                var previousMaxX = frame.minX
+                let expectedBottom = row == specification.rows - 1
+                    ? frame.minY
+                    : frame.minY + (frame.height * CGFloat(specification.rows - row - 1) / CGFloat(specification.rows)).rounded()
+                let expectedTop = row == 0
+                    ? frame.maxY
+                    : frame.minY + (frame.height * CGFloat(specification.rows - row) / CGFloat(specification.rows)).rounded()
+
+                for column in 0..<specification.columns {
+                    let action = group[row * specification.columns + column]
+                    guard let calculation = WindowCalculationFactory.calculationsByAction[action] else {
+                        XCTFail("Missing calculation for \(action.name)", file: file, line: line)
+                        continue
+                    }
+                    let rect = calculation.calculateRect(params(for: action, frame: frame)).rect
+                    let expectedLeft = frame.minX + (frame.width * CGFloat(column) / CGFloat(specification.columns)).rounded()
+                    let expectedRight = column == specification.columns - 1
+                        ? frame.maxX
+                        : frame.minX + (frame.width * CGFloat(column + 1) / CGFloat(specification.columns)).rounded()
+
+                    XCTAssertEqual(rect.minX, expectedLeft, accuracy: 0.001, file: file, line: line)
+                    XCTAssertEqual(rect.maxX, expectedRight, accuracy: 0.001, file: file, line: line)
+                    XCTAssertEqual(rect.minX, previousMaxX, accuracy: 0.001, file: file, line: line)
+                    XCTAssertEqual(rect.minY, expectedBottom, accuracy: 0.001, file: file, line: line)
+                    XCTAssertEqual(rect.maxY, expectedTop, accuracy: 0.001, file: file, line: line)
+                    previousMaxX = rect.maxX
+                }
+                XCTAssertEqual(previousMaxX, frame.maxX, accuracy: 0.001, file: file, line: line)
+            }
+        }
+    }
+
+    private func expectedNames() -> [String] {
+        specifications.flatMap { specification in
+            (1...specification.rows).flatMap { row in
+                (1...specification.columns).map { column in
+                    "grid\(specification.rows)x\(specification.columns)Row\(row)Column\(column)"
+                }
+            }
+        }
+    }
+
+    private func urlName(_ name: String) -> String {
+        name.map { $0.isUppercase ? "-" + $0.lowercased() : String($0) }.joined()
+    }
+
+    private func params(for action: WindowAction, frame: CGRect) -> RectCalculationParameters {
+        RectCalculationParameters(window: Window(id: 1, rect: frame),
+                                  visibleFrameOfScreen: frame,
+                                  action: action,
+                                  lastAction: nil)
+    }
+
+    private func bitmap(for action: WindowAction) throws -> NSBitmapImageRep {
+        let data = try XCTUnwrap(action.image.tiffRepresentation)
+        return try XCTUnwrap(NSBitmapImageRep(data: data))
+    }
+
+    private func alpha(at point: CGPoint, in bitmap: NSBitmapImageRep) -> CGFloat {
+        let x = Int(point.x / 21 * CGFloat(bitmap.pixelsWide))
+        let y = bitmap.pixelsHigh - 1 - Int(point.y / 14 * CGFloat(bitmap.pixelsHigh))
+        return bitmap.colorAt(x: x, y: y)?.alphaComponent ?? 0
     }
 }
 

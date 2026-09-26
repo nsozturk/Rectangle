@@ -5,7 +5,7 @@ import Foundation
 enum WindowActionCategory {
 
     case halves, corners, thirds, max, size, display, move, other, sixths, fourths, eighths, ninths, twelfths, sixteenths,
-         sixthColumns, eighthColumns, topHalfEighthColumns, topHalfTenthColumns
+         sixthColumns, eighthColumns, topHalfEighthColumns, topHalfTenthColumns, twoRowGrids, threeRowGrids
 
     var menuOrder: Int {
         switch self {
@@ -22,6 +22,8 @@ enum WindowActionCategory {
         case .eighthColumns: return 10
         case .topHalfEighthColumns: return 11
         case .topHalfTenthColumns: return 12
+        case .twoRowGrids: return 13
+        case .threeRowGrids: return 14
         default: return 99
         }
     }
@@ -64,6 +66,10 @@ enum WindowActionCategory {
             return NSLocalizedString("Top-Half Eighths", tableName: "Main", value: "Top-Half Eighths", comment: "")
         case .topHalfTenthColumns:
             return NSLocalizedString("Top-Half Tenths", tableName: "Main", value: "Top-Half Tenths", comment: "")
+        case .twoRowGrids:
+            return NSLocalizedString("Two-Row Layouts", tableName: "Main", value: "Two-Row Layouts", comment: "")
+        case .threeRowGrids:
+            return NSLocalizedString("Three-Row Layouts", tableName: "Main", value: "Three-Row Layouts", comment: "")
         }
     }
 }

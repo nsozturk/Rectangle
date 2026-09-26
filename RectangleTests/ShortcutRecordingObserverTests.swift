@@ -103,13 +103,14 @@ class ColumnShortcutPopoverTests: XCTestCase {
         return false
     }
 
-    func testEveryColumnActionAppearsOnceInItsMenuGroup() throws {
+    func testEveryDynamicActionAppearsOnceInItsMenuGroup() throws {
         let menu = try XCTUnwrap(AppDelegate.instance.mainStatusMenu)
         func items(in menu: NSMenu) -> [NSMenuItem] {
             menu.items + menu.items.compactMap(\.submenu).flatMap { items(in: $0) }
         }
         let allItems = items(in: menu)
-        for action in WindowAction.columnLayoutGroups.flatMap({ $0 }) {
+        let fixedGridActions = WindowAction.gridLayoutGroups.flatMap { $0 }
+        for action in (WindowAction.columnLayoutGroups + WindowAction.gridLayoutGroups).flatMap({ $0 }) {
             let matches = allItems.filter { ($0.representedObject as? WindowAction) == action }
             XCTAssertEqual(matches.count, 1, action.name)
             XCTAssertEqual(matches.first?.title, action.displayName)
@@ -117,9 +118,18 @@ class ColumnShortcutPopoverTests: XCTestCase {
                 XCTAssertEqual(matches.first?.menu?.title, action.category?.displayName)
             }
         }
+        let fixedGridCategories = Set(fixedGridActions.compactMap(\.category))
+        XCTAssertEqual(fixedGridCategories, [.twoRowGrids, .threeRowGrids])
+        XCTAssertEqual(menu.items.filter { item in
+            item.submenu != nil && fixedGridCategories.contains { $0.displayName == item.title }
+        }.count, 2)
+        for (category, count) in [(WindowActionCategory.twoRowGrids, 8), (.threeRowGrids, 63)] {
+            let submenu = try XCTUnwrap(menu.items.first { $0.title == category.displayName }?.submenu)
+            XCTAssertEqual(submenu.items.compactMap { $0.representedObject as? WindowAction }.count, count)
+        }
     }
 
-    func testAllColumnShortcutsAreBoundInsideScrollableShortcutsDisclosure() throws {
+    func testAllDynamicShortcutsAreBoundInsideScrollableShortcutsDisclosure() throws {
         let windowController = try XCTUnwrap(
             NSStoryboard(name: "Main", bundle: nil)
                 .instantiateController(withIdentifier: "PrefsWindowController") as? NSWindowController
@@ -134,8 +144,12 @@ class ColumnShortcutPopoverTests: XCTestCase {
         windowController.showWindow(nil)
         defer { window.close() }
 
-        let actions = WindowAction.columnLayoutGroups.flatMap { $0 }
-        XCTAssertEqual(actions.count, 32)
+        let columnActions = WindowAction.columnLayoutGroups.flatMap { $0 }
+        let fixedGridActions = WindowAction.gridLayoutGroups.flatMap { $0 }
+        let actions = columnActions + fixedGridActions
+        XCTAssertEqual(columnActions.count, 32)
+        XCTAssertEqual(fixedGridActions.count, 71)
+        XCTAssertEqual(actions.count, 103)
         XCTAssertTrue(controller.additionalShortcutsStackView.isHidden)
 
         let disclosureViews = descendants(of: controller.additionalShortcutsStackView)
@@ -148,7 +162,7 @@ class ColumnShortcutPopoverTests: XCTestCase {
         for action in retainedActions {
             XCTAssertEqual(disclosureControls.filter { $0.associatedUserDefaultsKey == action.name }.count, 1, action.name)
         }
-        for action in actions {
+        for action in columnActions {
             let matches = disclosureControls.filter { $0.associatedUserDefaultsKey == action.name }
             XCTAssertEqual(matches.count, 1, action.name)
             XCTAssertEqual(matches.first?.identifier?.rawValue, "columnShortcut.\(action.name)")
@@ -163,10 +177,27 @@ class ColumnShortcutPopoverTests: XCTestCase {
                 action.name
             )
         }
+        for action in fixedGridActions {
+            let matches = disclosureControls.filter { $0.associatedUserDefaultsKey == action.name }
+            XCTAssertEqual(matches.count, 1, action.name)
+            XCTAssertEqual(matches.first?.identifier?.rawValue, "fixedGridShortcut.\(action.name)")
+            XCTAssertIdentical(controller.actionsToViews[action], matches.first)
+            let control = try XCTUnwrap(matches.first)
+            let row = try XCTUnwrap(control.superview)
+            let icon = try XCTUnwrap(descendants(of: row).compactMap { $0 as? NSImageView }.first)
+            XCTAssertEqual(
+                control.convert(control.bounds, to: row).minX - icon.convert(icon.bounds, to: row).maxX,
+                18,
+                accuracy: 1,
+                action.name
+            )
+        }
         XCTAssertEqual(
             disclosureControls.filter { actions.map(\.name).contains($0.associatedUserDefaultsKey) }.count,
-            32
+            103
         )
+        XCTAssertEqual(disclosureViews.filter { $0.identifier?.rawValue.hasPrefix("fixedGridShortcutHeader.") == true }.count, 2)
+        XCTAssertEqual(disclosureViews.filter { $0.identifier?.rawValue.hasPrefix("fixedGridShortcutSubheader.") == true }.count, 4)
         XCTAssertTrue(disclosureViews.contains { $0 === controller.thirdFourthShortcutView })
         XCTAssertTrue(disclosureViews.contains { $0 === controller.lastFourthShortcutView })
 
@@ -218,7 +249,7 @@ class ColumnShortcutPopoverTests: XCTestCase {
         let controls = testWindows.compactMap(\.contentView)
             .flatMap { descendants(of: $0) }
             .compactMap { $0 as? MASShortcutView }
-        for action in WindowAction.columnLayoutGroups.flatMap({ $0 }) {
+        for action in (WindowAction.columnLayoutGroups + WindowAction.gridLayoutGroups).flatMap({ $0 }) {
             XCTAssertFalse(controls.contains { $0.associatedUserDefaultsKey == action.name }, action.name)
         }
     }

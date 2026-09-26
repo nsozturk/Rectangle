@@ -120,7 +120,7 @@ class PrefsViewController: NSViewController {
             .bottomCenterSixth: bottomCenterSixthShortcutView,
             .bottomRightSixth: bottomRightSixthShortcutView
         ]
-        appendColumnShortcuts()
+        appendDynamicShortcuts()
         
         for (action, view) in actionsToViews {
             view.setAssociatedUserDefaultsKey(action.name, withTransformerName: MASDictionaryTransformerName)
@@ -151,7 +151,7 @@ class PrefsViewController: NSViewController {
         updateShortcutViewport()
     }
 
-    private func appendColumnShortcuts() {
+    private func appendDynamicShortcuts() {
         let existingColumns = additionalShortcutsStackView.arrangedSubviews
         guard existingColumns.count == 2 else { return }
 
@@ -173,25 +173,24 @@ class PrefsViewController: NSViewController {
         for actions in WindowAction.columnLayoutGroups {
             guard let category = actions.first?.category else { continue }
 
-            let header = NSTextField(labelWithString: category.displayName)
-            header.font = NSFont.boldSystemFont(ofSize: NSFont.systemFontSize)
-            header.alignment = .center
-            header.translatesAutoresizingMaskIntoConstraints = false
-            header.setContentCompressionResistancePriority(.required, for: .vertical)
-            header.heightAnchor.constraint(equalToConstant: 16).isActive = true
-            header.identifier = NSUserInterfaceItemIdentifier("columnShortcutHeader.\(category.menuOrder)")
-            additionalShortcutsStackView.setCustomSpacing(14, after: additionalShortcutsStackView.arrangedSubviews.last!)
-            additionalShortcutsStackView.addArrangedSubview(header)
-            header.widthAnchor.constraint(equalTo: additionalShortcutsStackView.widthAnchor).isActive = true
+            appendHeader(category.displayName, identifier: "columnShortcutHeader.\(category.menuOrder)")
+            widestGrid = max(widestGrid, appendGrid(actions, identifierPrefix: "columnShortcut").fittingSize.width)
+        }
 
-            let midpoint = (actions.count + 1) / 2
-            let columns = [Array(actions[..<midpoint]), Array(actions[midpoint...])].map(makeColumn)
-            let grid = makeTwoColumnGrid(columns)
-            let gridHeight = CGFloat(midpoint * 19 + max(0, midpoint - 1) * 9)
-            grid.heightAnchor.constraint(equalToConstant: gridHeight).isActive = true
-            widestGrid = max(widestGrid, grid.fittingSize.width)
-            additionalShortcutsStackView.addArrangedSubview(grid)
-            grid.widthAnchor.constraint(equalTo: additionalShortcutsStackView.widthAnchor).isActive = true
+        if let twoRowActions = WindowAction.gridLayoutGroups.first,
+           let category = twoRowActions.first?.category {
+            appendHeader(category.displayName, identifier: "fixedGridShortcutHeader.\(category.menuOrder)")
+            widestGrid = max(widestGrid, appendGrid(twoRowActions, identifierPrefix: "fixedGridShortcut").fittingSize.width)
+        }
+
+        let threeRowGroups = WindowAction.gridLayoutGroups.dropFirst()
+        if let category = threeRowGroups.first?.first?.category {
+            appendHeader(category.displayName, identifier: "fixedGridShortcutHeader.\(category.menuOrder)")
+            for actions in threeRowGroups {
+                let columnCount = actions.count / 3
+                appendHeader(fixedGridColumnsTitle(columnCount), identifier: "fixedGridShortcutSubheader.\(columnCount)")
+                widestGrid = max(widestGrid, appendGrid(actions, identifierPrefix: "fixedGridShortcut").fittingSize.width)
+            }
         }
 
         let horizontalPadding = view.frame.width - additionalShortcutsStackView.frame.width
@@ -204,7 +203,42 @@ class PrefsViewController: NSViewController {
         }
     }
 
-    private func makeColumn(_ actions: [WindowAction]) -> NSStackView {
+    private func appendHeader(_ title: String, identifier: String) {
+        let header = NSTextField(labelWithString: title)
+        header.font = NSFont.boldSystemFont(ofSize: NSFont.systemFontSize)
+        header.alignment = .center
+        header.translatesAutoresizingMaskIntoConstraints = false
+        header.setContentCompressionResistancePriority(.required, for: .vertical)
+        header.heightAnchor.constraint(equalToConstant: 16).isActive = true
+        header.identifier = NSUserInterfaceItemIdentifier(identifier)
+        additionalShortcutsStackView.setCustomSpacing(14, after: additionalShortcutsStackView.arrangedSubviews.last!)
+        additionalShortcutsStackView.addArrangedSubview(header)
+        header.widthAnchor.constraint(equalTo: additionalShortcutsStackView.widthAnchor).isActive = true
+    }
+
+    private func appendGrid(_ actions: [WindowAction], identifierPrefix: String) -> NSStackView {
+        let midpoint = (actions.count + 1) / 2
+        let columns = [Array(actions[..<midpoint]), Array(actions[midpoint...])].map {
+            makeColumn($0, identifierPrefix: identifierPrefix)
+        }
+        let grid = makeTwoColumnGrid(columns)
+        let gridHeight = CGFloat(midpoint * 19 + max(0, midpoint - 1) * 9)
+        grid.heightAnchor.constraint(equalToConstant: gridHeight).isActive = true
+        additionalShortcutsStackView.addArrangedSubview(grid)
+        grid.widthAnchor.constraint(equalTo: additionalShortcutsStackView.widthAnchor).isActive = true
+        return grid
+    }
+
+    private func fixedGridColumnsTitle(_ count: Int) -> String {
+        switch count {
+        case 3: return NSLocalizedString("3 Columns", tableName: "Main", value: "3 Columns", comment: "Fixed grid shortcut subgroup")
+        case 4: return NSLocalizedString("4 Columns", tableName: "Main", value: "4 Columns", comment: "Fixed grid shortcut subgroup")
+        case 6: return NSLocalizedString("6 Columns", tableName: "Main", value: "6 Columns", comment: "Fixed grid shortcut subgroup")
+        default: return NSLocalizedString("8 Columns", tableName: "Main", value: "8 Columns", comment: "Fixed grid shortcut subgroup")
+        }
+    }
+
+    private func makeColumn(_ actions: [WindowAction], identifierPrefix: String) -> NSStackView {
         let column = NSStackView()
         column.orientation = .vertical
         column.alignment = .trailing
@@ -234,7 +268,7 @@ class PrefsViewController: NSViewController {
             labelAndIcon.translatesAutoresizingMaskIntoConstraints = false
 
             let shortcutView = MASShortcutView(frame: NSRect(x: 0, y: 0, width: 160, height: 19))
-            shortcutView.identifier = NSUserInterfaceItemIdentifier("columnShortcut.\(action.name)")
+            shortcutView.identifier = NSUserInterfaceItemIdentifier("\(identifierPrefix).\(action.name)")
             shortcutView.translatesAutoresizingMaskIntoConstraints = false
             shortcutView.widthAnchor.constraint(equalToConstant: 160).isActive = true
             shortcutView.heightAnchor.constraint(equalToConstant: 19).isActive = true
