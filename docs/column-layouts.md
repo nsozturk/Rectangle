@@ -1,6 +1,6 @@
 # Fixed column layouts
 
-Adds 32 fixed positions to Extra Shortcuts and the additional-size menu:
+Adds 32 fixed positions to the expanded Shortcuts section and the additional-size menu:
 
 | Group | Positions | Window size |
 |---|---:|---|
@@ -9,7 +9,7 @@ Adds 32 fixed positions to Extra Shortcuts and the additional-size menu:
 | Top-Half Eighths | 8 | 1/8 width, half height |
 | Top-Half Tenths | 10 | 1/10 width, half height |
 
-Open **General → ⋯** to assign shortcuts. Enable **Show additional sizes in menu** for the menu entries. No shortcuts are assigned by default. Positions stay left-to-right on portrait displays and repeated execution targets the same column.
+Open **Shortcuts → disclosure arrow** to assign shortcuts. The four new groups continue the existing two-column shortcut rows. Enable **Show additional sizes in menu** for the menu entries. No shortcuts are assigned by default. Positions stay left-to-right on portrait displays and repeated execution targets the same column.
 
 A shared calculation divides the usable screen area using adjacent rounded boundaries, respecting existing gap handling. Existing action identifiers and shortcut keys are preserved. Titles are localized across all 31 supported locales.
 
@@ -26,8 +26,8 @@ Actual screenshots captured from the installed Debug build after code review, 20
 ## Verification
 
 - Xcode 26.6 Debug build succeeded; deployment target stays macOS 10.15.
-- All 8 focused tests passed on the isolated feature branch and the combined local build: geometry, odd/fractional dimensions, negative origins, portrait screens, repeat execution, gaps, menu entries, shortcut bindings and scrolling.
+- All 9 focused tests passed on the isolated feature branch and the combined local build: geometry, odd/fractional dimensions, negative origins, portrait screens, repeat execution, gaps, menu entries, shortcut bindings, disclosure visibility and scrolling.
 - Existing IDs/names and prior catalog entries remain unchanged; 36 new keys cover 31 locales.
-- Native preference UI was inspected. Real window movement remains unverified: both new and legacy URL probes left the test window unchanged in the automation session. Do not interpret these screenshots as movement verification.
+- Native preference UI was inspected, including Fourth Eighth. The real storyboard window test verifies all 32 rows are fully reachable, share the existing 18-point icon/control gap, and hide on collapse. No Auto Layout warnings remain in the focused run. Real window movement remains unverified: both new and legacy URL probes left the test window unchanged in the automation session. Do not interpret these screenshots as movement verification.
 - The earlier full-suite comparison produced the same 22 assertion failures before and after the feature, in existing tests depending on ambient preferences.
 - Applications may enforce a minimum window width larger than a requested column.

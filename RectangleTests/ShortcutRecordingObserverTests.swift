@@ -90,6 +90,19 @@ class ShortcutRecordingObserverTests: XCTestCase {
 }
 
 class ColumnShortcutPopoverTests: XCTestCase {
+    private func descendants(of view: NSView) -> [NSView] {
+        [view] + view.subviews.flatMap(descendants)
+    }
+
+    private func isHidden(_ view: NSView, by ancestor: NSView) -> Bool {
+        var candidate: NSView? = view
+        while let current = candidate {
+            if current === ancestor { return current.isHidden }
+            candidate = current.superview
+        }
+        return false
+    }
+
     func testEveryColumnActionAppearsOnceInItsMenuGroup() throws {
         let menu = try XCTUnwrap(AppDelegate.instance.mainStatusMenu)
         func items(in menu: NSMenu) -> [NSMenuItem] {
@@ -106,7 +119,85 @@ class ColumnShortcutPopoverTests: XCTestCase {
         }
     }
 
-    func testAllColumnShortcutsAreBoundAndReachableInScrollablePopover() throws {
+    func testAllColumnShortcutsAreBoundInsideScrollableShortcutsDisclosure() throws {
+        let windowController = try XCTUnwrap(
+            NSStoryboard(name: "Main", bundle: nil)
+                .instantiateController(withIdentifier: "PrefsWindowController") as? NSWindowController
+        )
+        let tabController = try XCTUnwrap(windowController.contentViewController as? NSTabViewController)
+        let controller = try XCTUnwrap(
+            tabController.tabViewItems.compactMap(\.viewController)
+                .compactMap { $0 as? PrefsViewController }
+                .first
+        )
+        let window = try XCTUnwrap(windowController.window)
+        windowController.showWindow(nil)
+        defer { window.close() }
+
+        let actions = WindowAction.columnLayoutGroups.flatMap { $0 }
+        XCTAssertEqual(actions.count, 32)
+        XCTAssertTrue(controller.additionalShortcutsStackView.isHidden)
+
+        let disclosureViews = descendants(of: controller.additionalShortcutsStackView)
+        let disclosureControls = disclosureViews.compactMap { $0 as? MASShortcutView }
+        let retainedActions: [WindowAction] = [
+            .firstThird, .firstTwoThirds, .centerThird, .centerTwoThirds, .lastTwoThirds, .lastThird,
+            .firstFourth, .secondFourth, .thirdFourth, .lastFourth,
+            .firstThreeFourths, .centerThreeFourths, .lastThreeFourths
+        ]
+        for action in retainedActions {
+            XCTAssertEqual(disclosureControls.filter { $0.associatedUserDefaultsKey == action.name }.count, 1, action.name)
+        }
+        for action in actions {
+            let matches = disclosureControls.filter { $0.associatedUserDefaultsKey == action.name }
+            XCTAssertEqual(matches.count, 1, action.name)
+            XCTAssertEqual(matches.first?.identifier?.rawValue, "columnShortcut.\(action.name)")
+            XCTAssertIdentical(controller.actionsToViews[action], matches.first)
+            let control = try XCTUnwrap(matches.first)
+            let row = try XCTUnwrap(control.superview)
+            let icon = try XCTUnwrap(descendants(of: row).compactMap { $0 as? NSImageView }.first)
+            XCTAssertEqual(
+                control.convert(control.bounds, to: row).minX - icon.convert(icon.bounds, to: row).maxX,
+                18,
+                accuracy: 1,
+                action.name
+            )
+        }
+        XCTAssertEqual(
+            disclosureControls.filter { actions.map(\.name).contains($0.associatedUserDefaultsKey) }.count,
+            32
+        )
+        XCTAssertTrue(disclosureViews.contains { $0 === controller.thirdFourthShortcutView })
+        XCTAssertTrue(disclosureViews.contains { $0 === controller.lastFourthShortcutView })
+
+        let collapsedWindowHeight = window.frame.height
+        controller.toggleShowMore(controller.showMoreButton)
+        XCTAssertFalse(controller.additionalShortcutsStackView.isHidden)
+        window.contentView?.layoutSubtreeIfNeeded()
+        XCTAssertGreaterThan(window.frame.height, collapsedWindowHeight)
+
+        let scroll = try XCTUnwrap(descendants(of: controller.view).compactMap { $0 as? NSScrollView }.first)
+        let document = try XCTUnwrap(scroll.documentView)
+        document.layoutSubtreeIfNeeded()
+        XCTAssertGreaterThan(document.frame.height, scroll.contentView.bounds.height)
+        XCTAssertEqual(scroll.contentSize.height, min(document.frame.height, 686), accuracy: 1)
+        for action in actions {
+            let control = try XCTUnwrap(controller.actionsToViews[action])
+            control.scrollToVisible(control.bounds)
+            XCTAssertTrue(
+                scroll.documentVisibleRect.contains(control.convert(control.bounds, to: document)),
+                action.name
+            )
+        }
+
+        controller.toggleShowMore(controller.showMoreButton)
+        XCTAssertTrue(controller.additionalShortcutsStackView.isHidden)
+        XCTAssertTrue(disclosureControls.allSatisfy {
+            isHidden($0, by: controller.additionalShortcutsStackView)
+        })
+    }
+
+    func testGeneralPopoverDoesNotDuplicateColumnShortcuts() throws {
         let originalWindows = Set(NSApp.windows.map(ObjectIdentifier.init))
         let host = NSWindow(contentRect: NSRect(x: 100, y: 100, width: 500, height: 300),
                             styleMask: [.titled], backing: .buffered, defer: false)
@@ -123,27 +214,12 @@ class ColumnShortcutPopoverTests: XCTestCase {
         }
         controller.showExtraSettings(button)
 
-        func descendants(_ view: NSView) -> [NSView] {
-            [view] + view.subviews.flatMap(descendants)
-        }
         let testWindows = NSApp.windows.filter { !originalWindows.contains(ObjectIdentifier($0)) }
-        let views = testWindows.compactMap(\.contentView).flatMap(descendants)
-        let scroll = try XCTUnwrap(views.compactMap { $0 as? NSScrollView }.first)
-        let document = try XCTUnwrap(scroll.documentView)
-        document.layoutSubtreeIfNeeded()
-        let controls = descendants(document).compactMap { $0 as? MASShortcutView }
-        let labels = descendants(document).compactMap { $0 as? NSTextField }.map(\.stringValue)
+        let controls = testWindows.compactMap(\.contentView)
+            .flatMap { descendants(of: $0) }
+            .compactMap { $0 as? MASShortcutView }
         for action in WindowAction.columnLayoutGroups.flatMap({ $0 }) {
-            XCTAssertEqual(controls.filter { $0.associatedUserDefaultsKey == action.name }.count, 1, action.name)
-            XCTAssertTrue(labels.contains(try XCTUnwrap(action.displayName)), action.name)
+            XCTAssertFalse(controls.contains { $0.associatedUserDefaultsKey == action.name }, action.name)
         }
-        XCTAssertTrue(document.isFlipped)
-        XCTAssertLessThanOrEqual(scroll.frame.height, 680)
-        XCTAssertGreaterThan(document.frame.height, scroll.contentView.bounds.height)
-        XCTAssertEqual(scroll.contentView.bounds.minY, 0, accuracy: 1)
-        let lastAction = try XCTUnwrap(WindowAction.columnLayoutGroups.last?.last)
-        let lastControl = try XCTUnwrap(controls.first { $0.associatedUserDefaultsKey == lastAction.name })
-        lastControl.scrollToVisible(lastControl.bounds)
-        XCTAssertTrue(scroll.documentVisibleRect.intersects(lastControl.convert(lastControl.bounds, to: document)))
     }
 }

@@ -63,9 +63,19 @@ class PrefsViewController: NSViewController {
     
     @IBOutlet weak var showMoreButton: NSButton!
     @IBOutlet weak var additionalShortcutsStackView: NSStackView!
+
+    private var shortcutsScrollView: NSScrollView?
+    private weak var shortcutsContentView: NSStackView?
+    private var documentWidthConstraint: NSLayoutConstraint?
+    private var documentHeightConstraint: NSLayoutConstraint?
+    private var expandedShortcutWidth: CGFloat = 850
+    private var collapsedShortcutHeight: CGFloat = 0
+    private var didInitialize = false
     
     // Settings
     override func awakeFromNib() {
+        guard !didInitialize else { return }
+        didInitialize = true
         
         actionsToViews = [
             .leftHalf: leftHalfShortcutView,
@@ -110,6 +120,7 @@ class PrefsViewController: NSViewController {
             .bottomCenterSixth: bottomCenterSixthShortcutView,
             .bottomRightSixth: bottomRightSixthShortcutView
         ]
+        appendColumnShortcuts()
         
         for (action, view) in actionsToViews {
             view.setAssociatedUserDefaultsKey(action.name, withTransformerName: MASDictionaryTransformerName)
@@ -124,12 +135,201 @@ class PrefsViewController: NSViewController {
         subscribeToAllowAnyShortcutToggle()
         
         additionalShortcutsStackView.isHidden = true
+        installShortcutScrollView()
+        updateShortcutViewport()
     }
     
     @IBAction func toggleShowMore(_ sender: NSButton) {
+        if additionalShortcutsStackView.isHidden {
+            let expandedHeight = collapsedShortcutHeight + ceil(additionalShortcutsStackView.fittingSize.height) + 8
+            documentHeightConstraint?.constant = expandedHeight
+            shortcutsContentView?.frame.size.height = expandedHeight
+        }
         additionalShortcutsStackView.isHidden = !additionalShortcutsStackView.isHidden
         showMoreButton.title = additionalShortcutsStackView.isHidden
             ? "▶︎ ⋯" : "▼"
+        updateShortcutViewport()
+    }
+
+    private func appendColumnShortcuts() {
+        let existingColumns = additionalShortcutsStackView.arrangedSubviews
+        guard existingColumns.count == 2 else { return }
+
+        existingColumns.forEach {
+            additionalShortcutsStackView.removeArrangedSubview($0)
+            $0.removeFromSuperview()
+        }
+
+        additionalShortcutsStackView.orientation = .vertical
+        additionalShortcutsStackView.distribution = .fill
+        additionalShortcutsStackView.alignment = .leading
+        additionalShortcutsStackView.spacing = 9
+
+        let existingGrid = makeTwoColumnGrid(existingColumns)
+        additionalShortcutsStackView.addArrangedSubview(existingGrid)
+        existingGrid.widthAnchor.constraint(equalTo: additionalShortcutsStackView.widthAnchor).isActive = true
+
+        var widestGrid = existingGrid.fittingSize.width
+        for actions in WindowAction.columnLayoutGroups {
+            guard let category = actions.first?.category else { continue }
+
+            let header = NSTextField(labelWithString: category.displayName)
+            header.font = NSFont.boldSystemFont(ofSize: NSFont.systemFontSize)
+            header.alignment = .center
+            header.translatesAutoresizingMaskIntoConstraints = false
+            header.setContentCompressionResistancePriority(.required, for: .vertical)
+            header.heightAnchor.constraint(equalToConstant: 16).isActive = true
+            header.identifier = NSUserInterfaceItemIdentifier("columnShortcutHeader.\(category.menuOrder)")
+            additionalShortcutsStackView.setCustomSpacing(14, after: additionalShortcutsStackView.arrangedSubviews.last!)
+            additionalShortcutsStackView.addArrangedSubview(header)
+            header.widthAnchor.constraint(equalTo: additionalShortcutsStackView.widthAnchor).isActive = true
+
+            let midpoint = (actions.count + 1) / 2
+            let columns = [Array(actions[..<midpoint]), Array(actions[midpoint...])].map(makeColumn)
+            let grid = makeTwoColumnGrid(columns)
+            let gridHeight = CGFloat(midpoint * 19 + max(0, midpoint - 1) * 9)
+            grid.heightAnchor.constraint(equalToConstant: gridHeight).isActive = true
+            widestGrid = max(widestGrid, grid.fittingSize.width)
+            additionalShortcutsStackView.addArrangedSubview(grid)
+            grid.widthAnchor.constraint(equalTo: additionalShortcutsStackView.widthAnchor).isActive = true
+        }
+
+        let horizontalPadding = view.frame.width - additionalShortcutsStackView.frame.width
+        expandedShortcutWidth = ceil(max(view.frame.width, widestGrid + horizontalPadding))
+        if let content = view.subviews.first as? NSStackView,
+           let widthConstraint = content.constraints.first(where: {
+               $0.firstAttribute == .width && $0.secondItem == nil
+           }) {
+            widthConstraint.constant = expandedShortcutWidth
+        }
+    }
+
+    private func makeColumn(_ actions: [WindowAction]) -> NSStackView {
+        let column = NSStackView()
+        column.orientation = .vertical
+        column.alignment = .trailing
+        column.distribution = .fill
+        column.spacing = 9
+        column.translatesAutoresizingMaskIntoConstraints = false
+
+        for action in actions {
+            let label = NSTextField(labelWithString: action.displayName ?? action.name)
+            label.alignment = .right
+            label.translatesAutoresizingMaskIntoConstraints = false
+            label.setContentCompressionResistancePriority(.required, for: .horizontal)
+
+            let icon = NSImageView(frame: NSRect(x: 0, y: 0, width: 21, height: 14))
+            icon.image = action.image
+            icon.imageScaling = .scaleProportionallyDown
+            icon.setAccessibilityLabel(action.displayName ?? action.name)
+            icon.translatesAutoresizingMaskIntoConstraints = false
+            icon.widthAnchor.constraint(equalToConstant: 21).isActive = true
+            icon.heightAnchor.constraint(equalToConstant: 14).isActive = true
+
+            let labelAndIcon = NSStackView(views: [label, icon])
+            labelAndIcon.orientation = .horizontal
+            labelAndIcon.alignment = .centerY
+            labelAndIcon.distribution = .fill
+            labelAndIcon.spacing = 8
+            labelAndIcon.translatesAutoresizingMaskIntoConstraints = false
+
+            let shortcutView = MASShortcutView(frame: NSRect(x: 0, y: 0, width: 160, height: 19))
+            shortcutView.identifier = NSUserInterfaceItemIdentifier("columnShortcut.\(action.name)")
+            shortcutView.translatesAutoresizingMaskIntoConstraints = false
+            shortcutView.widthAnchor.constraint(equalToConstant: 160).isActive = true
+            shortcutView.heightAnchor.constraint(equalToConstant: 19).isActive = true
+            actionsToViews[action] = shortcutView
+
+            let row = NSStackView(views: [labelAndIcon, shortcutView])
+            row.orientation = .horizontal
+            row.alignment = .centerY
+            row.distribution = .fill
+            row.spacing = 18
+            row.translatesAutoresizingMaskIntoConstraints = false
+            row.setContentHuggingPriority(.required, for: .horizontal)
+            labelAndIcon.trailingAnchor.constraint(equalTo: shortcutView.leadingAnchor, constant: -18).isActive = true
+            column.addArrangedSubview(row)
+        }
+        return column
+    }
+
+    private func makeTwoColumnGrid(_ columns: [NSView]) -> NSStackView {
+        let grid = NSStackView(views: columns)
+        grid.orientation = .horizontal
+        grid.alignment = .top
+        grid.distribution = .fillEqually
+        grid.spacing = 43
+        grid.translatesAutoresizingMaskIntoConstraints = false
+        return grid
+    }
+
+    private func installShortcutScrollView() {
+        guard shortcutsScrollView == nil,
+              let content = view.subviews.first as? NSStackView else { return }
+
+        let containingConstraints = view.constraints.filter {
+            ($0.firstItem as? NSView) === content || ($0.secondItem as? NSView) === content
+        }
+        NSLayoutConstraint.deactivate(containingConstraints)
+        content.removeFromSuperview()
+        content.translatesAutoresizingMaskIntoConstraints = false
+
+        let scrollView = NSScrollView(frame: view.bounds)
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.hasVerticalScroller = true
+        scrollView.autohidesScrollers = true
+        scrollView.borderType = .noBorder
+        scrollView.drawsBackground = false
+        scrollView.documentView = content
+        view.addSubview(scrollView)
+        NSLayoutConstraint.activate([
+            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+
+        collapsedShortcutHeight = ceil(content.fittingSize.height)
+        let widthConstraint = content.widthAnchor.constraint(equalToConstant: expandedShortcutWidth)
+        let heightConstraint = content.heightAnchor.constraint(equalToConstant: collapsedShortcutHeight)
+        NSLayoutConstraint.activate([widthConstraint, heightConstraint])
+
+        shortcutsContentView = content
+        shortcutsScrollView = scrollView
+        documentWidthConstraint = widthConstraint
+        documentHeightConstraint = heightConstraint
+    }
+
+    private func updateShortcutViewport() {
+        guard let content = shortcutsContentView, shortcutsScrollView != nil else { return }
+
+        additionalShortcutsStackView.needsLayout = true
+        additionalShortcutsStackView.layoutSubtreeIfNeeded()
+
+        let documentHeight = additionalShortcutsStackView.isHidden
+            ? collapsedShortcutHeight
+            : collapsedShortcutHeight + ceil(additionalShortcutsStackView.fittingSize.height) + 8
+        let contentSize = NSSize(width: expandedShortcutWidth, height: documentHeight)
+        documentWidthConstraint?.constant = contentSize.width
+        documentHeightConstraint?.constant = contentSize.height
+        content.frame = NSRect(origin: .zero, size: contentSize)
+        content.layoutSubtreeIfNeeded()
+
+        let viewportHeight = additionalShortcutsStackView.isHidden
+            ? contentSize.height
+            : min(contentSize.height, 686)
+        let viewportSize = NSSize(width: contentSize.width, height: viewportHeight)
+        preferredContentSize = viewportSize
+        view.frame.size = viewportSize
+        view.window?.setContentSize(viewportSize)
+
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self, let content = self.shortcutsContentView,
+                  let scrollView = self.shortcutsScrollView else { return }
+            let top = content.isFlipped ? CGFloat.zero : max(0, content.bounds.height - scrollView.contentSize.height)
+            scrollView.contentView.scroll(to: NSPoint(x: 0, y: top))
+            scrollView.reflectScrolledClipView(scrollView.contentView)
+        }
     }
     
     private func subscribeToAllowAnyShortcutToggle() {
